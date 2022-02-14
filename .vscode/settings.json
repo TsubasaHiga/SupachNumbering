@@ -1,3 +1,16 @@
 {
-  "editor.formatOnSave": true
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "cSpell.words": [
+    "cofus",
+    "Higa",
+    "messagearea",
+    "ress",
+    "stylelint",
+    "tabler",
+    "Tsubasa"
+  ]
 }

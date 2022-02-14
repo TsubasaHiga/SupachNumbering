@@ -1,0 +1,44 @@
+.root {
+
+  section {
+
+    + section {
+      margin-top: 10px;
+    }
+  }
+
+  h2 {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+
+    span {
+      margin-left: 5px;
+    }
+  }
+
+  .content {
+    border-left: 2px solid #eee;
+    margin-left: 8px;
+    margin-top: 10px;
+    padding: 4px 0 4px 15px;
+
+    p {
+      font-size: 13px;
+
+      + p {
+        margin-top: 10px;
+      }
+    }
+
+    small {
+      color: rgba(#000, .5);
+      display: block;
+      font-size: 10px;
+      margin-top: 3px;
+      text-align: right;
+    }
+  }
+}
