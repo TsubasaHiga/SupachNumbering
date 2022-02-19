@@ -1,3 +1,4 @@
+import GetI18n from '../../../../utils/GetI18n'
 import style from './Footer.module.scss'
 
 const Footer = (): JSX.Element => {
@@ -28,7 +29,7 @@ const Footer = (): JSX.Element => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            Chrome拡張機能リストを見る
+            {GetI18n('popup_footer_link')}
           </a>
         </p>
       </div>

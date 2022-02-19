@@ -1,3 +1,5 @@
+/* stylelint-disable selector-class-pattern */
+
 .root {
 
   section {
@@ -33,12 +35,41 @@
       }
     }
 
+    .image {
+      width: 100%;
+
+      img {
+        border-radius: 5px;
+        height: auto;
+        width: 100%;
+      }
+    }
+
     small {
       color: rgba(#000, .5);
       display: block;
       font-size: 10px;
       margin-top: 3px;
       text-align: right;
+    }
+
+    .settings {
+      background-color: #f9fafb;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      padding: 15px;
+    }
+
+    .settingBox {
+      border: 1px dashed #ddd;
+      border-radius: 4px;
+      margin-top: 10px;
+      padding: 12px 14px 10px;
+      position: relative;
+
+      + .settingBox {
+        margin-top: 20px;
+      }
     }
   }
 }

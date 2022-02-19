@@ -3,7 +3,8 @@
   "globals": {
     "chrome": "readonly"
   },
-  "plugins": [
-    "simple-import-sort"
-  ]
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "simple-import-sort/imports": "error"
+  }
 }

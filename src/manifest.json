@@ -1,9 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "example-name",
-  "description": "example-description",
+  "name": "Supach Numbering",
+  "description": "__MSG_ext_desc__",
+  "homepage_url": "https://chrome-extensions.cofus.work/",
   "author": "HigaTsubasa",
   "version": "1.0.0",
+  "default_locale": "en",
   "action": {
     "default_popup": "popup.html",
     "default_icon": "icon-34.png"
@@ -13,13 +15,19 @@
   },
   "content_scripts": [
     {
+      "all_frames": true,
       "matches": [
-        "*://example.com/*"
+        "*://youtube.com/*",
+        "*://www.youtube.com/*",
+        "*://m.youtube.com/*"
+      ],
+      "exclude_matches": [
+        "*://*/*embed*"
       ],
       "js": [
         "contentScript.bundle.js"
       ],
-      "run_at": "document_end"
+      "run_at": "document_idle"
     }
   ],
   "web_accessible_resources": [

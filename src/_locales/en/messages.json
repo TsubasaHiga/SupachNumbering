@@ -1,0 +1,77 @@
+{
+  "ext_desc": {
+    "message": "You can add numbering to your YouTube Super Chat and make some style adjustments."
+  },
+  "popup_about_title": {
+    "message": "About"
+  },
+  "popup_about_desc": {
+    "message": "This extension is a Chrome extension that allows you to make some style adjustments, including adding numbering to your <a href='https:\\www.youtube.com' target='_blank' rel='noreferrer noopener' title='YouTube'>YouTube</a>YouTube</a> Super Chat. It can be used with the Chromium browser."
+  },
+  "popup_settings_title": {
+    "message": "Settings"
+  },
+  "popup_settings_main_title": {
+    "message": "Main Settings"
+  },
+  "popup_settings_sub_title": {
+    "message": "Sub Settings"
+  },
+  "popup_settings_sub_superchat_title": {
+    "message": "Settings in Super Chat"
+  },
+  "popup_settings_sub_chat_title": {
+    "message": "Settings in Chat"
+  },
+  "popup_settings_AddSuperChatNumbering_label": {
+    "message": "Add numbering to Super Chat"
+  },
+  "popup_settings_WrapSuperChat_label": {
+    "message": "Show all Super Chat"
+  },
+  "popup_settings_HideSuperChatPrice_label": {
+    "message": "Hide price"
+  },
+  "popup_settings_HideSuperChatPrice_label_caption": {
+    "message": "\"Hide user avatar image\" setting is OFF"
+  },
+  "popup_settings_HideSuperChatAvatar_label": {
+    "message": "Hide user avatar image"
+  },
+  "popup_settings_HideSuperChatAvatar_label_caption": {
+    "message": "\"Hide price\" setting is OFF"
+  },
+  "popup_settings_AddSuperChatAvatarBlur_label": {
+    "message": "Add blur to user avatar image"
+  },
+  "popup_settings_HideChatAvatar_label": {
+    "message": "Hide user avatar image"
+  },
+  "popup_settings_AddChatAvatarBlur_label": {
+    "message": "Add blur to user avatar image"
+  },
+  "popup_settings_ShrinkChatMessage_label": {
+    "message": "Shrink message interval in chat field"
+  },
+  "popup_settings_ExpandChatHeight_label": {
+    "message": "Expanded chat field height"
+  },
+  "popup_settings_ChangeChatFontSize_label": {
+    "message": "Change font size of chat field"
+  },
+  "popup_image_title": {
+    "message": "Operation image"
+  },
+  "popup_image_caption": {
+    "message": "Some UI designs and functions may differ depending on the version."
+  },
+  "popup_notwork_title": {
+    "message": "When it doesn't work"
+  },
+  "popup_notwork_desc": {
+    "message": "If the YouTube page specifications (DOM structure) change, it may not work properly. In that case, <a href='define.STORE_URL' target ='_blank' rel ='noreferrer noopener'> support in the web store </a> or <a href='https://twitter.com/_cofus' target Please let us know ='_blank' rel ='noreferrer noopener'> @_cofus </a>."
+  },
+  "popup_footer_link": {
+    "message": "View all Chrome extension list"
+  }
+}

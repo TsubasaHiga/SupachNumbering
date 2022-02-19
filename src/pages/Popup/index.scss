@@ -16,6 +16,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 30px;
   width: 680px;
+  // width: 520px;
+  // width: 600px;
 
   a {
     color: inherit;
@@ -23,6 +25,15 @@ body {
 
     &:hover {
       opacity: .4;
+    }
+  }
+
+  [data-rmiz-modal-content] {
+    overflow: hidden;
+
+    img {
+      // border-radius: 5px;
+      width: 100%;
     }
   }
 }
