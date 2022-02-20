@@ -1,0 +1,77 @@
+{
+  "ext_desc": {
+    "message": "YouTubeのスーパーチャットにナンバリングの追加と、おまけ機能として幾つかのスタイル調整を行うことが出来ます。"
+  },
+  "popup_about_title": {
+    "message": "本拡張機能について"
+  },
+  "popup_about_desc": {
+    "message": "本拡張機能は「<a href='https:\\www.youtube.com' target='_blank' rel='noreferrer noopener' title='YouTube'>YouTube</a>」のスーパーチャットに<b>ナンバリングの追加</b>を始めとする、幾つかのスタイル調整を行えるChrome拡張機能です。Chromiumブラウザで利用する事が可能です。"
+  },
+  "popup_settings_title": {
+    "message": "設定"
+  },
+  "popup_settings_main_title": {
+    "message": "メイン設定"
+  },
+  "popup_settings_sub_title": {
+    "message": "サブ設定"
+  },
+  "popup_settings_sub_superchat_title": {
+    "message": "スーパーチャット内の設定"
+  },
+  "popup_settings_sub_chat_title": {
+    "message": "チャット内の設定"
+  },
+  "popup_settings_AddSuperChatNumbering_label": {
+    "message": "スーパーチャットにナンバリングを追加"
+  },
+  "popup_settings_WrapSuperChat_label": {
+    "message": "スーパーチャットを全て表示"
+  },
+  "popup_settings_HideSuperChatPrice_label": {
+    "message": "金額を非表示"
+  },
+  "popup_settings_HideSuperChatPrice_label_caption": {
+    "message": "「ユーザーアバター画像を非表示」設定はOFFになります"
+  },
+  "popup_settings_HideSuperChatAvatar_label": {
+    "message": "ユーザーアバター画像を非表示"
+  },
+  "popup_settings_HideSuperChatAvatar_label_caption": {
+    "message": "「金額を非表示」設定はOFFになります"
+  },
+  "popup_settings_AddSuperChatAvatarBlur_label": {
+    "message": "ユーザーアバター画像にモザイクを追加"
+  },
+  "popup_settings_HideChatAvatar_label": {
+    "message": "ユーザーアバター画像を非表示"
+  },
+  "popup_settings_AddChatAvatarBlur_label": {
+    "message": "ユーザーアバター画像にモザイクを追加"
+  },
+  "popup_settings_ShrinkChatMessage_label": {
+    "message": "チャット欄のメッセージ間隔を狭める"
+  },
+  "popup_settings_ExpandChatHeight_label": {
+    "message": "チャット欄の高さを拡張"
+  },
+  "popup_settings_ChangeChatFontSize_label": {
+    "message": "チャット欄のフォントサイズを変更"
+  },
+  "popup_image_title": {
+    "message": "動作イメージ"
+  },
+  "popup_image_caption": {
+    "message": "バージョンによっては一部UIのデザインや機能が異なる場合がございます。"
+  },
+  "popup_notwork_title": {
+    "message": "動作しない時"
+  },
+  "popup_notwork_desc": {
+    "message": "YouTubeのページ仕様（DOM構造）が変わった場合正常に動作しなくなる可能性があります。その際は<a href='define.STORE_URL' target='_blank' rel='noreferrer noopener'>ウェブストア内のサポート</a>または<a href='https://twitter.com/_cofus' target='_blank' rel='noreferrer noopener'>@_cofus</a>までお知らせ下さい。"
+  },
+  "popup_footer_link": {
+    "message": "Chrome拡張機能リストを見る"
+  }
+}
