@@ -9,8 +9,8 @@
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
   "dependencies": {
-    "@emotion/react": "^11.7.1",
-    "@emotion/styled": "^11.6.0",
+    "@emotion/react": "^11.8.1",
+    "@emotion/styled": "^11.8.1",
     "@hot-loader/react-dom": "^17.0.2",
     "@mui/icons-material": "^5.4.2",
     "@mui/material": "^5.4.2",
@@ -25,10 +25,10 @@
     "ress": "^4.0.0",
     "rooks": "^5.10.0",
     "throttle-debounce": "^3.0.1",
-    "use-chrome-storage": "^1.0.5"
+    "use-chrome-storage": "^1.0.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.4",
+    "@babel/core": "^7.17.5",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
@@ -54,7 +54,7 @@
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.5.1",
-    "sass": "^1.49.7",
+    "sass": "^1.49.8",
     "sass-loader": "^12.6.0",
     "source-map-loader": "^3.0.1",
     "style-loader": "^3.3.1",
