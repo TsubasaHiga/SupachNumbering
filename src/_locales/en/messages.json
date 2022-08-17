@@ -71,6 +71,9 @@
   "popup_notwork_desc": {
     "message": "If the YouTube page specifications (DOM structure) change, it may not work properly. In that case, <a href='define.STORE_URL' target ='_blank' rel ='noreferrer noopener'> support in the web store </a> or <a href='https://twitter.com/_cofus' target Please let us know ='_blank' rel ='noreferrer noopener'> @_cofus </a>."
   },
+  "popup_changelog_title": {
+    "message": "Changelog"
+  },
   "popup_footer_link": {
     "message": "View all Chrome extension list"
   }
