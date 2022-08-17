@@ -53,6 +53,19 @@
       text-align: right;
     }
 
+    ul {
+      padding: 0 18px;
+    }
+
+    code {
+      background-color: #eee;
+      border-radius: 3px;
+      color: #666;
+      font-size: 11px;
+      margin: 0 3px;
+      padding: 2px 8px;
+    }
+
     .settings {
       background-color: #f9fafb;
       border: 1px solid #eee;

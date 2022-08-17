@@ -71,6 +71,9 @@
   "popup_notwork_desc": {
     "message": "YouTubeのページ仕様（DOM構造）が変わった場合正常に動作しなくなる可能性があります。その際は<a href='define.STORE_URL' target='_blank' rel='noreferrer noopener'>ウェブストア内のサポート</a>または<a href='https://twitter.com/_cofus' target='_blank' rel='noreferrer noopener'>@_cofus</a>までお知らせ下さい。"
   },
+  "popup_changelog_title": {
+    "message": "更新情報"
+  },
   "popup_footer_link": {
     "message": "Chrome拡張機能リストを見る"
   }
