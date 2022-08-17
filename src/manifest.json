@@ -19,7 +19,8 @@
       "matches": [
         "*://youtube.com/*",
         "*://www.youtube.com/*",
-        "*://m.youtube.com/*"
+        "*://m.youtube.com/*",
+        "*://studio.youtube.com/*"
       ],
       "exclude_matches": [
         "*://*/*embed*"
