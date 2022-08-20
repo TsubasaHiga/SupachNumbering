@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 
-import { useSettingsStore } from '../../common/useSettingsStore'
+import { useSettingsStore } from '~/store/atoms/useSettingsStore'
+
 import AddChatAvatarBlur from './styleFunctions/AddChatAvatarBlur'
 import AddSuperChatAvatarBlur from './styleFunctions/AddSuperChatAvatarBlur'
 import AddSuperChatNumbering from './styleFunctions/AddSuperChatNumbering'

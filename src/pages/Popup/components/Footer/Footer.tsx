@@ -1,4 +1,5 @@
-import GetI18n from '../../../../utils/GetI18n'
+import GetI18n from '~/modules/GetI18n'
+
 import style from './Footer.module.scss'
 
 const Footer = (): JSX.Element => {

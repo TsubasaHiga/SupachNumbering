@@ -5,8 +5,8 @@ import InputAdornment from '@mui/material/InputAdornment'
 import Switch from '@mui/material/Switch'
 import TextField from '@mui/material/TextField'
 
-import { useSettingsStore } from '../../../../common/useSettingsStore'
-import GetI18n from '../../../../utils/GetI18n'
+import GetI18n from '~/modules/GetI18n'
+import { useSettingsStore } from '~/store/atoms/useSettingsStore'
 
 const ChangeChatFontSize = (): JSX.Element => {
   const [settings, setSettings] = useSettingsStore()
