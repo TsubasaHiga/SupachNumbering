@@ -2,8 +2,9 @@ import InfoIcon from '@mui/icons-material/Info'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Switch from '@mui/material/Switch'
 
-import { useSettingsStore } from '../../../../common/useSettingsStore'
-import GetI18n from '../../../../utils/GetI18n'
+import GetI18n from '~/modules/GetI18n'
+import { useSettingsStore } from '~/store/atoms/useSettingsStore'
+
 const HideSuperChatPrice = (): JSX.Element => {
   const [settings, setSettings] = useSettingsStore()
   const { isHideSuperChatPrice } = settings

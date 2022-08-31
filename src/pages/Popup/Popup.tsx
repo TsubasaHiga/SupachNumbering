@@ -24,11 +24,12 @@ import {
 import React, { useState } from 'react'
 import Zoom from 'react-medium-image-zoom'
 
-import img from '../../assets/img/popup.png'
-import define from '../../common/constants/define'
-import { useSettingsStore } from '../../common/useSettingsStore'
-import changeLog from '../../const/changeLog'
-import GetI18n from '../../utils/GetI18n'
+import img from '~/assets/img/popup.png'
+import changeLog from '~/const/changeLog'
+import define from '~/const/define'
+import GetI18n from '~/modules/GetI18n'
+import { useSettingsStore } from '~/store/atoms/useSettingsStore'
+
 import AddChatAvatarBlur from './components/AddChatAvatarBlur/AddChatAvatarBlur'
 import AddSuperChatAvatarBlur from './components/AddSuperChatAvatarBlur/AddSuperChatAvatarBlur'
 import AddSuperChatNumbering from './components/AddSuperChatNumbering/AddSuperChatNumbering'
@@ -268,10 +269,7 @@ const Popup = (): JSX.Element => {
           </h2>
           <div className={styles.content}>
             <div className={styles.image}>
-              <Zoom
-                zoomMargin={0}
-                wrapStyle={{ width: '100%', height: '100%' }}
-              >
+              <Zoom zoomMargin={0}>
                 <img src={img} alt={GetI18n('popup_image_title')} />
               </Zoom>
             </div>

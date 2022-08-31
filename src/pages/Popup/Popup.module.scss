@@ -43,6 +43,11 @@
         height: auto;
         width: 100%;
       }
+
+      [data-rmiz-modal-content] {
+        height: 100%;
+        width: 100%;
+      }
     }
 
     small {

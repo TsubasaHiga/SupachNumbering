@@ -6,12 +6,10 @@ var webpack = require('webpack'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   TerserPlugin = require('terser-webpack-plugin')
 
-const Fibers = require('fibers')
-
 const ASSET_PATH = process.env.ASSET_PATH || '/'
 
 var alias = {
-  'react-dom': '@hot-loader/react-dom',
+  '~': path.resolve('./', '/src'),
 }
 
 // load the secrets
@@ -69,7 +67,7 @@ var options = {
             options: {
               implementation: require('sass'),
               sassOptions: {
-                fiber: Fibers,
+                fiber: false,
               },
             },
           },
@@ -93,7 +91,7 @@ var options = {
               sourceMap: true,
               implementation: require('sass'),
               sassOptions: {
-                fiber: Fibers,
+                fiber: false,
               },
             },
           },
