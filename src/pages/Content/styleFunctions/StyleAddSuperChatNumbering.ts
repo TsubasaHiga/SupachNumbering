@@ -1,4 +1,4 @@
-const AddSuperChatNumbering = () => {
+const StyleAddSuperChatNumbering = () => {
   const style = `
 yt-live-chat-ticker-renderer {
   counter-reset: number 0;
@@ -28,4 +28,4 @@ yt-live-chat-ticker-paid-message-item-renderer #content:before {
   return style.replace(/\r?\n/g, '')
 }
 
-export default AddSuperChatNumbering
+export default StyleAddSuperChatNumbering

@@ -1,4 +1,4 @@
-const ExpandChatHeight = (headerH: number) => {
+const StyleExpandChatHeight = (headerH: number) => {
   const style = `
 ytd-live-chat-frame {
   min-height: unset !important;
@@ -9,4 +9,4 @@ ytd-live-chat-frame {
   return style.replace(/\r?\n/g, '')
 }
 
-export default ExpandChatHeight
+export default StyleExpandChatHeight

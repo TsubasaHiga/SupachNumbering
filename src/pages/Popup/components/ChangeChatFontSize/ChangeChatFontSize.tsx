@@ -7,10 +7,11 @@ import TextField from '@mui/material/TextField'
 
 import GetI18n from '~/modules/GetI18n'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
+import { SettingsType } from '~/types/SettingsType'
 
 const ChangeChatFontSize = (): JSX.Element => {
   const [settings, setSettings] = useSettingsStore()
-  const { isChangeChatFontSize, valueChatFontSize } = settings
+  const { isChangeChatFontSize, valueChatFontSize }: SettingsType = settings
 
   return (
     <>

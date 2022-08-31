@@ -1,45 +1,35 @@
-import { createChromeStorageStateHookLocal } from 'use-chrome-storage'
-
-import { SettingsType } from '~/types/SettingsType'
-
-const SETTINGS_KEY = 'settings'
-const INITIAL_VALUE: SettingsType = {
+export type SettingsType = {
   // スーパーチャットにナンバリングを追加
-  isAddSuperChatNumbering: true,
+  isAddSuperChatNumbering: boolean
 
   // スーパーチャットを全て表示
-  isWrapSuperChat: false,
+  isWrapSuperChat: boolean
 
   // スーパーチャットの金額を非表示
-  isHideSuperChatPrice: false,
+  isHideSuperChatPrice: boolean
 
   // ユーザーアバター画像（スーパーチャット内のみ）の非表示
-  isHideSuperChatAvatar: false,
+  isHideSuperChatAvatar: boolean
 
   // ユーザーアバター画像（チャット内のみ）の非表示
-  isHideChatAvatar: false,
+  isHideChatAvatar: boolean
 
   // ユーザーアバター画像（スーパーチャット内のみ）にモザイクを追加
-  isAddSuperChatAvatarBlur: false,
+  isAddSuperChatAvatarBlur: boolean
 
   // ユーザーアバター画像（チャット内のみ）にモザイクを追加
-  isAddChatAvatarBlur: false,
+  isAddChatAvatarBlur: boolean
 
   // ユーザー名を非表示
-  isHideAuthorName: false,
+  isHideAuthorName: boolean
 
   // チャット欄のメッセージ間隔を狭める
-  isShrinkChatMessage: false,
+  isShrinkChatMessage: boolean
 
   // チャット欄の高さを拡張
-  isExpandChatHeight: false,
+  isExpandChatHeight: boolean
 
   // チャット欄のフォントサイズを変更
-  isChangeChatFontSize: false,
-  valueChatFontSize: 10,
+  isChangeChatFontSize: boolean
+  valueChatFontSize: number
 }
-
-export const useSettingsStore = createChromeStorageStateHookLocal(
-  SETTINGS_KEY,
-  INITIAL_VALUE
-)

@@ -3,10 +3,11 @@ import Switch from '@mui/material/Switch'
 
 import GetI18n from '~/modules/GetI18n'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
+import { SettingsType } from '~/types/SettingsType'
 
 const AddChatAvatarBlur = (): JSX.Element => {
   const [settings, setSettings] = useSettingsStore()
-  const { isAddChatAvatarBlur, isHideChatAvatar } = settings
+  const { isAddChatAvatarBlur, isHideChatAvatar }: SettingsType = settings
 
   return (
     <FormControlLabel
