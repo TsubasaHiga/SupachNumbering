@@ -35,6 +35,7 @@ import AddSuperChatAvatarBlur from './components/AddSuperChatAvatarBlur/AddSuper
 import AddSuperChatNumbering from './components/AddSuperChatNumbering/AddSuperChatNumbering'
 import ChangeChatFontSize from './components/ChangeChatFontSize/ChangeChatFontSize'
 import ExpandChatHeight from './components/ExpandChatHeight/ExpandChatHeight'
+import HideAuthorName from './components/HideAuthorName/HideAuthorName'
 import Footer from './components/Footer/Footer'
 import HideChatAvatar from './components/HideChatAvatar/HideChatAvatar'
 import HideSuperChatAvatar from './components/HideSuperChatAvatar/HideSuperChatAvatar'
@@ -154,6 +155,15 @@ const Popup = (): JSX.Element => {
                 fontSize: '15px',
                 marginRight: '3px',
               },
+              '&[data-text]': {
+                marginLeft: '5px',
+                padding: '2px 8px',
+                fontSize: '11px',
+              },
+              '&[data-color="red"]': {
+                backgroundColor: '#ea3323',
+                color: '#fff',
+              },
             },
           },
         },
@@ -245,6 +255,7 @@ const Popup = (): JSX.Element => {
                     </Typography>
                     <HideChatAvatar />
                     <AddChatAvatarBlur />
+                    <HideAuthorName isNew={true} />
                     <ShrinkChatMessage />
                     <ExpandChatHeight />
                     <ChangeChatFontSize />

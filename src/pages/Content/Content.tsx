@@ -12,6 +12,7 @@ import HideSuperChatAvatar from './styleFunctions/HideSuperChatAvatar'
 import HideSuperChatPrice from './styleFunctions/HideSuperChatPrice'
 import ShrinkChatMessage from './styleFunctions/ShrinkChatMessage'
 import WrapSuperChat from './styleFunctions/WrapSuperChat'
+import HideAuthorName from './styleFunctions/HideAuthorName'
 
 const Content = (): JSX.Element | null => {
   const [settings] = useSettingsStore()
@@ -23,6 +24,7 @@ const Content = (): JSX.Element | null => {
     isAddSuperChatAvatarBlur,
     isHideChatAvatar,
     isAddChatAvatarBlur,
+    isHideAuthorName,
     isShrinkChatMessage,
     isExpandChatHeight,
     isChangeChatFontSize,
@@ -78,6 +80,11 @@ const Content = (): JSX.Element | null => {
       inlineStyleElement.innerText += AddChatAvatarBlur()
     }
 
+    // ユーザー名を非表示
+    if (isHideAuthorName) {
+      inlineStyleElement.innerText += HideAuthorName()
+    }
+
     // チャット欄のメッセージ間隔を狭める
     if (isShrinkChatMessage) {
       inlineStyleElement.innerText += ShrinkChatMessage()
@@ -111,6 +118,7 @@ const Content = (): JSX.Element | null => {
     isAddSuperChatAvatarBlur,
     isHideChatAvatar,
     isAddChatAvatarBlur,
+    isHideAuthorName,
     isShrinkChatMessage,
     isExpandChatHeight,
     isChangeChatFontSize,
