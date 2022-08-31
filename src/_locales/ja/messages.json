@@ -50,6 +50,9 @@
   "popup_settings_AddChatAvatarBlur_label": {
     "message": "ユーザーアバター画像にモザイクを追加"
   },
+  "popup_settings_HideAuthorName_label": {
+    "message": "ユーザー名を非表示"
+  },
   "popup_settings_ShrinkChatMessage_label": {
     "message": "チャット欄のメッセージ間隔を狭める"
   },

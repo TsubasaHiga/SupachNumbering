@@ -23,6 +23,9 @@ const INITIAL_VALUE = {
   // ユーザーアバター画像（チャット内のみ）にモザイクを追加
   isAddChatAvatarBlur: false,
 
+  // ユーザー名を非表示
+  isHideAuthorName: false,
+
   // チャット欄のメッセージ間隔を狭める
   isShrinkChatMessage: false,
 
