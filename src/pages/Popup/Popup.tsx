@@ -269,10 +269,7 @@ const Popup = (): JSX.Element => {
           </h2>
           <div className={styles.content}>
             <div className={styles.image}>
-              <Zoom
-                zoomMargin={0}
-                wrapStyle={{ width: '100%', height: '100%' }}
-              >
+              <Zoom zoomMargin={0}>
                 <img src={img} alt={GetI18n('popup_image_title')} />
               </Zoom>
             </div>

@@ -1,10 +1,15 @@
 import React from 'react'
-import { render } from 'react-dom'
-
+import { createRoot } from 'react-dom/client'
+import { StrictMode } from 'react'
 import Popup from './Popup'
 import './index.scss'
 import 'ress'
 
-render(<Popup />, window.document.querySelector('#app-container'))
+const rootElement = document.getElementById('app-container')
+const root = createRoot(rootElement)
 
-if (module.hot) module.hot.accept()
+root.render(
+  <StrictMode>
+    <Popup />
+  </StrictMode>
+)
