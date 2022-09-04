@@ -1,4 +1,4 @@
-const WrapSuperChat = () => {
+const StyleWrapSuperChat = () => {
   const style = `
 yt-live-chat-ticker-renderer #items {
   height: unset !important;
@@ -15,4 +15,4 @@ yt-live-chat-ticker-paid-sticker-item-renderer {
   return style.replace(/\r?\n/g, '')
 }
 
-export default WrapSuperChat
+export default StyleWrapSuperChat

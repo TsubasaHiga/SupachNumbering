@@ -1,18 +1,19 @@
 import { useEffect } from 'react'
 
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
+import { SettingsType } from '~/types/SettingsType'
 
-import AddChatAvatarBlur from './styleFunctions/AddChatAvatarBlur'
-import AddSuperChatAvatarBlur from './styleFunctions/AddSuperChatAvatarBlur'
-import AddSuperChatNumbering from './styleFunctions/AddSuperChatNumbering'
-import ChangeChatFontSize from './styleFunctions/ChangeChatFontSize'
-import ExpandChatHeight from './styleFunctions/ExpandChatHeight'
-import HideChatAvatar from './styleFunctions/HideChatAvatar'
-import HideSuperChatAvatar from './styleFunctions/HideSuperChatAvatar'
-import HideSuperChatPrice from './styleFunctions/HideSuperChatPrice'
-import ShrinkChatMessage from './styleFunctions/ShrinkChatMessage'
-import WrapSuperChat from './styleFunctions/WrapSuperChat'
-import HideAuthorName from './styleFunctions/HideAuthorName'
+import StyleAddChatAvatarBlur from './styleFunctions/StyleAddChatAvatarBlur'
+import StyleAddSuperChatAvatarBlur from './styleFunctions/StyleAddSuperChatAvatarBlur'
+import StyleAddSuperChatNumbering from './styleFunctions/StyleAddSuperChatNumbering'
+import StyleChangeChatFontSize from './styleFunctions/StyleChangeChatFontSize'
+import StyleExpandChatHeight from './styleFunctions/StyleExpandChatHeight'
+import StyleHideAuthorName from './styleFunctions/StyleHideAuthorName'
+import StyleHideChatAvatar from './styleFunctions/StyleHideChatAvatar'
+import StyleHideSuperChatAvatar from './styleFunctions/StyleHideSuperChatAvatar'
+import StyleHideSuperChatPrice from './styleFunctions/StyleHideSuperChatPrice'
+import StyleShrinkChatMessage from './styleFunctions/StyleShrinkChatMessage'
+import StyleWrapSuperChat from './styleFunctions/StyleWrapSuperChat'
 
 const Content = (): JSX.Element | null => {
   const [settings] = useSettingsStore()
@@ -29,7 +30,7 @@ const Content = (): JSX.Element | null => {
     isExpandChatHeight,
     isChangeChatFontSize,
     valueChatFontSize,
-  } = settings
+  }: SettingsType = settings
 
   const inlineStyleElement = document.createElement('style')
   inlineStyleElement.type = 'text/css'
@@ -47,47 +48,47 @@ const Content = (): JSX.Element | null => {
 
     // スーパーチャットにナンバリングを追加
     if (isAddSuperChatNumbering) {
-      inlineStyleElement.innerText += AddSuperChatNumbering()
+      inlineStyleElement.innerText += StyleAddSuperChatNumbering()
     }
 
     // スーパーチャットを全て表示
     if (isWrapSuperChat) {
-      inlineStyleElement.innerText += WrapSuperChat()
+      inlineStyleElement.innerText += StyleWrapSuperChat()
     }
 
     // スーパーチャットの金額を非表示
     if (isHideSuperChatPrice) {
-      inlineStyleElement.innerText += HideSuperChatPrice()
+      inlineStyleElement.innerText += StyleHideSuperChatPrice()
     }
 
     // ユーザーアバター画像（スーパーチャット内のみ）の非表示
     if (isHideSuperChatAvatar) {
-      inlineStyleElement.innerText += HideSuperChatAvatar()
+      inlineStyleElement.innerText += StyleHideSuperChatAvatar()
     }
 
     // ユーザーアバター画像（スーパーチャット内のみ）にモザイクを追加
     if (isAddSuperChatAvatarBlur) {
-      inlineStyleElement.innerText += AddSuperChatAvatarBlur()
+      inlineStyleElement.innerText += StyleAddSuperChatAvatarBlur()
     }
 
     // ユーザーアバター画像（チャット内のみ）の非表示
     if (isHideChatAvatar) {
-      inlineStyleElement.innerText += HideChatAvatar()
+      inlineStyleElement.innerText += StyleHideChatAvatar()
     }
 
     // ユーザーアバター画像（チャット内のみ）にモザイクを追加
     if (isAddChatAvatarBlur) {
-      inlineStyleElement.innerText += AddChatAvatarBlur()
+      inlineStyleElement.innerText += StyleAddChatAvatarBlur()
     }
 
     // ユーザー名を非表示
     if (isHideAuthorName) {
-      inlineStyleElement.innerText += HideAuthorName()
+      inlineStyleElement.innerText += StyleHideAuthorName()
     }
 
     // チャット欄のメッセージ間隔を狭める
     if (isShrinkChatMessage) {
-      inlineStyleElement.innerText += ShrinkChatMessage()
+      inlineStyleElement.innerText += StyleShrinkChatMessage()
     }
 
     // チャット欄の高さを拡張
@@ -95,12 +96,12 @@ const Content = (): JSX.Element | null => {
       const headerElement = document.querySelector('#masthead-container')
       const headerH = headerElement ? headerElement.clientHeight : 0
       console.log(headerH)
-      inlineStyleElement.innerText += ExpandChatHeight(headerH)
+      inlineStyleElement.innerText += StyleExpandChatHeight(headerH)
     }
 
     // チャット欄のフォントサイズを変更
     if (isChangeChatFontSize) {
-      inlineStyleElement.innerText += ChangeChatFontSize(valueChatFontSize)
+      inlineStyleElement.innerText += StyleChangeChatFontSize(valueChatFontSize)
     }
 
     console.log('スタイル追加')
@@ -108,8 +109,6 @@ const Content = (): JSX.Element | null => {
 
     // headに追加
     head?.appendChild(inlineStyleElement)
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     isAddSuperChatNumbering,
     isWrapSuperChat,
@@ -123,6 +122,7 @@ const Content = (): JSX.Element | null => {
     isExpandChatHeight,
     isChangeChatFontSize,
     valueChatFontSize,
+    inlineStyleElement,
   ])
 
   return null

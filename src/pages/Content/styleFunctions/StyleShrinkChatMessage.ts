@@ -1,4 +1,4 @@
-const ShrinkChatMessage = () => {
+const StyleShrinkChatMessage = () => {
   const style = `
 yt-live-chat-text-message-renderer {
   padding-top: 1px !important;
@@ -8,4 +8,4 @@ yt-live-chat-text-message-renderer {
   return style.replace(/\r?\n/g, '')
 }
 
-export default ShrinkChatMessage
+export default StyleShrinkChatMessage

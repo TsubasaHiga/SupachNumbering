@@ -4,10 +4,11 @@ import Switch from '@mui/material/Switch'
 
 import GetI18n from '~/modules/GetI18n'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
+import { SettingsType } from '~/types/SettingsType'
 
 const HideSuperChatAvatar = (): JSX.Element => {
   const [settings, setSettings] = useSettingsStore()
-  const { isHideSuperChatAvatar } = settings
+  const { isHideSuperChatAvatar }: SettingsType = settings
 
   return (
     <FormControlLabel

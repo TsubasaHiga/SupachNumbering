@@ -1,8 +1,10 @@
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Switch from '@mui/material/Switch'
-import TextLabel from '~/pages/Popup/components/TextLabel/TextLabel'
+
 import GetI18n from '~/modules/GetI18n'
+import TextLabel from '~/pages/Popup/components/TextLabel/TextLabel'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
+import { SettingsType } from '~/types/SettingsType'
 
 type Props = {
   isNew?: boolean
@@ -10,7 +12,7 @@ type Props = {
 
 const HideAuthorName = ({ isNew = false }: Props): JSX.Element => {
   const [settings, setSettings] = useSettingsStore()
-  const { isHideAuthorName } = settings
+  const { isHideAuthorName }: SettingsType = settings
 
   return (
     <FormControlLabel
