@@ -28,6 +28,7 @@ import img from '~/assets/img/popup.png'
 import changeLog from '~/const/changeLog'
 import define from '~/const/define'
 import GetI18n from '~/modules/GetI18n'
+import SelectNumberingType from '~/pages/Popup/components/SelectNumberingType/SelectNumberingType'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
 
 import AddChatAvatarBlur from './components/AddChatAvatarBlur/AddChatAvatarBlur'
@@ -106,6 +107,17 @@ const Popup = (): JSX.Element => {
             '&:not(:first-of-type)': {
               marginTop: '15px',
             },
+
+            '&[role="radiogroup"]': {
+              '.MuiButtonBase-root': {
+                padding: '4px',
+              },
+              '.MuiFormControlLabel-root': {
+                '&:not(:first-of-type)': {
+                  marginTop: '0',
+                },
+              },
+            },
           },
         },
       },
@@ -135,6 +147,7 @@ const Popup = (): JSX.Element => {
             fontSize: '11px',
             alignItems: 'center',
             display: 'flex',
+            flexWrap: 'wrap',
             fontWeight: 700,
             userSelect: 'none',
             marginLeft: '5px',
@@ -156,7 +169,8 @@ const Popup = (): JSX.Element => {
                 marginRight: '3px',
               },
               '&[data-text]': {
-                marginLeft: '5px',
+                marginLeft: '0',
+                marginRight: '5px',
                 padding: '2px 8px',
                 fontSize: '11px',
               },
@@ -228,6 +242,19 @@ const Popup = (): JSX.Element => {
                 <FormGroup>
                   <FormLabel>{GetI18n('popup_settings_main_title')}</FormLabel>
                   <AddSuperChatNumbering />
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    className={styles.settingBox}
+                    style={{ marginTop: '20px' }}
+                  >
+                    <Typography variant="caption" component="div">
+                      {GetI18n(
+                        'popup_settings_main_select_numbering_type_title'
+                      )}
+                    </Typography>
+                    <SelectNumberingType isNew={true} />
+                  </Box>
                 </FormGroup>
 
                 <FormGroup>

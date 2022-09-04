@@ -14,11 +14,14 @@ import StyleHideSuperChatAvatar from './styleFunctions/StyleHideSuperChatAvatar'
 import StyleHideSuperChatPrice from './styleFunctions/StyleHideSuperChatPrice'
 import StyleShrinkChatMessage from './styleFunctions/StyleShrinkChatMessage'
 import StyleWrapSuperChat from './styleFunctions/StyleWrapSuperChat'
+import AddSuperChatNumbering from './voidFunctions/AddSuperChatNumbering/AddSuperChatNumbering'
 
-const Content = (): JSX.Element | null => {
+const Content = (): JSX.Element => {
   const [settings] = useSettingsStore()
   const {
     isAddSuperChatNumbering,
+    numberingType,
+    uniqueNumberingHashLength,
     isWrapSuperChat,
     isHideSuperChatPrice,
     isHideSuperChatAvatar,
@@ -36,6 +39,7 @@ const Content = (): JSX.Element | null => {
   inlineStyleElement.type = 'text/css'
   inlineStyleElement.className = 'supach-numbering'
 
+  // スタイル追加
   useEffect(() => {
     const head = document.querySelector('head')
     const isExistenceElement = head?.querySelector('.supach-numbering')
@@ -48,7 +52,7 @@ const Content = (): JSX.Element | null => {
 
     // スーパーチャットにナンバリングを追加
     if (isAddSuperChatNumbering) {
-      inlineStyleElement.innerText += StyleAddSuperChatNumbering()
+      inlineStyleElement.innerText += StyleAddSuperChatNumbering(numberingType)
     }
 
     // スーパーチャットを全て表示
@@ -111,6 +115,7 @@ const Content = (): JSX.Element | null => {
     head?.appendChild(inlineStyleElement)
   }, [
     isAddSuperChatNumbering,
+    numberingType,
     isWrapSuperChat,
     isHideSuperChatPrice,
     isHideSuperChatAvatar,
@@ -125,7 +130,13 @@ const Content = (): JSX.Element | null => {
     inlineStyleElement,
   ])
 
-  return null
+  return (
+    <>
+      {isAddSuperChatNumbering && numberingType === 'unique' && (
+        <AddSuperChatNumbering hashLength={uniqueNumberingHashLength} />
+      )}
+    </>
+  )
 }
 
 export default Content
