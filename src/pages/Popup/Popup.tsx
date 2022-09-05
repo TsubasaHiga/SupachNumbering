@@ -1,17 +1,8 @@
-import 'react-medium-image-zoom/dist/styles.css'
-
-import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp'
-import MuiAccordion, { AccordionProps } from '@mui/material/Accordion'
-import MuiAccordionDetails from '@mui/material/AccordionDetails'
-import MuiAccordionSummary, {
-  AccordionSummaryProps,
-} from '@mui/material/AccordionSummary'
 import Alert from '@mui/material/Alert'
 import AlertTitle from '@mui/material/AlertTitle'
 import FormGroup from '@mui/material/FormGroup'
 import FormLabel from '@mui/material/FormLabel'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import {
   IconBellRinging,
@@ -24,10 +15,12 @@ import React, { useState } from 'react'
 import Zoom from 'react-medium-image-zoom'
 
 import img from '~/assets/img/popup.png'
-import changeLog from '~/const/changeLog'
 import define from '~/const/define'
 import GetI18n from '~/modules/GetI18n'
+import ChangeLog from '~/pages/Popup/components/ChangeLog/ChangeLog'
 import SettingsWrap from '~/pages/Popup/components/SettingsWrap/SettingsWrap'
+import UpdateDialog from '~/pages/Popup/components/UpdateDialog/UpdateDialog'
+import { useCommonStore } from '~/store/atoms/useCommonStore'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
 
 import AddChatAvatarBlur from './components/AddChatAvatarBlur/AddChatAvatarBlur'
@@ -44,58 +37,9 @@ import ShrinkChatMessage from './components/ShrinkChatMessage/ShrinkChatMessage'
 import WrapSuperChat from './components/WrapSuperChat/WrapSuperChat'
 import styles from './Popup.module.scss'
 
-const Accordion = styled((props: AccordionProps) => (
-  <MuiAccordion disableGutters elevation={0} square {...props} />
-))(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  '&:first-of-type': {
-    borderRadius: '6px 6px 0 0',
-  },
-  '&:last-of-type': {
-    borderRadius: '0 0 6px 6px',
-  },
-  '&:not(:last-child)': {
-    borderBottom: 0,
-  },
-  '&:before': {
-    display: 'none',
-  },
-}))
-
-const AccordionSummary = styled((props: AccordionSummaryProps) => (
-  <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
-    {...props}
-  />
-))(({ theme }) => ({
-  backgroundColor:
-    theme.palette.mode === 'dark'
-      ? 'rgba(255, 255, 255, .05)'
-      : 'rgba(0, 0, 0, .03)',
-  flexDirection: 'row-reverse',
-  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-    transform: 'rotate(90deg)',
-  },
-  '& .MuiAccordionSummary-content': {
-    marginLeft: theme.spacing(1),
-  },
-}))
-
-const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-  padding: theme.spacing(2),
-  borderTop: '1px solid rgba(0, 0, 0, .125)',
-}))
-
 const Popup = (): JSX.Element => {
   const [isPersistent, error] = useSettingsStore()
-
-  const [expanded, setExpanded] = useState<string | false>('panel0')
-
-  const handleChange =
-    (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
-      console.log(panel)
-      setExpanded(newExpanded ? panel : false)
-    }
+  const [common] = useCommonStore()
 
   const backgroundColor = '#f9fafb'
   const theme = createTheme({
@@ -223,6 +167,7 @@ const Popup = (): JSX.Element => {
 
   return (
     <>
+      {common.isUpdated && <UpdateDialog />}
       <div className={styles.root}>
         <section>
           <h2>
@@ -322,34 +267,7 @@ const Popup = (): JSX.Element => {
             <span>{GetI18n('popup_changelog_title')}</span>
           </h2>
           <div className={styles.content}>
-            {changeLog.map((item, index) => (
-              <Accordion
-                key={index}
-                expanded={expanded === `panel${index}`}
-                onChange={handleChange(`panel${index}`)}
-              >
-                <AccordionSummary
-                  aria-controls={`panel${index}d-content`}
-                  id={`panel${index}d-header`}
-                >
-                  <Typography>
-                    Version {item.version}（{item.date}）
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <ul>
-                    {item.changes.map((change, changeIndex) => (
-                      <li
-                        key={changeIndex}
-                        dangerouslySetInnerHTML={{
-                          __html: change,
-                        }}
-                      />
-                    ))}
-                  </ul>
-                </AccordionDetails>
-              </Accordion>
-            ))}
+            <ChangeLog />
           </div>
         </section>
       </div>

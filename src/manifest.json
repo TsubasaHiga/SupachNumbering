@@ -31,6 +31,9 @@
       "run_at": "document_idle"
     }
   ],
+  "background": {
+    "service_worker": "background.bundle.js"
+  },
   "web_accessible_resources": [
     {
       "resources": [
@@ -41,6 +44,7 @@
     }
   ],
   "permissions": [
-    "storage"
+    "storage",
+    "background"
   ]
 }

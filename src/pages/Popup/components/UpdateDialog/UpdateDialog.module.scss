@@ -1,0 +1,19 @@
+.title {
+  align-items: center;
+  display: flex;
+  font-size: 20px;
+
+  code {
+    align-items: center;
+    background-color: #333;
+    border-radius: 3px;
+    color: #fff;
+    display: flex;
+    font-family: Roboto, sans-serif;
+    font-size: 13px;
+    justify-content: center;
+    letter-spacing: -.2px;
+    margin-left: 10px;
+    padding: 1px 8px 0;
+  }
+}
