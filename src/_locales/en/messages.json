@@ -29,14 +29,23 @@
   "popup_settings_main_select_numbering_type_label2_caption": {
     "message": "Recommended if you have a lot of super chats."
   },
+  "popup_settings_main_select_numbering_type_label3": {
+    "message": "use username"
+  },
+  "popup_settings_main_select_numbering_type_label3_caption": {
+    "message": "Recommended if you have a lot of super chats."
+  },
   "popup_settings_main_select_numbering_length_label": {
     "message": "string length"
   },
   "popup_settings_main_select_numbering_length_help": {
-    "message": "The longer the string, the less likely it will be duplicated."
+    "message": "Longer strings are less likely to be duplicated."
   },
   "popup_settings_main_select_numbering_length_unit": {
     "message": "length"
+  },
+  "popup_settings_main_select_numbering_length_all": {
+    "message": "all"
   },
   "popup_settings_sub_title": {
     "message": "Sub Settings"

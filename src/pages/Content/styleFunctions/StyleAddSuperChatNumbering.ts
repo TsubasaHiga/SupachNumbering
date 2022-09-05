@@ -25,7 +25,7 @@ yt-live-chat-ticker-paid-message-item-renderer #content {
 
 yt-live-chat-ticker-paid-sticker-item-renderer #content:before,
 yt-live-chat-ticker-paid-message-item-renderer #content:before {
-  border-right: 1px solid rgb(0 0 0 / 20%);
+  border-right: 1px solid rgb(0 0 0 / 25%);
   box-sizing: border-box;
   color: inherit;
   ${
@@ -39,11 +39,14 @@ yt-live-chat-ticker-paid-message-item-renderer #content:before {
   }
   ${
     // ユニークなナンバリング
-    numberingType === 'unique' ? `content: attr(data-hash);` : ''
+    ['uniqueId', 'uniqueUserName'].includes(numberingType)
+      ? `content: attr(data-unique-string);`
+      : ''
   }
   counter-increment: number 1;
   margin-right: 8px;
   padding: 0 8px 0 9px;
+  font-weight: bold;
 }
 `
   return style.replace(/\r?\n/g, '')

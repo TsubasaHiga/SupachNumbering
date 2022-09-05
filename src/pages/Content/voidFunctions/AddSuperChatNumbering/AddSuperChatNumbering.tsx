@@ -2,35 +2,53 @@ import { useCallback, useEffect, useState } from 'react'
 
 import useMutationObserver from '~/hooks/useMutationObserver'
 import GetSha256 from '~/modules/GetSha256'
+import GetUserNameFromTickerItemElement from '~/modules/GetUserNameFromTickerItemElement'
+import { NumberingType } from '~/types/SettingsType'
 
 /**
- * addHash
+ * addUniqueNumberingString
  * @param element
- * @param hashLength
+ * @param numberingType
+ * @param stringLength
  * @returns
  */
-const addHash = async (element: HTMLElement, hashLength: number) => {
+const addUniqueNumberingString = async (
+  element: HTMLElement,
+  numberingType: NumberingType,
+  stringLength: number
+) => {
   if (!element.id || element.id.length <= 0) return
-  console.log('addHash')
-
-  // id取得
-  const id = element.id
-
-  // ハッシュ取得
-  const hashValue = await GetSha256(id, hashLength)
+  // console.log('addUniqueNumberingString')
 
   // スーパーチャットの要素を取得
   const tickerPaidMessageItem = element.querySelector('#content') as HTMLElement
+  if (!tickerPaidMessageItem) return
 
-  // データ属性にハッシュ値をセット
-  if (tickerPaidMessageItem) tickerPaidMessageItem.dataset.hash = hashValue
+  // 文字列取得
+  let stringValue = ''
+
+  if (numberingType === 'uniqueId') {
+    stringValue = await GetSha256(element.id)
+  }
+
+  if (numberingType === 'uniqueUserName') {
+    stringValue = await GetUserNameFromTickerItemElement(element, 1000, 100)
+  }
+
+  // データ属性にユニークな文字列をセット
+  tickerPaidMessageItem.dataset.uniqueString =
+    stringLength > 0 ? stringValue.slice(0, stringLength) : stringValue
 }
 
 type Props = {
-  hashLength: number
+  stringLength: number
+  numberingType: NumberingType
 }
 
-const AddSuperChatNumbering = ({ hashLength }: Props): null => {
+const AddSuperChatNumbering = ({
+  stringLength,
+  numberingType,
+}: Props): null => {
   console.log('AddSuperChatNumbering')
 
   // スーパーチャットの要素の親要素を取得
@@ -65,7 +83,7 @@ const AddSuperChatNumbering = ({ hashLength }: Props): null => {
         '#items'
       ) as NodeListOf<HTMLElement>
 
-      // addHash
+      // setElementItems
       setElementItems(elementItems)
     })
   }, [])
@@ -83,11 +101,15 @@ const AddSuperChatNumbering = ({ hashLength }: Props): null => {
         // 要素が存在しない時は処理しない
         if (!mutation.addedNodes[0]) return
 
-        // addHash
-        addHash(mutation.addedNodes[0] as HTMLElement, hashLength)
+        // addUniqueNumberingString
+        addUniqueNumberingString(
+          mutation.addedNodes[0] as HTMLElement,
+          numberingType,
+          stringLength
+        )
       })
     },
-    [hashLength]
+    [stringLength, numberingType]
   )
 
   // useMutationObserver
@@ -98,10 +120,14 @@ const AddSuperChatNumbering = ({ hashLength }: Props): null => {
     if (!elementItems) return
     elementItems.forEach((target) => {
       target.childNodes.forEach((child) =>
-        addHash(child as HTMLElement, hashLength)
+        addUniqueNumberingString(
+          child as HTMLElement,
+          numberingType,
+          stringLength
+        )
       )
     })
-  }, [elementItems, hashLength])
+  }, [elementItems, stringLength, numberingType])
 
   return null
 }

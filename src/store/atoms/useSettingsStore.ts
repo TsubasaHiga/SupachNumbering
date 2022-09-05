@@ -8,8 +8,8 @@ const INITIAL_VALUE: SettingsType = {
   isAddSuperChatNumbering: true,
 
   // ナンバリング方式の選択
-  numberingType: 'unique',
-  uniqueNumberingHashLength: 3,
+  numberingType: 'default',
+  uniqueNumberingStringLength: 3,
 
   // スーパーチャットを全て表示
   isWrapSuperChat: false,

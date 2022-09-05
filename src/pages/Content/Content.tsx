@@ -21,7 +21,7 @@ const Content = (): JSX.Element => {
   const {
     isAddSuperChatNumbering,
     numberingType,
-    uniqueNumberingHashLength,
+    uniqueNumberingStringLength,
     isWrapSuperChat,
     isHideSuperChatPrice,
     isHideSuperChatAvatar,
@@ -99,7 +99,7 @@ const Content = (): JSX.Element => {
     if (isExpandChatHeight) {
       const headerElement = document.querySelector('#masthead-container')
       const headerH = headerElement ? headerElement.clientHeight : 0
-      console.log(headerH)
+      console.log({ headerH })
       inlineStyleElement.innerText += StyleExpandChatHeight(headerH)
     }
 
@@ -109,7 +109,7 @@ const Content = (): JSX.Element => {
     }
 
     console.log('スタイル追加')
-    console.log(inlineStyleElement.innerText)
+    console.log({ inlineStyleElement })
 
     // headに追加
     head?.appendChild(inlineStyleElement)
@@ -132,9 +132,17 @@ const Content = (): JSX.Element => {
 
   return (
     <>
-      {isAddSuperChatNumbering && numberingType === 'unique' && (
-        <AddSuperChatNumbering hashLength={uniqueNumberingHashLength} />
-      )}
+      {
+        // isAddSuperChatNumberingがtrue且つ
+        // ナンバリング方式に'uniqueId', 'uniqueUserName'を選択している時のみレンダリング
+        isAddSuperChatNumbering &&
+          ['uniqueId', 'uniqueUserName'].includes(numberingType) && (
+            <AddSuperChatNumbering
+              stringLength={uniqueNumberingStringLength}
+              numberingType={numberingType}
+            />
+          )
+      }
     </>
   )
 }

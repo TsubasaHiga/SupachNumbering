@@ -1,6 +1,7 @@
 /* stylelint-disable selector-class-pattern */
 
 .root {
+  padding: 30px;
 
   section {
 
@@ -37,6 +38,15 @@
 
     .image {
       width: 100%;
+
+      a {
+        cursor: zoom-in;
+        transition: opacity 400ms ease;
+
+        &:hover {
+          opacity: .8;
+        }
+      }
 
       img {
         border-radius: 5px;
