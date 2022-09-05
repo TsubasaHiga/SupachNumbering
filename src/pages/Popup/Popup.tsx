@@ -27,6 +27,7 @@ import AddSuperChatNumbering from './components/AddSuperChatNumbering/AddSuperCh
 import ChangeChatFontSize from './components/ChangeChatFontSize/ChangeChatFontSize'
 import ExpandChatHeight from './components/ExpandChatHeight/ExpandChatHeight'
 import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
 import HideAuthorName from './components/HideAuthorName/HideAuthorName'
 import HideChatAvatar from './components/HideChatAvatar/HideChatAvatar'
 import HideSuperChatAvatar from './components/HideSuperChatAvatar/HideSuperChatAvatar'
@@ -166,6 +167,7 @@ const Popup = (): JSX.Element => {
   return (
     <>
       {common.isUpdated && <UpdateDialog />}
+      <Header />
       <div className={styles.root}>
         <section>
           <h2>
