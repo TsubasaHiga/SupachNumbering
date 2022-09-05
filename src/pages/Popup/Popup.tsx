@@ -211,6 +211,13 @@ const Popup = (): JSX.Element => {
           },
         },
       },
+      MuiInputBase: {
+        styleOverrides: {
+          root: {
+            fontFamily: 'Roboto',
+          },
+        },
+      },
     },
   })
 
@@ -248,10 +255,10 @@ const Popup = (): JSX.Element => {
                     <Typography variant="caption" component="div">
                       {GetI18n('popup_settings_sub_superchat_title')}
                     </Typography>
-                    <WrapSuperChat />
                     <HideSuperChatPrice />
                     <HideSuperChatAvatar />
                     <AddSuperChatAvatarBlur />
+                    <WrapSuperChat />
                   </SettingsWrap>
                   <SettingsWrap>
                     <Typography variant="caption" component="div">
