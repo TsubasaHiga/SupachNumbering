@@ -23,6 +23,7 @@ const Content = (): JSX.Element => {
     numberingType,
     uniqueNumberingStringLength,
     isWrapSuperChat,
+    valueWrapSuperChatMaxHeight,
     isHideSuperChatPrice,
     isHideSuperChatAvatar,
     isAddSuperChatAvatarBlur,
@@ -57,7 +58,12 @@ const Content = (): JSX.Element => {
 
     // スーパーチャットを全て表示
     if (isWrapSuperChat) {
-      inlineStyleElement.innerText += StyleWrapSuperChat()
+      const containerElement = document.querySelector('#content-pages')
+      const containerH = containerElement ? containerElement.clientHeight : 0
+      // containerHをvalueWrapSuperChatMaxHeightの割合で計算
+      const maxHeight = (containerH * valueWrapSuperChatMaxHeight) / 100
+      console.log({ containerH, maxHeight })
+      inlineStyleElement.innerText += StyleWrapSuperChat(maxHeight)
     }
 
     // スーパーチャットの金額を非表示
@@ -117,6 +123,7 @@ const Content = (): JSX.Element => {
     isAddSuperChatNumbering,
     numberingType,
     isWrapSuperChat,
+    valueWrapSuperChatMaxHeight,
     isHideSuperChatPrice,
     isHideSuperChatAvatar,
     isAddSuperChatAvatarBlur,

@@ -10,6 +10,7 @@ export type SettingsType = {
 
   // スーパーチャットを全て表示
   isWrapSuperChat: boolean
+  valueWrapSuperChatMaxHeight: number
 
   // スーパーチャットの金額を非表示
   isHideSuperChatPrice: boolean

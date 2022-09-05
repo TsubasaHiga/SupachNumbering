@@ -12,7 +12,8 @@ const INITIAL_VALUE: SettingsType = {
   uniqueNumberingStringLength: 3,
 
   // スーパーチャットを全て表示
-  isWrapSuperChat: false,
+  isWrapSuperChat: true,
+  valueWrapSuperChatMaxHeight: 50,
 
   // スーパーチャットの金額を非表示
   isHideSuperChatPrice: false,
