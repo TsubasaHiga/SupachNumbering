@@ -7,6 +7,10 @@ const INITIAL_VALUE: SettingsType = {
   // スーパーチャットにナンバリングを追加
   isAddSuperChatNumbering: true,
 
+  // ナンバリング方式の選択
+  numberingType: 'default',
+  uniqueNumberingStringLength: 3,
+
   // スーパーチャットを全て表示
   isWrapSuperChat: false,
 

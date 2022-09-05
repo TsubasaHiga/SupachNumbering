@@ -32,8 +32,8 @@ const HideAuthorName = ({ isNew = false }: Props): JSX.Element => {
       }
       label={
         <>
-          {GetI18n('popup_settings_HideAuthorName_label')}
           {isNew && <TextLabel text="NEW" />}
+          {GetI18n('popup_settings_HideAuthorName_label')}
         </>
       }
     />

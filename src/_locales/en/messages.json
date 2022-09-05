@@ -14,6 +14,39 @@
   "popup_settings_main_title": {
     "message": "Main Settings"
   },
+  "popup_settings_main_select_numbering_type_title": {
+    "message": "Select numbering type"
+  },
+  "popup_settings_main_select_numbering_type_label1": {
+    "message": "asc order"
+  },
+  "popup_settings_main_select_numbering_type_label1_caption": {
+    "message": "Recommended if you don't have a lot of super chat."
+  },
+  "popup_settings_main_select_numbering_type_label2": {
+    "message": "use unique string"
+  },
+  "popup_settings_main_select_numbering_type_label2_caption": {
+    "message": "Recommended if you have a lot of super chats."
+  },
+  "popup_settings_main_select_numbering_type_label3": {
+    "message": "use username"
+  },
+  "popup_settings_main_select_numbering_type_label3_caption": {
+    "message": "Recommended if you have a lot of super chats."
+  },
+  "popup_settings_main_select_numbering_length_label": {
+    "message": "string length"
+  },
+  "popup_settings_main_select_numbering_length_help": {
+    "message": "Longer strings are less likely to be duplicated."
+  },
+  "popup_settings_main_select_numbering_length_unit": {
+    "message": "length"
+  },
+  "popup_settings_main_select_numbering_length_all": {
+    "message": "all"
+  },
   "popup_settings_sub_title": {
     "message": "Sub Settings"
   },

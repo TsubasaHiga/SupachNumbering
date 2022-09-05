@@ -8,7 +8,6 @@ import MuiAccordionSummary, {
 } from '@mui/material/AccordionSummary'
 import Alert from '@mui/material/Alert'
 import AlertTitle from '@mui/material/AlertTitle'
-import Box from '@mui/material/Box'
 import FormGroup from '@mui/material/FormGroup'
 import FormLabel from '@mui/material/FormLabel'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
@@ -28,6 +27,7 @@ import img from '~/assets/img/popup.png'
 import changeLog from '~/const/changeLog'
 import define from '~/const/define'
 import GetI18n from '~/modules/GetI18n'
+import SettingsWrap from '~/pages/Popup/components/SettingsWrap/SettingsWrap'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
 
 import AddChatAvatarBlur from './components/AddChatAvatarBlur/AddChatAvatarBlur'
@@ -106,6 +106,17 @@ const Popup = (): JSX.Element => {
             '&:not(:first-of-type)': {
               marginTop: '15px',
             },
+
+            '&[role="radiogroup"]': {
+              '.MuiButtonBase-root': {
+                padding: '4px',
+              },
+              '.MuiFormControlLabel-root': {
+                '&:not(:first-of-type)': {
+                  marginTop: '0',
+                },
+              },
+            },
           },
         },
       },
@@ -113,7 +124,6 @@ const Popup = (): JSX.Element => {
         styleOverrides: {
           root: {
             fontSize: '13px',
-            // fontWeight: '700',
             color: '#aaa',
             marginBottom: '7px',
           },
@@ -135,6 +145,7 @@ const Popup = (): JSX.Element => {
             fontSize: '11px',
             alignItems: 'center',
             display: 'flex',
+            flexWrap: 'wrap',
             fontWeight: 700,
             userSelect: 'none',
             marginLeft: '5px',
@@ -156,8 +167,9 @@ const Popup = (): JSX.Element => {
                 marginRight: '3px',
               },
               '&[data-text]': {
-                marginLeft: '5px',
-                padding: '2px 8px',
+                marginLeft: '0',
+                marginRight: '5px',
+                padding: '1px 8px',
                 fontSize: '11px',
               },
               '&[data-color="red"]': {
@@ -232,11 +244,7 @@ const Popup = (): JSX.Element => {
 
                 <FormGroup>
                   <FormLabel>{GetI18n('popup_settings_sub_title')}</FormLabel>
-                  <Box
-                    display="flex"
-                    flexDirection="column"
-                    className={styles.settingBox}
-                  >
+                  <SettingsWrap>
                     <Typography variant="caption" component="div">
                       {GetI18n('popup_settings_sub_superchat_title')}
                     </Typography>
@@ -244,12 +252,8 @@ const Popup = (): JSX.Element => {
                     <HideSuperChatPrice />
                     <HideSuperChatAvatar />
                     <AddSuperChatAvatarBlur />
-                  </Box>
-                  <Box
-                    display="flex"
-                    flexDirection="column"
-                    className={styles.settingBox}
-                  >
+                  </SettingsWrap>
+                  <SettingsWrap>
                     <Typography variant="caption" component="div">
                       {GetI18n('popup_settings_sub_chat_title')}
                     </Typography>
@@ -259,7 +263,7 @@ const Popup = (): JSX.Element => {
                     <ShrinkChatMessage />
                     <ExpandChatHeight />
                     <ChangeChatFontSize />
-                  </Box>
+                  </SettingsWrap>
                 </FormGroup>
               </ThemeProvider>
 

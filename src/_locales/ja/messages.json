@@ -14,6 +14,39 @@
   "popup_settings_main_title": {
     "message": "メイン設定"
   },
+  "popup_settings_main_select_numbering_type_title": {
+    "message": "ナンバリング方式の選択"
+  },
+  "popup_settings_main_select_numbering_type_label1": {
+    "message": "昇順でナンバリング"
+  },
+  "popup_settings_main_select_numbering_type_label1_caption": {
+    "message": "スーパーチャットの出現が穏やかな場合におすすめ"
+  },
+  "popup_settings_main_select_numbering_type_label2": {
+    "message": "数字の代わりにユニークIDを使用"
+  },
+  "popup_settings_main_select_numbering_type_label2_caption": {
+    "message": "スーパーチャットの出現が激しい場合におすすめ"
+  },
+  "popup_settings_main_select_numbering_type_label3": {
+    "message": "数字の代わりにユーザー名を使用"
+  },
+  "popup_settings_main_select_numbering_type_label3_caption": {
+    "message": "スーパーチャットの出現が激しい場合におすすめ"
+  },
+  "popup_settings_main_select_numbering_length_label": {
+    "message": "文字列の長さ指定"
+  },
+  "popup_settings_main_select_numbering_length_help": {
+    "message": "文字列が長くなるほど重複する確率が低くなります"
+  },
+  "popup_settings_main_select_numbering_length_unit": {
+    "message": "文字"
+  },
+  "popup_settings_main_select_numbering_length_all": {
+    "message": "全て表示"
+  },
   "popup_settings_sub_title": {
     "message": "サブ設定"
   },

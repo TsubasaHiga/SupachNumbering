@@ -1,6 +1,12 @@
+export type NumberingType = 'default' | 'uniqueId' | 'uniqueUserName'
+
 export type SettingsType = {
   // スーパーチャットにナンバリングを追加
   isAddSuperChatNumbering: boolean
+
+  // ナンバリング方式の選択
+  numberingType: NumberingType
+  uniqueNumberingStringLength: number
 
   // スーパーチャットを全て表示
   isWrapSuperChat: boolean
