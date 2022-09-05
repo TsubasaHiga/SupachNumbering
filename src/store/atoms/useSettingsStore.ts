@@ -5,14 +5,14 @@ import { SettingsType } from '~/types/SettingsType'
 const SETTINGS_KEY = 'settings'
 const INITIAL_VALUE: SettingsType = {
   // スーパーチャットにナンバリングを追加
-  isAddSuperChatNumbering: true,
+  isAddSuperChatNumbering: false,
 
   // ナンバリング方式の選択
   numberingType: 'default',
   uniqueNumberingStringLength: 3,
 
   // スーパーチャットを全て表示
-  isWrapSuperChat: true,
+  isWrapSuperChat: false,
   valueWrapSuperChatMaxHeight: 50,
 
   // スーパーチャットの金額を非表示
