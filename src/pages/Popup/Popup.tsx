@@ -11,8 +11,6 @@ import {
   IconSettings,
   IconTools,
 } from '@tabler/icons'
-import React, { useState } from 'react'
-import Zoom from 'react-medium-image-zoom'
 
 import img from '~/assets/img/popup.png'
 import define from '~/const/define'
@@ -236,9 +234,9 @@ const Popup = (): JSX.Element => {
           </h2>
           <div className={styles.content}>
             <div className={styles.image}>
-              <Zoom zoomMargin={0}>
+              <a href={img} target="_blank" rel="noreferrer noopener">
                 <img src={img} alt={GetI18n('popup_image_title')} />
-              </Zoom>
+              </a>
             </div>
             <small>{GetI18n('popup_image_caption')}</small>
           </div>
