@@ -2,6 +2,7 @@ import HelpIcon from '@mui/icons-material/Help'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
 import { Box } from '@mui/system'
+import { memo } from 'react'
 
 import GetI18n from '~/modules/GetI18n'
 
@@ -46,4 +47,4 @@ const IndentWrap = ({ children, title, help }: Props): JSX.Element => {
   )
 }
 
-export default IndentWrap
+export default memo(IndentWrap)

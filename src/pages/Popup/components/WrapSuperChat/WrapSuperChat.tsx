@@ -6,6 +6,7 @@ import InputAdornment from '@mui/material/InputAdornment'
 import Switch from '@mui/material/Switch'
 import TextField from '@mui/material/TextField'
 import Tooltip from '@mui/material/Tooltip'
+import { memo, useCallback } from 'react'
 
 import GetI18n from '~/modules/GetI18n'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
@@ -16,6 +17,27 @@ const WrapSuperChat = (): JSX.Element => {
   const { isWrapSuperChat, valueWrapSuperChatMaxHeight }: SettingsType =
     settings
 
+  const switchHandleChange = useCallback(() => {
+    setSettings((prevState: SettingsType) => {
+      return {
+        ...prevState,
+        isWrapSuperChat: !isWrapSuperChat,
+      }
+    })
+  }, [isWrapSuperChat, setSettings])
+
+  const textHandleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setSettings((prevState: SettingsType) => {
+        return {
+          ...prevState,
+          valueWrapSuperChatMaxHeight: e.target.value,
+        }
+      })
+    },
+    [setSettings]
+  )
+
   return (
     <Box display="flex" alignItems="center" mt={0.5}>
       <FormControlLabel
@@ -23,14 +45,7 @@ const WrapSuperChat = (): JSX.Element => {
           <Switch
             size="small"
             checked={isWrapSuperChat}
-            onChange={() => {
-              setSettings((prevState: any) => {
-                return {
-                  ...prevState,
-                  isWrapSuperChat: !isWrapSuperChat,
-                }
-              })
-            }}
+            onChange={switchHandleChange}
           />
         }
         label={
@@ -56,17 +71,9 @@ const WrapSuperChat = (): JSX.Element => {
         size="small"
         margin="none"
         disabled={!isWrapSuperChat}
-        style={{
-          minWidth: '100px',
-        }}
-        inputProps={{
-          min: 10,
-          max: 100,
-          step: 10,
-        }}
-        InputLabelProps={{
-          shrink: true,
-        }}
+        style={{ minWidth: '100px' }}
+        inputProps={{ min: 10, max: 100, step: 10 }}
+        InputLabelProps={{ shrink: true }}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
@@ -75,17 +82,10 @@ const WrapSuperChat = (): JSX.Element => {
           ),
           endAdornment: <InputAdornment position="end">%</InputAdornment>,
         }}
-        onChange={(e) => {
-          setSettings((prevState: any) => {
-            return {
-              ...prevState,
-              valueWrapSuperChatMaxHeight: e.target.value,
-            }
-          })
-        }}
+        onChange={(e) => textHandleChange(e)}
       />
     </Box>
   )
 }
 
-export default WrapSuperChat
+export default memo(WrapSuperChat)

@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 import GetI18n from '~/modules/GetI18n'
 
 import styles from './Footer.module.scss'
@@ -37,4 +39,4 @@ const Footer = (): JSX.Element => {
   )
 }
 
-export default Footer
+export default memo(Footer)

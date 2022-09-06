@@ -4,7 +4,7 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 import IconButton from '@mui/material/IconButton'
 import { styled } from '@mui/material/styles'
-import { useCallback, useState } from 'react'
+import { memo, useCallback, useState } from 'react'
 
 import ChangeLog from '~/pages/Popup/components/ChangeLog/ChangeLog'
 import { useCommonStore } from '~/store/atoms/useCommonStore'
@@ -98,4 +98,4 @@ const UpdateDialog = (): JSX.Element => {
   )
 }
 
-export default UpdateDialog
+export default memo(UpdateDialog)

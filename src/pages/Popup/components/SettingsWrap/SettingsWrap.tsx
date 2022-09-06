@@ -1,4 +1,5 @@
 import { Box } from '@mui/system'
+import { memo } from 'react'
 
 import styles from './SettingsWrap.module.scss'
 
@@ -20,4 +21,4 @@ const SettingsWrap = ({ children, style }: Props): JSX.Element => {
   )
 }
 
-export default SettingsWrap
+export default memo(SettingsWrap)

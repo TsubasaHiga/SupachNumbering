@@ -1,6 +1,7 @@
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Switch from '@mui/material/Switch'
 import Typography from '@mui/material/Typography'
+import { memo, useCallback } from 'react'
 
 import GetI18n from '~/modules/GetI18n'
 import SelectNumberingType from '~/pages/Popup/components/SelectNumberingType/SelectNumberingType'
@@ -12,24 +13,26 @@ const AddSuperChatNumbering = (): JSX.Element => {
   const [settings, setSettings] = useSettingsStore()
   const { isAddSuperChatNumbering }: SettingsType = settings
 
+  const switchHandleChange = useCallback(() => {
+    setSettings((prevState: SettingsType) => {
+      return {
+        ...prevState,
+        isAddSuperChatNumbering: !isAddSuperChatNumbering,
+      }
+    })
+  }, [isAddSuperChatNumbering, setSettings])
+
   return (
     <>
       <FormControlLabel
+        label={GetI18n('popup_settings_AddSuperChatNumbering_label')}
         control={
           <Switch
             size="small"
             checked={isAddSuperChatNumbering}
-            onChange={() => {
-              setSettings((prevState: any) => {
-                return {
-                  ...prevState,
-                  isAddSuperChatNumbering: !isAddSuperChatNumbering,
-                }
-              })
-            }}
+            onChange={switchHandleChange}
           />
         }
-        label={GetI18n('popup_settings_AddSuperChatNumbering_label')}
       />
 
       {isAddSuperChatNumbering && (
@@ -44,4 +47,4 @@ const AddSuperChatNumbering = (): JSX.Element => {
   )
 }
 
-export default AddSuperChatNumbering
+export default memo(AddSuperChatNumbering)

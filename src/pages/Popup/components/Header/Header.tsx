@@ -3,6 +3,7 @@ import RateReviewIcon from '@mui/icons-material/RateReview'
 import ShopIcon from '@mui/icons-material/Shop'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
+import { memo } from 'react'
 
 import Logo from '~/assets/img/icon-128.png'
 import define from '~/const/define'
@@ -64,4 +65,4 @@ const Header = (): JSX.Element => {
   )
 }
 
-export default Header
+export default memo(Header)

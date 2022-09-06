@@ -6,7 +6,7 @@ import MuiAccordionSummary, {
 } from '@mui/material/AccordionSummary'
 import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
-import { useCallback, useState } from 'react'
+import { memo, useCallback, useState } from 'react'
 
 import changeLog from '~/const/changeLog'
 
@@ -59,7 +59,6 @@ const ChangeLog = (): JSX.Element => {
 
   const handleChange = useCallback(
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
-      console.log(panel)
       setExpanded(newExpanded ? panel : false)
     },
     []
@@ -101,4 +100,4 @@ const ChangeLog = (): JSX.Element => {
   )
 }
 
-export default ChangeLog
+export default memo(ChangeLog)

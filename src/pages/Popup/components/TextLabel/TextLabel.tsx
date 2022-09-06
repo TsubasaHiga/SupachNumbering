@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 type Props = {
   text: string
   color?: string
@@ -11,4 +13,4 @@ const TextLabel = ({ text, color = 'red' }: Props): JSX.Element => {
   )
 }
 
-export default TextLabel
+export default memo(TextLabel)
