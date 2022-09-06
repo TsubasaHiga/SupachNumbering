@@ -59,10 +59,12 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
     fontSize: 11,
     color: '#a9a9a9',
     '&[data-index="0"]': {
-      left: '14px !important',
+      transform: 'unset',
     },
     '&[data-index="6"]': {
-      left: 'calc(100% - 14px) !important',
+      transform: 'unset',
+      left: 'unset !important',
+      right: '0',
     },
     '&.MuiSlider-markLabelActive': {
       color: '#000',

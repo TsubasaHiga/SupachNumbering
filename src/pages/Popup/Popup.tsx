@@ -42,12 +42,18 @@ const Popup = (): JSX.Element => {
 
   const backgroundColor = '#f9fafb'
   const theme = createTheme({
+    typography: {
+      fontFamily: ['Roboto', 'Noto Sans JP'].join(','),
+      allVariants: {
+        color: '#3c3c3c',
+      },
+    },
     components: {
       MuiFormGroup: {
         styleOverrides: {
           root: {
             '&:not(:first-of-type)': {
-              marginTop: '15px',
+              marginTop: '20px',
             },
 
             '&[role="radiogroup"]': {
@@ -66,9 +72,9 @@ const Popup = (): JSX.Element => {
       MuiFormLabel: {
         styleOverrides: {
           root: {
-            fontSize: '13px',
+            fontSize: '15px',
             color: '#aaa',
-            marginBottom: '7px',
+            marginBottom: '10px',
           },
         },
       },
@@ -77,7 +83,7 @@ const Popup = (): JSX.Element => {
           root: {
             marginLeft: '-3px',
             '&:not(:first-of-type)': {
-              marginTop: '1px',
+              marginTop: '4px',
             },
             '&.Mui-disabled': {
               cursor: 'not-allowed',
@@ -85,7 +91,7 @@ const Popup = (): JSX.Element => {
             },
           },
           label: {
-            fontSize: '11px',
+            fontSize: '12px',
             alignItems: 'center',
             display: 'flex',
             flexWrap: 'wrap',
@@ -99,7 +105,10 @@ const Popup = (): JSX.Element => {
             span: {
               backgroundColor: '#eee',
               alignItems: 'center',
+              lineHeight: '1',
+              color: '#666',
               display: 'flex',
+              fontSize: '11px',
               fontWeight: '400',
               padding: '3px 8px 3px 5px',
               marginLeft: '3px',
@@ -107,16 +116,16 @@ const Popup = (): JSX.Element => {
               svg: {
                 color: '#999',
                 fontSize: '15px',
-                marginRight: '3px',
+                marginRight: '4px',
               },
               '&[data-text]': {
                 marginLeft: '0',
                 marginRight: '5px',
-                padding: '1px 8px',
+                padding: '4px 8px 3px',
                 fontSize: '11px',
               },
               '&[data-color="red"]': {
-                backgroundColor: '#ea3323',
+                backgroundColor: '#d73a4a',
                 color: '#fff',
               },
             },
@@ -147,7 +156,6 @@ const Popup = (): JSX.Element => {
           caption: {
             position: 'absolute',
             backgroundColor: backgroundColor,
-            // color: '#aaa',
             padding: '0 5px',
             left: '10px',
             top: '-10px',
@@ -165,13 +173,13 @@ const Popup = (): JSX.Element => {
   })
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       {common.isUpdated && <UpdateDialog />}
       <Header />
       <div className={styles.root}>
         <section>
           <h2>
-            <IconBrandChrome size={18} stroke="1.5" />
+            <IconBrandChrome size={22} stroke="1.5" />
             <span>{GetI18n('popup_about_title')}</span>
           </h2>
           <div className={styles.content}>
@@ -183,41 +191,39 @@ const Popup = (): JSX.Element => {
 
         <section>
           <h2>
-            <IconSettings size={18} stroke="1.5" />
+            <IconSettings size={22} stroke="1.5" />
             <span>{GetI18n('popup_settings_title')}</span>
           </h2>
           <div className={styles.content}>
             <div className={styles.settings}>
-              <ThemeProvider theme={theme}>
-                <FormGroup>
-                  <FormLabel>{GetI18n('popup_settings_main_title')}</FormLabel>
-                  <AddSuperChatNumbering />
-                </FormGroup>
+              <FormGroup>
+                <FormLabel>{GetI18n('popup_settings_main_title')}</FormLabel>
+                <AddSuperChatNumbering />
+              </FormGroup>
 
-                <FormGroup>
-                  <FormLabel>{GetI18n('popup_settings_sub_title')}</FormLabel>
-                  <SettingsWrap>
-                    <Typography variant="caption" component="div">
-                      {GetI18n('popup_settings_sub_superchat_title')}
-                    </Typography>
-                    <HideSuperChatPrice />
-                    <HideSuperChatAvatar />
-                    <AddSuperChatAvatarBlur />
-                    <WrapSuperChat />
-                  </SettingsWrap>
-                  <SettingsWrap>
-                    <Typography variant="caption" component="div">
-                      {GetI18n('popup_settings_sub_chat_title')}
-                    </Typography>
-                    <HideChatAvatar />
-                    <AddChatAvatarBlur />
-                    <HideAuthorName isNew={true} />
-                    <ShrinkChatMessage />
-                    <ExpandChatHeight />
-                    <ChangeChatFontSize />
-                  </SettingsWrap>
-                </FormGroup>
-              </ThemeProvider>
+              <FormGroup>
+                <FormLabel>{GetI18n('popup_settings_sub_title')}</FormLabel>
+                <SettingsWrap>
+                  <Typography variant="caption" component="div">
+                    {GetI18n('popup_settings_sub_superchat_title')}
+                  </Typography>
+                  <HideSuperChatPrice />
+                  <HideSuperChatAvatar />
+                  <AddSuperChatAvatarBlur />
+                  <WrapSuperChat />
+                </SettingsWrap>
+                <SettingsWrap>
+                  <Typography variant="caption" component="div">
+                    {GetI18n('popup_settings_sub_chat_title')}
+                  </Typography>
+                  <HideChatAvatar />
+                  <AddChatAvatarBlur />
+                  <HideAuthorName isNew={true} />
+                  <ShrinkChatMessage />
+                  <ExpandChatHeight />
+                  <ChangeChatFontSize />
+                </SettingsWrap>
+              </FormGroup>
 
               {!isPersistent && (
                 <Alert severity="error" style={{ marginTop: '10px' }}>
@@ -231,7 +237,7 @@ const Popup = (): JSX.Element => {
 
         <section>
           <h2>
-            <IconTools size={18} stroke="1.5" />
+            <IconTools size={22} stroke="1.5" />
             <span>{GetI18n('popup_image_title')}</span>
           </h2>
           <div className={styles.content}>
@@ -246,7 +252,7 @@ const Popup = (): JSX.Element => {
 
         <section>
           <h2>
-            <IconBellRinging size={18} stroke="1.5" />
+            <IconBellRinging size={22} stroke="1.5" />
             <span>{GetI18n('popup_notwork_title')}</span>
           </h2>
           <div className={styles.content}>
@@ -263,17 +269,17 @@ const Popup = (): JSX.Element => {
 
         <section>
           <h2>
-            <IconGitPullRequest size={18} stroke="1.5" />
+            <IconGitPullRequest size={22} stroke="1.5" />
             <span>{GetI18n('popup_changelog_title')}</span>
           </h2>
           <div className={styles.content}>
             <ChangeLog />
           </div>
         </section>
-      </div>
 
-      <Footer />
-    </>
+        <Footer />
+      </div>
+    </ThemeProvider>
   )
 }
 

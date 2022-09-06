@@ -84,12 +84,14 @@ const ChangeLog = (): JSX.Element => {
           <AccordionDetails>
             <ul>
               {item.changes.map((change, changeIndex) => (
-                <li
-                  key={changeIndex}
-                  dangerouslySetInnerHTML={{
-                    __html: change,
-                  }}
-                />
+                <li key={changeIndex}>
+                  <span data-type={change.type}>{change.type}</span>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: change.message,
+                    }}
+                  />
+                </li>
               ))}
             </ul>
           </AccordionDetails>

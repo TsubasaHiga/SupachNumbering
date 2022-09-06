@@ -3,7 +3,7 @@
 .header {
   background-color: #fff;
   box-shadow: 0 1px 6px 2px rgb(152 152 152 / 15%);
-  padding: 30px 30px 20px;
+  padding: 20px 20px 15px 22px;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -37,7 +37,7 @@
         }
 
         .text {
-          font-size: 18px;
+          font-size: 20px;
           font-weight: 700;
         }
 
@@ -47,20 +47,36 @@
           border-radius: 3px;
           color: inherit;
           display: flex;
-          font-family: Roboto, sans-serif;
-          font-size: 12px;
+          font-size: 11px;
+          font-weight: 700;
           justify-content: center;
           letter-spacing: -.2px;
-          margin-left: 10px;
-          padding: 2px 6px 1px;
+          margin-left: 8px;
+          margin-top: 2px;
+          padding: 3px 6px 2px;
           text-decoration: none;
-          transition: background-color 400ms ease, color 400ms ease;
-
-          &:hover {
-            background-color: #333;
-            color: #fff;
-          }
         }
+      }
+    }
+
+    .links {
+
+      a {
+        color: #333;
+
+        &:not(:first-of-type) {
+          margin-left: 8px;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      button {
+        border: 1px solid #eee;
+        border-radius: 10px;
+        font-size: 18px;
       }
     }
   }

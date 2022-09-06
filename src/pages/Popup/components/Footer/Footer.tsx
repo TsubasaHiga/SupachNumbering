@@ -1,12 +1,12 @@
 import GetI18n from '~/modules/GetI18n'
 
-import style from './Footer.module.scss'
+import styles from './Footer.module.scss'
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className={style.footer}>
-      <div className={style.messagearea}>
-        <p className={style.caption}>
+    <footer className={styles.footer}>
+      <div className={styles.messagearea}>
+        <p className={styles.caption}>
           Powered by{' '}
           <a
             href="https://cofus.work"
@@ -25,7 +25,6 @@ const Footer = (): JSX.Element => {
           </a>
           ｜
           <a
-            className={style.ja}
             href="https://chrome-extensions.cofus.work"
             target="_blank"
             rel="noreferrer noopener"

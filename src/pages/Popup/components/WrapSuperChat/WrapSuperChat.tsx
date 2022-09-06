@@ -1,9 +1,11 @@
 import HeightIcon from '@mui/icons-material/Height'
+import HelpIcon from '@mui/icons-material/Help'
 import Box from '@mui/material/Box'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import InputAdornment from '@mui/material/InputAdornment'
 import Switch from '@mui/material/Switch'
 import TextField from '@mui/material/TextField'
+import Tooltip from '@mui/material/Tooltip'
 
 import GetI18n from '~/modules/GetI18n'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
@@ -31,7 +33,21 @@ const WrapSuperChat = (): JSX.Element => {
             }}
           />
         }
-        label={GetI18n('popup_settings_WrapSuperChat_label')}
+        label={
+          <>
+            {GetI18n('popup_settings_WrapSuperChat_label')}
+            <Tooltip
+              title={GetI18n('popup_settings_WrapSuperChat_help')}
+              arrow
+              placement="right"
+            >
+              <HelpIcon
+                fontSize="inherit"
+                style={{ fontSize: '17px', marginLeft: '4px' }}
+              />
+            </Tooltip>
+          </>
+        }
       />
       <TextField
         value={valueWrapSuperChatMaxHeight}

@@ -18,19 +18,19 @@
     "message": "Select numbering type"
   },
   "popup_settings_main_select_numbering_type_label1": {
-    "message": "asc order"
+    "message": "Use ASC order"
   },
   "popup_settings_main_select_numbering_type_label1_caption": {
     "message": "Recommended if you don't have a lot of super chat."
   },
   "popup_settings_main_select_numbering_type_label2": {
-    "message": "use unique string"
+    "message": "Use Unique Id"
   },
   "popup_settings_main_select_numbering_type_label2_caption": {
     "message": "Recommended if you have a lot of super chats."
   },
   "popup_settings_main_select_numbering_type_label3": {
-    "message": "use username"
+    "message": "Use User name"
   },
   "popup_settings_main_select_numbering_type_label3_caption": {
     "message": "Recommended if you have a lot of super chats."
@@ -61,6 +61,9 @@
   },
   "popup_settings_WrapSuperChat_label": {
     "message": "Show all Super Chat"
+  },
+  "popup_settings_WrapSuperChat_help": {
+    "message": "If the entire screen display area is filled with super chat, it is recommended to adjust the maximum height by specifying max-height."
   },
   "popup_settings_HideSuperChatPrice_label": {
     "message": "Hide price"
@@ -112,5 +115,14 @@
   },
   "popup_footer_link": {
     "message": "View all Chrome extension list"
+  },
+  "popup_web_store": {
+    "message": "Chrome Web Store"
+  },
+  "popup_review": {
+    "message": "Please review!"
+  },
+  "popup_support": {
+    "message": "Bug reports and suggestions are welcome!"
   }
 }
