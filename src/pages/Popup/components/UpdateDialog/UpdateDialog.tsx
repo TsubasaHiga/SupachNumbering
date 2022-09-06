@@ -4,7 +4,7 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 import IconButton from '@mui/material/IconButton'
 import { styled } from '@mui/material/styles'
-import { useCallback, useState } from 'react'
+import { memo, useCallback, useState } from 'react'
 
 import ChangeLog from '~/pages/Popup/components/ChangeLog/ChangeLog'
 import { useCommonStore } from '~/store/atoms/useCommonStore'
@@ -36,7 +36,9 @@ const CustomDialogTitle = (props: DialogTitleProps) => {
   return (
     <DialogTitle
       className={styles.title}
-      sx={{ m: 0, p: 2, pt: 2.5, pb: 2.5 }}
+      fontWeight={700}
+      color="#444"
+      sx={{ m: 0, p: 2, pt: 2.5, pb: 2.5, pl: 2.5 }}
       {...other}
     >
       {children}
@@ -46,7 +48,7 @@ const CustomDialogTitle = (props: DialogTitleProps) => {
           onClick={onClose}
           sx={{
             position: 'absolute',
-            right: 8,
+            right: 16,
             top: 16,
             color: (theme) => theme.palette.grey[500],
           }}
@@ -86,7 +88,8 @@ const UpdateDialog = (): JSX.Element => {
       fullWidth
     >
       <CustomDialogTitle id="customized-dialog-title" onClose={handleClose}>
-        🎉 Updated to Version <code>{manifest.version}</code>
+        <span style={{ marginRight: '6px' }}>🎉</span>Updated to Version{' '}
+        <code>{manifest.version}</code>
       </CustomDialogTitle>
       <DialogContent>
         <ChangeLog />
@@ -95,4 +98,4 @@ const UpdateDialog = (): JSX.Element => {
   )
 }
 
-export default UpdateDialog
+export default memo(UpdateDialog)

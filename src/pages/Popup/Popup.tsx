@@ -11,8 +11,6 @@ import {
   IconSettings,
   IconTools,
 } from '@tabler/icons'
-import React, { useState } from 'react'
-import Zoom from 'react-medium-image-zoom'
 
 import img from '~/assets/img/popup.png'
 import define from '~/const/define'
@@ -29,6 +27,7 @@ import AddSuperChatNumbering from './components/AddSuperChatNumbering/AddSuperCh
 import ChangeChatFontSize from './components/ChangeChatFontSize/ChangeChatFontSize'
 import ExpandChatHeight from './components/ExpandChatHeight/ExpandChatHeight'
 import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
 import HideAuthorName from './components/HideAuthorName/HideAuthorName'
 import HideChatAvatar from './components/HideChatAvatar/HideChatAvatar'
 import HideSuperChatAvatar from './components/HideSuperChatAvatar/HideSuperChatAvatar'
@@ -37,141 +36,150 @@ import ShrinkChatMessage from './components/ShrinkChatMessage/ShrinkChatMessage'
 import WrapSuperChat from './components/WrapSuperChat/WrapSuperChat'
 import styles from './Popup.module.scss'
 
-const Popup = (): JSX.Element => {
-  const [isPersistent, error] = useSettingsStore()
-  const [common] = useCommonStore()
+const backgroundColor = '#f9fafb'
+const theme = createTheme({
+  typography: {
+    fontFamily: ['Roboto', 'Noto Sans JP'].join(','),
+    allVariants: {
+      color: '#3c3c3c',
+    },
+  },
+  components: {
+    MuiFormGroup: {
+      styleOverrides: {
+        root: {
+          '&:not(:first-of-type)': {
+            marginTop: '20px',
+          },
 
-  const backgroundColor = '#f9fafb'
-  const theme = createTheme({
-    components: {
-      MuiFormGroup: {
-        styleOverrides: {
-          root: {
-            '&:not(:first-of-type)': {
-              marginTop: '15px',
+          '&[role="radiogroup"]': {
+            '.MuiButtonBase-root': {
+              padding: '4px',
             },
-
-            '&[role="radiogroup"]': {
-              '.MuiButtonBase-root': {
-                padding: '4px',
-              },
-              '.MuiFormControlLabel-root': {
-                '&:not(:first-of-type)': {
-                  marginTop: '0',
-                },
+            '.MuiFormControlLabel-root': {
+              '&:not(:first-of-type)': {
+                marginTop: '0',
               },
             },
-          },
-        },
-      },
-      MuiFormLabel: {
-        styleOverrides: {
-          root: {
-            fontSize: '13px',
-            color: '#aaa',
-            marginBottom: '7px',
-          },
-        },
-      },
-      MuiFormControlLabel: {
-        styleOverrides: {
-          root: {
-            marginLeft: '-3px',
-            '&:not(:first-of-type)': {
-              marginTop: '1px',
-            },
-            '&.Mui-disabled': {
-              cursor: 'not-allowed',
-              opacity: '.5',
-            },
-          },
-          label: {
-            fontSize: '11px',
-            alignItems: 'center',
-            display: 'flex',
-            flexWrap: 'wrap',
-            fontWeight: 700,
-            userSelect: 'none',
-            marginLeft: '5px',
-            transition: 'opacity 400ms ease',
-            '&:not(.Mui-disabled):hover': {
-              opacity: '.5',
-            },
-            span: {
-              backgroundColor: '#eee',
-              alignItems: 'center',
-              display: 'flex',
-              fontWeight: '400',
-              padding: '3px 8px 3px 5px',
-              marginLeft: '3px',
-              borderRadius: '999px',
-              svg: {
-                color: '#999',
-                fontSize: '15px',
-                marginRight: '3px',
-              },
-              '&[data-text]': {
-                marginLeft: '0',
-                marginRight: '5px',
-                padding: '1px 8px',
-                fontSize: '11px',
-              },
-              '&[data-color="red"]': {
-                backgroundColor: '#ea3323',
-                color: '#fff',
-              },
-            },
-          },
-        },
-      },
-      MuiOutlinedInput: {
-        styleOverrides: {
-          root: {
-            '&.Mui-disabled': {
-              cursor: 'not-allowed',
-              opacity: '.5',
-            },
-          },
-          input: {
-            paddingTop: '4px',
-            paddingBottom: '4px',
-            fontWeight: '700',
-            color: '#777',
-            '&.Mui-disabled': {
-              cursor: 'not-allowed',
-            },
-          },
-        },
-      },
-      MuiTypography: {
-        styleOverrides: {
-          caption: {
-            position: 'absolute',
-            backgroundColor: backgroundColor,
-            // color: '#aaa',
-            padding: '0 5px',
-            left: '10px',
-            top: '-10px',
-          },
-        },
-      },
-      MuiInputBase: {
-        styleOverrides: {
-          root: {
-            fontFamily: 'Roboto',
           },
         },
       },
     },
-  })
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          fontSize: '15px',
+          color: '#aaa',
+          marginBottom: '10px',
+        },
+      },
+    },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          marginLeft: '-3px',
+          '&:not(:first-of-type)': {
+            marginTop: '4px',
+          },
+          '&.Mui-disabled': {
+            cursor: 'not-allowed',
+            opacity: '.5',
+          },
+        },
+        label: {
+          fontSize: '12px',
+          alignItems: 'center',
+          display: 'flex',
+          flexWrap: 'wrap',
+          fontWeight: 700,
+          userSelect: 'none',
+          marginLeft: '5px',
+          transition: 'opacity 400ms ease',
+          '&:not(.Mui-disabled):hover': {
+            opacity: '.5',
+          },
+          span: {
+            backgroundColor: '#eee',
+            alignItems: 'center',
+            lineHeight: '1',
+            color: '#666',
+            display: 'flex',
+            fontSize: '11px',
+            fontWeight: '400',
+            padding: '3px 8px 3px 5px',
+            marginLeft: '3px',
+            borderRadius: '999px',
+            svg: {
+              color: '#999',
+              fontSize: '15px',
+              marginRight: '4px',
+            },
+            '&[data-text]': {
+              marginLeft: '0',
+              marginRight: '5px',
+              padding: '4px 8px 3px',
+              fontSize: '11px',
+            },
+            '&[data-color="red"]': {
+              backgroundColor: '#d73a4a',
+              color: '#fff',
+            },
+          },
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          '&.Mui-disabled': {
+            cursor: 'not-allowed',
+            opacity: '.5',
+          },
+        },
+        input: {
+          paddingTop: '4px',
+          paddingBottom: '4px',
+          fontWeight: '700',
+          color: '#777',
+          '&.Mui-disabled': {
+            cursor: 'not-allowed',
+          },
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        caption: {
+          position: 'absolute',
+          backgroundColor: backgroundColor,
+          padding: '0 5px',
+          left: '10px',
+          top: '-10px',
+        },
+      },
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          fontFamily: 'Roboto',
+        },
+      },
+    },
+  },
+})
+
+const Popup = (): JSX.Element => {
+  const [isPersistent, error] = useSettingsStore()
+  const [common] = useCommonStore()
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       {common.isUpdated && <UpdateDialog />}
+      <Header />
       <div className={styles.root}>
         <section>
           <h2>
-            <IconBrandChrome size={18} stroke="1.5" />
+            <IconBrandChrome size={22} stroke="1.5" />
             <span>{GetI18n('popup_about_title')}</span>
           </h2>
           <div className={styles.content}>
@@ -183,41 +191,40 @@ const Popup = (): JSX.Element => {
 
         <section>
           <h2>
-            <IconSettings size={18} stroke="1.5" />
+            <IconSettings size={22} stroke="1.5" />
             <span>{GetI18n('popup_settings_title')}</span>
           </h2>
           <div className={styles.content}>
             <div className={styles.settings}>
-              <ThemeProvider theme={theme}>
-                <FormGroup>
-                  <FormLabel>{GetI18n('popup_settings_main_title')}</FormLabel>
-                  <AddSuperChatNumbering />
-                </FormGroup>
+              <FormGroup>
+                <FormLabel>{GetI18n('popup_settings_main_title')}</FormLabel>
+                <AddSuperChatNumbering />
+              </FormGroup>
 
-                <FormGroup>
-                  <FormLabel>{GetI18n('popup_settings_sub_title')}</FormLabel>
-                  <SettingsWrap>
-                    <Typography variant="caption" component="div">
-                      {GetI18n('popup_settings_sub_superchat_title')}
-                    </Typography>
-                    <HideSuperChatPrice />
-                    <HideSuperChatAvatar />
-                    <AddSuperChatAvatarBlur />
-                    <WrapSuperChat />
-                  </SettingsWrap>
-                  <SettingsWrap>
-                    <Typography variant="caption" component="div">
-                      {GetI18n('popup_settings_sub_chat_title')}
-                    </Typography>
-                    <HideChatAvatar />
-                    <AddChatAvatarBlur />
-                    <HideAuthorName isNew={true} />
-                    <ShrinkChatMessage />
-                    <ExpandChatHeight />
-                    <ChangeChatFontSize />
-                  </SettingsWrap>
-                </FormGroup>
-              </ThemeProvider>
+              <FormGroup>
+                <FormLabel>{GetI18n('popup_settings_sub_title')}</FormLabel>
+                <SettingsWrap>
+                  <Typography variant="caption" component="div">
+                    {GetI18n('popup_settings_sub_superchat_title')}
+                  </Typography>
+                  <HideSuperChatPrice />
+                  <HideSuperChatAvatar />
+                  <AddSuperChatAvatarBlur />
+                  <WrapSuperChat />
+                </SettingsWrap>
+
+                <SettingsWrap>
+                  <Typography variant="caption" component="div">
+                    {GetI18n('popup_settings_sub_chat_title')}
+                  </Typography>
+                  <HideChatAvatar />
+                  <AddChatAvatarBlur />
+                  <HideAuthorName isNew={true} />
+                  <ShrinkChatMessage />
+                  <ExpandChatHeight />
+                  <ChangeChatFontSize />
+                </SettingsWrap>
+              </FormGroup>
 
               {!isPersistent && (
                 <Alert severity="error" style={{ marginTop: '10px' }}>
@@ -231,14 +238,14 @@ const Popup = (): JSX.Element => {
 
         <section>
           <h2>
-            <IconTools size={18} stroke="1.5" />
+            <IconTools size={22} stroke="1.5" />
             <span>{GetI18n('popup_image_title')}</span>
           </h2>
           <div className={styles.content}>
             <div className={styles.image}>
-              <Zoom zoomMargin={0}>
+              <a href={img} target="_blank" rel="noreferrer noopener">
                 <img src={img} alt={GetI18n('popup_image_title')} />
-              </Zoom>
+              </a>
             </div>
             <small>{GetI18n('popup_image_caption')}</small>
           </div>
@@ -246,7 +253,7 @@ const Popup = (): JSX.Element => {
 
         <section>
           <h2>
-            <IconBellRinging size={18} stroke="1.5" />
+            <IconBellRinging size={22} stroke="1.5" />
             <span>{GetI18n('popup_notwork_title')}</span>
           </h2>
           <div className={styles.content}>
@@ -263,17 +270,17 @@ const Popup = (): JSX.Element => {
 
         <section>
           <h2>
-            <IconGitPullRequest size={18} stroke="1.5" />
+            <IconGitPullRequest size={22} stroke="1.5" />
             <span>{GetI18n('popup_changelog_title')}</span>
           </h2>
           <div className={styles.content}>
             <ChangeLog />
           </div>
         </section>
-      </div>
 
-      <Footer />
-    </>
+        <Footer />
+      </div>
+    </ThemeProvider>
   )
 }
 

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { memo, useCallback, useEffect, useState } from 'react'
 
 import useMutationObserver from '~/hooks/useMutationObserver'
 import GetSha256 from '~/modules/GetSha256'
@@ -132,4 +132,4 @@ const AddSuperChatNumbering = ({
   return null
 }
 
-export default AddSuperChatNumbering
+export default memo(AddSuperChatNumbering)

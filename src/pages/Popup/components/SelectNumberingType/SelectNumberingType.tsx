@@ -4,7 +4,7 @@ import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import Slider from '@mui/material/Slider'
 import { styled } from '@mui/material/styles'
-import { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 
 import GetI18n from '~/modules/GetI18n'
 import IndentWrap from '~/pages/Popup/components/IndentWrap/IndentWrap'
@@ -59,10 +59,12 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
     fontSize: 11,
     color: '#a9a9a9',
     '&[data-index="0"]': {
-      left: '14px !important',
+      transform: 'unset',
     },
     '&[data-index="6"]': {
-      left: 'calc(100% - 14px) !important',
+      transform: 'unset',
+      left: 'unset !important',
+      right: '0',
     },
     '&.MuiSlider-markLabelActive': {
       color: '#000',
@@ -82,7 +84,7 @@ const SelectNumberingType = ({ isNew = false }: Props): JSX.Element => {
   const numberingTypeHandleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const value = (event.target as HTMLInputElement).value
-      setSettings((prevState: any) => {
+      setSettings((prevState: SettingsType) => {
         return { ...prevState, numberingType: value }
       })
     },
@@ -93,7 +95,7 @@ const SelectNumberingType = ({ isNew = false }: Props): JSX.Element => {
   const numberingLengthHandleChange = useCallback(
     (event: Event, newValue: number | number[]) => {
       const value = newValue as number
-      setSettings((prevState: any) => {
+      setSettings((prevState: SettingsType) => {
         return { ...prevState, uniqueNumberingStringLength: value }
       })
     },
@@ -195,4 +197,4 @@ const SelectNumberingType = ({ isNew = false }: Props): JSX.Element => {
   )
 }
 
-export default SelectNumberingType
+export default memo(SelectNumberingType)
