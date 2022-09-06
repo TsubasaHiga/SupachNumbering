@@ -1,4 +1,4 @@
-const ChangeChatFontSize = (fontSize: number) => {
+const StyleChangeChatFontSize = (fontSize: number) => {
   const style = `
 yt-live-chat-text-message-renderer,
 yt-live-chat-paid-message-renderer {
@@ -8,4 +8,4 @@ yt-live-chat-paid-message-renderer {
   return style.replace(/\r?\n/g, '')
 }
 
-export default ChangeChatFontSize
+export default StyleChangeChatFontSize

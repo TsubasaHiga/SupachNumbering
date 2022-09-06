@@ -1,0 +1,21 @@
+.title {
+  align-items: center;
+  display: flex;
+  font-size: 20px;
+
+  code {
+    align-items: center;
+    border: 1px solid #333;
+    border-radius: 3px;
+    display: flex;
+    font-family: Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    height: 22px;
+    justify-content: center;
+    letter-spacing: -.2px;
+    line-height: 1;
+    margin-left: 8px;
+    padding: 1px 6px 0;
+  }
+}

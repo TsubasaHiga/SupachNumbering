@@ -1,4 +1,4 @@
-const HideChatAvatar = () => {
+const StyleHideChatAvatar = () => {
   const style = `
 yt-live-chat-item-list-renderer yt-img-shadow {
   display: none !important;
@@ -7,4 +7,4 @@ yt-live-chat-item-list-renderer yt-img-shadow {
   return style.replace(/\r?\n/g, '')
 }
 
-export default HideChatAvatar
+export default StyleHideChatAvatar

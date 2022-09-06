@@ -14,6 +14,39 @@
   "popup_settings_main_title": {
     "message": "メイン設定"
   },
+  "popup_settings_main_select_numbering_type_title": {
+    "message": "ナンバリング方式の選択"
+  },
+  "popup_settings_main_select_numbering_type_label1": {
+    "message": "昇順でナンバリング（数字）"
+  },
+  "popup_settings_main_select_numbering_type_label1_caption": {
+    "message": "スーパーチャットの出現頻度が穏やかな場合におすすめ"
+  },
+  "popup_settings_main_select_numbering_type_label2": {
+    "message": "ユニークIDを使用（文字）"
+  },
+  "popup_settings_main_select_numbering_type_label2_caption": {
+    "message": "スーパーチャットの出現頻度が激しい場合におすすめ"
+  },
+  "popup_settings_main_select_numbering_type_label3": {
+    "message": "ユーザー名を使用（文字）"
+  },
+  "popup_settings_main_select_numbering_type_label3_caption": {
+    "message": "スーパーチャットの出現頻度が激しい場合におすすめ"
+  },
+  "popup_settings_main_select_numbering_length_label": {
+    "message": "文字列の長さ指定"
+  },
+  "popup_settings_main_select_numbering_length_help": {
+    "message": "文字列が長くなるほど重複する確率が低くなります"
+  },
+  "popup_settings_main_select_numbering_length_unit": {
+    "message": "文字"
+  },
+  "popup_settings_main_select_numbering_length_all": {
+    "message": "全て表示"
+  },
   "popup_settings_sub_title": {
     "message": "サブ設定"
   },
@@ -28,6 +61,9 @@
   },
   "popup_settings_WrapSuperChat_label": {
     "message": "スーパーチャットを全て表示"
+  },
+  "popup_settings_WrapSuperChat_help": {
+    "message": "スーパーチャットの数が多く画面表示領域全てが埋まる場合、max-height指定にて最大高の調整をおすすめします"
   },
   "popup_settings_HideSuperChatPrice_label": {
     "message": "金額を非表示"
@@ -49,6 +85,9 @@
   },
   "popup_settings_AddChatAvatarBlur_label": {
     "message": "ユーザーアバター画像にモザイクを追加"
+  },
+  "popup_settings_HideAuthorName_label": {
+    "message": "ユーザー名を非表示"
   },
   "popup_settings_ShrinkChatMessage_label": {
     "message": "チャット欄のメッセージ間隔を狭める"
@@ -76,5 +115,14 @@
   },
   "popup_footer_link": {
     "message": "Chrome拡張機能リストを見る"
+  },
+  "popup_web_store": {
+    "message": "Chromeウェブストアへ"
+  },
+  "popup_review": {
+    "message": "レビューお待ちしております！"
+  },
+  "popup_support": {
+    "message": "バグ報告＆提案お待ちしております！"
   }
 }

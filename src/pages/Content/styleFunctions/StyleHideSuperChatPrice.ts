@@ -1,4 +1,4 @@
-const HideSuperChatPrice = () => {
+const StyleHideSuperChatPrice = () => {
   const style = `
 yt-live-chat-ticker-renderer #text,
 yt-live-chat-paid-message-renderer #purchase-amount-column {
@@ -16,4 +16,4 @@ yt-live-chat-ticker-sponsor-item-renderer #content {
   return style.replace(/\r?\n/g, '')
 }
 
-export default HideSuperChatPrice
+export default StyleHideSuperChatPrice

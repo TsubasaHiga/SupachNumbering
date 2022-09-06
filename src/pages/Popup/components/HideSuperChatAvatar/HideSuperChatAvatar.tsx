@@ -1,31 +1,28 @@
 import InfoIcon from '@mui/icons-material/Info'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Switch from '@mui/material/Switch'
+import { memo, useCallback } from 'react'
 
-import { useSettingsStore } from '../../../../common/useSettingsStore'
-import GetI18n from '../../../../utils/GetI18n'
+import GetI18n from '~/modules/GetI18n'
+import { useSettingsStore } from '~/store/atoms/useSettingsStore'
+import { SettingsType } from '~/types/SettingsType'
 
 const HideSuperChatAvatar = (): JSX.Element => {
   const [settings, setSettings] = useSettingsStore()
-  const { isHideSuperChatAvatar } = settings
+  const { isHideSuperChatAvatar }: SettingsType = settings
+
+  const switchHandleChange = useCallback(() => {
+    setSettings((prevState: SettingsType) => {
+      return {
+        ...prevState,
+        isHideSuperChatAvatar: !isHideSuperChatAvatar,
+        isHideSuperChatPrice: false, // 金額を非表示をfalseに
+      }
+    })
+  }, [isHideSuperChatAvatar, setSettings])
 
   return (
     <FormControlLabel
-      control={
-        <Switch
-          size="small"
-          checked={isHideSuperChatAvatar}
-          onChange={() => {
-            setSettings((prevState: any) => {
-              return {
-                ...prevState,
-                isHideSuperChatAvatar: !isHideSuperChatAvatar,
-                isHideSuperChatPrice: false, // 金額を非表示をfalseに
-              }
-            })
-          }}
-        />
-      }
       label={
         <>
           {GetI18n('popup_settings_HideSuperChatAvatar_label')}
@@ -35,8 +32,15 @@ const HideSuperChatAvatar = (): JSX.Element => {
           </span>
         </>
       }
+      control={
+        <Switch
+          size="small"
+          checked={isHideSuperChatAvatar}
+          onChange={switchHandleChange}
+        />
+      }
     />
   )
 }
 
-export default HideSuperChatAvatar
+export default memo(HideSuperChatAvatar)

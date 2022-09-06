@@ -1,10 +1,11 @@
-const WrapSuperChat = () => {
+const StyleWrapSuperChat = (maxHeight: number) => {
   const style = `
 yt-live-chat-ticker-renderer #items {
   height: unset !important;
   overflow: auto !important;
   padding-bottom: 3px !important;
   white-space: unset !important;
+  max-height: ${maxHeight}px !important;
 }
 yt-live-chat-ticker-paid-message-item-renderer,
 yt-live-chat-ticker-sponsor-item-renderer,
@@ -15,4 +16,4 @@ yt-live-chat-ticker-paid-sticker-item-renderer {
   return style.replace(/\r?\n/g, '')
 }
 
-export default WrapSuperChat
+export default StyleWrapSuperChat

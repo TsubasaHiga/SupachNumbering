@@ -14,6 +14,39 @@
   "popup_settings_main_title": {
     "message": "Main Settings"
   },
+  "popup_settings_main_select_numbering_type_title": {
+    "message": "Select numbering type"
+  },
+  "popup_settings_main_select_numbering_type_label1": {
+    "message": "Use ASC order"
+  },
+  "popup_settings_main_select_numbering_type_label1_caption": {
+    "message": "Recommended if you don't have a lot of super chat."
+  },
+  "popup_settings_main_select_numbering_type_label2": {
+    "message": "Use Unique Id"
+  },
+  "popup_settings_main_select_numbering_type_label2_caption": {
+    "message": "Recommended if you have a lot of super chats."
+  },
+  "popup_settings_main_select_numbering_type_label3": {
+    "message": "Use User name"
+  },
+  "popup_settings_main_select_numbering_type_label3_caption": {
+    "message": "Recommended if you have a lot of super chats."
+  },
+  "popup_settings_main_select_numbering_length_label": {
+    "message": "string length"
+  },
+  "popup_settings_main_select_numbering_length_help": {
+    "message": "Longer strings are less likely to be duplicated."
+  },
+  "popup_settings_main_select_numbering_length_unit": {
+    "message": "length"
+  },
+  "popup_settings_main_select_numbering_length_all": {
+    "message": "all"
+  },
   "popup_settings_sub_title": {
     "message": "Sub Settings"
   },
@@ -28,6 +61,9 @@
   },
   "popup_settings_WrapSuperChat_label": {
     "message": "Show all Super Chat"
+  },
+  "popup_settings_WrapSuperChat_help": {
+    "message": "If the entire screen display area is filled with super chat, it is recommended to adjust the maximum height by specifying max-height."
   },
   "popup_settings_HideSuperChatPrice_label": {
     "message": "Hide price"
@@ -49,6 +85,9 @@
   },
   "popup_settings_AddChatAvatarBlur_label": {
     "message": "Add blur to user avatar image"
+  },
+  "popup_settings_HideAuthorName_label": {
+    "message": "Hide author name"
   },
   "popup_settings_ShrinkChatMessage_label": {
     "message": "Shrink message interval in chat field"
@@ -76,5 +115,14 @@
   },
   "popup_footer_link": {
     "message": "View all Chrome extension list"
+  },
+  "popup_web_store": {
+    "message": "Chrome Web Store"
+  },
+  "popup_review": {
+    "message": "Please review!"
+  },
+  "popup_support": {
+    "message": "Bug reports and suggestions are welcome!"
   }
 }

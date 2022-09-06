@@ -1,37 +1,46 @@
 import { useEffect } from 'react'
 
-import { useSettingsStore } from '../../common/useSettingsStore'
-import AddChatAvatarBlur from './styleFunctions/AddChatAvatarBlur'
-import AddSuperChatAvatarBlur from './styleFunctions/AddSuperChatAvatarBlur'
-import AddSuperChatNumbering from './styleFunctions/AddSuperChatNumbering'
-import ChangeChatFontSize from './styleFunctions/ChangeChatFontSize'
-import ExpandChatHeight from './styleFunctions/ExpandChatHeight'
-import HideChatAvatar from './styleFunctions/HideChatAvatar'
-import HideSuperChatAvatar from './styleFunctions/HideSuperChatAvatar'
-import HideSuperChatPrice from './styleFunctions/HideSuperChatPrice'
-import ShrinkChatMessage from './styleFunctions/ShrinkChatMessage'
-import WrapSuperChat from './styleFunctions/WrapSuperChat'
+import { useSettingsStore } from '~/store/atoms/useSettingsStore'
+import { SettingsType } from '~/types/SettingsType'
 
-const Content = (): JSX.Element | null => {
+import StyleAddChatAvatarBlur from './styleFunctions/StyleAddChatAvatarBlur'
+import StyleAddSuperChatAvatarBlur from './styleFunctions/StyleAddSuperChatAvatarBlur'
+import StyleAddSuperChatNumbering from './styleFunctions/StyleAddSuperChatNumbering'
+import StyleChangeChatFontSize from './styleFunctions/StyleChangeChatFontSize'
+import StyleExpandChatHeight from './styleFunctions/StyleExpandChatHeight'
+import StyleHideAuthorName from './styleFunctions/StyleHideAuthorName'
+import StyleHideChatAvatar from './styleFunctions/StyleHideChatAvatar'
+import StyleHideSuperChatAvatar from './styleFunctions/StyleHideSuperChatAvatar'
+import StyleHideSuperChatPrice from './styleFunctions/StyleHideSuperChatPrice'
+import StyleShrinkChatMessage from './styleFunctions/StyleShrinkChatMessage'
+import StyleWrapSuperChat from './styleFunctions/StyleWrapSuperChat'
+import AddSuperChatNumbering from './voidFunctions/AddSuperChatNumbering/AddSuperChatNumbering'
+
+const Content = (): JSX.Element => {
   const [settings] = useSettingsStore()
   const {
     isAddSuperChatNumbering,
+    numberingType,
+    uniqueNumberingStringLength,
     isWrapSuperChat,
+    valueWrapSuperChatMaxHeight,
     isHideSuperChatPrice,
     isHideSuperChatAvatar,
     isAddSuperChatAvatarBlur,
     isHideChatAvatar,
     isAddChatAvatarBlur,
+    isHideAuthorName,
     isShrinkChatMessage,
     isExpandChatHeight,
     isChangeChatFontSize,
     valueChatFontSize,
-  } = settings
+  }: SettingsType = settings
 
   const inlineStyleElement = document.createElement('style')
   inlineStyleElement.type = 'text/css'
   inlineStyleElement.className = 'supach-numbering'
 
+  // スタイル追加
   useEffect(() => {
     const head = document.querySelector('head')
     const isExistenceElement = head?.querySelector('.supach-numbering')
@@ -44,79 +53,105 @@ const Content = (): JSX.Element | null => {
 
     // スーパーチャットにナンバリングを追加
     if (isAddSuperChatNumbering) {
-      inlineStyleElement.innerText += AddSuperChatNumbering()
+      inlineStyleElement.innerText += StyleAddSuperChatNumbering(numberingType)
     }
 
     // スーパーチャットを全て表示
     if (isWrapSuperChat) {
-      inlineStyleElement.innerText += WrapSuperChat()
+      const containerElement = document.querySelector('#content-pages')
+      const containerH = containerElement ? containerElement.clientHeight : 0
+      // containerHをvalueWrapSuperChatMaxHeightの割合で計算
+      const maxHeight = (containerH * valueWrapSuperChatMaxHeight) / 100
+      console.log({ containerH, maxHeight })
+      inlineStyleElement.innerText += StyleWrapSuperChat(maxHeight)
     }
 
     // スーパーチャットの金額を非表示
     if (isHideSuperChatPrice) {
-      inlineStyleElement.innerText += HideSuperChatPrice()
+      inlineStyleElement.innerText += StyleHideSuperChatPrice()
     }
 
     // ユーザーアバター画像（スーパーチャット内のみ）の非表示
     if (isHideSuperChatAvatar) {
-      inlineStyleElement.innerText += HideSuperChatAvatar()
+      inlineStyleElement.innerText += StyleHideSuperChatAvatar()
     }
 
     // ユーザーアバター画像（スーパーチャット内のみ）にモザイクを追加
     if (isAddSuperChatAvatarBlur) {
-      inlineStyleElement.innerText += AddSuperChatAvatarBlur()
+      inlineStyleElement.innerText += StyleAddSuperChatAvatarBlur()
     }
 
     // ユーザーアバター画像（チャット内のみ）の非表示
     if (isHideChatAvatar) {
-      inlineStyleElement.innerText += HideChatAvatar()
+      inlineStyleElement.innerText += StyleHideChatAvatar()
     }
 
     // ユーザーアバター画像（チャット内のみ）にモザイクを追加
     if (isAddChatAvatarBlur) {
-      inlineStyleElement.innerText += AddChatAvatarBlur()
+      inlineStyleElement.innerText += StyleAddChatAvatarBlur()
+    }
+
+    // ユーザー名を非表示
+    if (isHideAuthorName) {
+      inlineStyleElement.innerText += StyleHideAuthorName()
     }
 
     // チャット欄のメッセージ間隔を狭める
     if (isShrinkChatMessage) {
-      inlineStyleElement.innerText += ShrinkChatMessage()
+      inlineStyleElement.innerText += StyleShrinkChatMessage()
     }
 
     // チャット欄の高さを拡張
     if (isExpandChatHeight) {
       const headerElement = document.querySelector('#masthead-container')
       const headerH = headerElement ? headerElement.clientHeight : 0
-      console.log(headerH)
-      inlineStyleElement.innerText += ExpandChatHeight(headerH)
+      console.log({ headerH })
+      inlineStyleElement.innerText += StyleExpandChatHeight(headerH)
     }
 
     // チャット欄のフォントサイズを変更
     if (isChangeChatFontSize) {
-      inlineStyleElement.innerText += ChangeChatFontSize(valueChatFontSize)
+      inlineStyleElement.innerText += StyleChangeChatFontSize(valueChatFontSize)
     }
 
     console.log('スタイル追加')
-    console.log(inlineStyleElement.innerText)
+    console.log({ inlineStyleElement })
 
     // headに追加
     head?.appendChild(inlineStyleElement)
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     isAddSuperChatNumbering,
+    numberingType,
     isWrapSuperChat,
+    valueWrapSuperChatMaxHeight,
     isHideSuperChatPrice,
     isHideSuperChatAvatar,
     isAddSuperChatAvatarBlur,
     isHideChatAvatar,
     isAddChatAvatarBlur,
+    isHideAuthorName,
     isShrinkChatMessage,
     isExpandChatHeight,
     isChangeChatFontSize,
     valueChatFontSize,
+    inlineStyleElement,
   ])
 
-  return null
+  return (
+    <>
+      {
+        // isAddSuperChatNumberingがtrue且つ
+        // ナンバリング方式に'uniqueId', 'uniqueUserName'を選択している時のみレンダリング
+        isAddSuperChatNumbering &&
+          ['uniqueId', 'uniqueUserName'].includes(numberingType) && (
+            <AddSuperChatNumbering
+              stringLength={uniqueNumberingStringLength}
+              numberingType={numberingType}
+            />
+          )
+      }
+    </>
+  )
 }
 
 export default Content

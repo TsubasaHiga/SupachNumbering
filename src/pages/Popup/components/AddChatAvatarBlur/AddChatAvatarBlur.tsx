@@ -1,33 +1,37 @@
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Switch from '@mui/material/Switch'
+import { memo, useCallback } from 'react'
 
-import { useSettingsStore } from '../../../../common/useSettingsStore'
-import GetI18n from '../../../../utils/GetI18n'
+import GetI18n from '~/modules/GetI18n'
+import { useSettingsStore } from '~/store/atoms/useSettingsStore'
+import { SettingsType } from '~/types/SettingsType'
 
 const AddChatAvatarBlur = (): JSX.Element => {
   const [settings, setSettings] = useSettingsStore()
-  const { isAddChatAvatarBlur, isHideChatAvatar } = settings
+  const { isAddChatAvatarBlur, isHideChatAvatar }: SettingsType = settings
+
+  const switchHandleChange = useCallback(() => {
+    setSettings((prevState: SettingsType) => {
+      return {
+        ...prevState,
+        isAddChatAvatarBlur: !isAddChatAvatarBlur,
+      }
+    })
+  }, [isAddChatAvatarBlur, setSettings])
 
   return (
     <FormControlLabel
+      label={GetI18n('popup_settings_AddChatAvatarBlur_label')}
       control={
         <Switch
           size="small"
           disabled={isHideChatAvatar}
           checked={isAddChatAvatarBlur}
-          onChange={() => {
-            setSettings((prevState: any) => {
-              return {
-                ...prevState,
-                isAddChatAvatarBlur: !isAddChatAvatarBlur,
-              }
-            })
-          }}
+          onChange={switchHandleChange}
         />
       }
-      label={GetI18n('popup_settings_AddChatAvatarBlur_label')}
     />
   )
 }
 
-export default AddChatAvatarBlur
+export default memo(AddChatAvatarBlur)

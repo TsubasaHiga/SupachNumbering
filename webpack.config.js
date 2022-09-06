@@ -6,12 +6,10 @@ var webpack = require('webpack'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   TerserPlugin = require('terser-webpack-plugin')
 
-const Fibers = require('fibers')
-
 const ASSET_PATH = process.env.ASSET_PATH || '/'
 
 var alias = {
-  'react-dom': '@hot-loader/react-dom',
+  '~': path.resolve('./', '/src'),
 }
 
 // load the secrets
@@ -39,9 +37,10 @@ var options = {
   entry: {
     popup: path.join(__dirname, 'src', 'pages', 'Popup', 'index.jsx'),
     contentScript: path.join(__dirname, 'src', 'pages', 'Content', 'index.jsx'),
+    background: path.join(__dirname, 'src', 'pages', 'Background', 'index.ts'),
   },
   chromeExtensionBoilerplate: {
-    notHotReload: ['contentScript'],
+    notHotReload: ['contentScript', 'background'],
   },
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -69,7 +68,7 @@ var options = {
             options: {
               implementation: require('sass'),
               sassOptions: {
-                fiber: Fibers,
+                fiber: false,
               },
             },
           },
@@ -93,7 +92,7 @@ var options = {
               sourceMap: true,
               implementation: require('sass'),
               sassOptions: {
-                fiber: Fibers,
+                fiber: false,
               },
             },
           },

@@ -4,7 +4,7 @@
   "description": "__MSG_ext_desc__",
   "homepage_url": "https://chrome-extensions.cofus.work/",
   "author": "HigaTsubasa",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "default_locale": "en",
   "action": {
     "default_popup": "popup.html",
@@ -31,6 +31,9 @@
       "run_at": "document_idle"
     }
   ],
+  "background": {
+    "service_worker": "background.bundle.js"
+  },
   "web_accessible_resources": [
     {
       "resources": [
@@ -41,6 +44,7 @@
     }
   ],
   "permissions": [
-    "storage"
+    "storage",
+    "background"
   ]
 }
