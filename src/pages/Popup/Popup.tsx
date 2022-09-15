@@ -223,7 +223,7 @@ const Popup = (): JSX.Element => {
                   </Typography>
                   <HideChatAvatar />
                   <AddChatAvatarBlur />
-                  <HideAuthorName isNew={true} />
+                  <HideAuthorName />
                   <ShrinkChatMessage />
                   <ExpandChatHeight />
                   <ChangeChatFontSize />
