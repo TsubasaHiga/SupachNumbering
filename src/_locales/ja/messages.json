@@ -124,5 +124,8 @@
   },
   "popup_support": {
     "message": "バグ報告＆提案お待ちしております！"
+  },
+  "popup_re_applying": {
+    "message": "再適用"
   }
 }

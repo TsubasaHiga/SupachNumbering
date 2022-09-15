@@ -124,5 +124,8 @@
   },
   "popup_support": {
     "message": "Bug reports and suggestions are welcome!"
+  },
+  "popup_re_applying": {
+    "message": "Re applying"
   }
 }
