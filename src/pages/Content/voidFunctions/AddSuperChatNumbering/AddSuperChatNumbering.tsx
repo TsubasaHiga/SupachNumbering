@@ -51,16 +51,16 @@ const AddSuperChatNumbering = ({
 }: Props): null => {
   console.log('AddSuperChatNumbering')
 
+  // チャット欄の変更を監視する要素を取得
+  const [rootElements] = useState<null | NodeListOf<HTMLElement>>(
+    document.querySelectorAll('yt-live-chat-app')
+  )
+
   // スーパーチャットの要素の親要素を取得
   const [elementItems, setElementItems] =
     useState<null | NodeListOf<HTMLElement>>(
       document.querySelectorAll('#ticker #items')
     )
-
-  // チャット欄の変更を監視する要素を取得
-  const rootElements = document.querySelectorAll(
-    '#chat-messages #ticker'
-  ) as NodeListOf<HTMLElement>
 
   // rootMutationCallback
   const rootMutationCallback = useCallback((mutations: MutationRecord[]) => {
@@ -68,28 +68,46 @@ const AddSuperChatNumbering = ({
       // childList以外の変更の時は処理しない
       if (mutation.type !== 'childList') return
 
-      // 要素が存在しない時は処理しない
-      if (!mutation.addedNodes[0]) return
+      // addedNodesがない時は処理しない
+      if (!mutation.addedNodes || mutation.addedNodes.length <= 0) return
+
+      // addedNodesの0番目を取得
+      const addedNode = mutation.addedNodes[0] as HTMLElement | null | undefined
+
+      // 存在しない時は処理しない
+      if (!addedNode) return
+
+      // nodeTypeが1以外の時は処理しない
+      if (addedNode.nodeType !== 1) return
 
       // 追加された要素を取得
-      const element = mutation.addedNodes[0] as HTMLElement
-      console.log(element.className)
+      const element = addedNode as HTMLElement | undefined
 
-      // classNameが.yt-live-chat-rendererの時以外は処理しない
-      if (!element.className.includes('yt-live-chat-renderer')) return
+      // elementが空の時は処理しない
+      if (!element) return
+
+      // elementのtagNameが'YT-LIVE-CHAT-TICKER-RENDERER'以外の時は処理しない
+      if (element.tagName !== 'YT-LIVE-CHAT-TICKER-RENDERER') return
 
       // #itemsを取得
       const elementItems = element.querySelectorAll(
         '#items'
       ) as NodeListOf<HTMLElement>
 
+      // elementItemsが存在しない時は処理しない
+      if (!elementItems || elementItems.length <= 0) return
+
       // setElementItems
+      console.log('setElementItems')
       setElementItems(elementItems)
     })
   }, [])
 
   // useMutationObserver
-  useMutationObserver(rootElements, rootMutationCallback, { childList: true })
+  useMutationObserver(rootElements, rootMutationCallback, {
+    childList: true,
+    subtree: true,
+  })
 
   // mutationCallback
   const mutationCallback = useCallback(
