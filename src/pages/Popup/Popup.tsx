@@ -32,6 +32,7 @@ import HideAuthorName from './components/HideAuthorName/HideAuthorName'
 import HideChatAvatar from './components/HideChatAvatar/HideChatAvatar'
 import HideSuperChatAvatar from './components/HideSuperChatAvatar/HideSuperChatAvatar'
 import HideSuperChatPrice from './components/HideSuperChatPrice/HideSuperChatPrice'
+import MainSettingsReApplying from './components/MainSettingsReApplying/MainSettingsReApplying'
 import ShrinkChatMessage from './components/ShrinkChatMessage/ShrinkChatMessage'
 import WrapSuperChat from './components/WrapSuperChat/WrapSuperChat'
 import styles from './Popup.module.scss'
@@ -197,7 +198,10 @@ const Popup = (): JSX.Element => {
           <div className={styles.content}>
             <div className={styles.settings}>
               <FormGroup>
-                <FormLabel>{GetI18n('popup_settings_main_title')}</FormLabel>
+                <FormLabel>
+                  {GetI18n('popup_settings_main_title')}
+                  <MainSettingsReApplying />
+                </FormLabel>
                 <AddSuperChatNumbering />
               </FormGroup>
 
