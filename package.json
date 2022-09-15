@@ -14,7 +14,7 @@
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.5",
-    "@tabler/icons": "^1.92.0",
+    "@tabler/icons": "^1.96.0",
     "@types/throttle-debounce": "^5.0.0",
     "classnames": "^2.3.2",
     "react": "^18.2.0",
@@ -24,9 +24,9 @@
     "use-chrome-storage": "^1.0.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.13",
+    "@babel/core": "^7.19.1",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/preset-env": "^7.18.10",
+    "@babel/preset-env": "^7.19.1",
     "@babel/preset-react": "^7.18.6",
     "@types/chrome": "^0.0.196",
     "@types/react": "^18.0.20",
@@ -62,6 +62,6 @@
     "typescript": "^4.8.3",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.10.1"
+    "webpack-dev-server": "^4.11.0"
   }
 }
