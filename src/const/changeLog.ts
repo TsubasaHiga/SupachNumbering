@@ -1,7 +1,31 @@
+/**
+ * @description: 最新の項目の`date`はbackgroundでupdate時に更新される`lastUpdateDate`が利用される想定だが、年の為おおよその日付を入れること。また次期バージョンアップ時にはおおよその日付をlastUpdateDateとイコールにするのを忘れないこと。
+ */
+
 const changeLog = [
   {
+    version: '1.0.3',
+    date: new Date('2022-09-17'),
+    changes: [
+      {
+        type: 'fix',
+        message:
+          '「スーパーチャットにナンバリングを追加」機能の「ユニークIDを使用」または「ユーザー名を使用」を利用中にチャットが落ちた際、チャット復帰時に同機能が利用できなくなる問題の暫定対応を行いました。<br>なお本事象は様々な要因により発生する可能性があり、本対応により完全に解消されるわけではなく随時改善を行っていく予定です。',
+      },
+      {
+        type: 'new',
+        message:
+          '設定画面より「スーパーチャットにナンバリングを追加」機能を任意のタイミングで再度適用を行える「再適用ボタン」を追加しました。何らかの理由で同機能が利用できない際にご利用頂けます。',
+      },
+      {
+        type: 'update',
+        message: '内部メンテナンスを実施しました。',
+      },
+    ],
+  },
+  {
     version: '1.0.2',
-    date: '2022.09.09',
+    date: new Date('2022-09-09'),
     changes: [
       {
         type: 'new',
@@ -34,7 +58,7 @@ const changeLog = [
   },
   {
     version: '1.0.1',
-    date: '2022.08.18',
+    date: new Date('2022-08-18'),
     changes: [
       {
         type: 'update',
@@ -53,7 +77,7 @@ const changeLog = [
   },
   {
     version: '1.0.0',
-    date: '2022.02.22',
+    date: new Date('2022-02-22'),
     changes: [
       {
         type: 'info',
