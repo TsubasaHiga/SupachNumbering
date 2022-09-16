@@ -17,7 +17,12 @@ const ReApplyingButton = ({ isDisabled, onClick }: Props): JSX.Element => {
         disabled={isDisabled}
         onClick={onClick}
         color="inherit"
-        style={{ marginLeft: '5px', fontSize: '20px', color: '#3c3c3c' }}
+        style={{
+          marginLeft: '4px',
+          marginTop: '-2px',
+          fontSize: '20px',
+          color: '#3c3c3c',
+        }}
       >
         <ReplayIcon fontSize="inherit" color="inherit" />
       </IconButton>
