@@ -1,3 +1,4 @@
+import GetDateFormatted from '~/modules/GetDateString'
 import GetLocalStorage from '~/modules/GetLocalStorage'
 import SetLocalStorage from '~/modules/SetLocalStorage'
 import { CommonType } from '~/types/CommonType'
@@ -9,10 +10,14 @@ const onUpdate = async () => {
   // local storageからcommonのデータを取得
   const commonValues = (await GetLocalStorage('common')) as CommonType
 
-  // isUpdatedをtrueにする
   const value: CommonType = {
     ...commonValues,
+
+    // isUpdatedをtrueにする
     isUpdated: true,
+
+    // 最終アップデート日付を更新（ChangeLogの最初の項目で使用などを想定）
+    lastUpdateDate: GetDateFormatted(new Date()),
   }
 
   // local storageにcommonのデータを保存

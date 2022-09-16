@@ -20,6 +20,7 @@ import SettingsWrap from '~/pages/Popup/components/SettingsWrap/SettingsWrap'
 import UpdateDialog from '~/pages/Popup/components/UpdateDialog/UpdateDialog'
 import { useCommonStore } from '~/store/atoms/useCommonStore'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
+import { CommonType } from '~/types/CommonType'
 
 import AddChatAvatarBlur from './components/AddChatAvatarBlur/AddChatAvatarBlur'
 import AddSuperChatAvatarBlur from './components/AddSuperChatAvatarBlur/AddSuperChatAvatarBlur'
@@ -32,6 +33,7 @@ import HideAuthorName from './components/HideAuthorName/HideAuthorName'
 import HideChatAvatar from './components/HideChatAvatar/HideChatAvatar'
 import HideSuperChatAvatar from './components/HideSuperChatAvatar/HideSuperChatAvatar'
 import HideSuperChatPrice from './components/HideSuperChatPrice/HideSuperChatPrice'
+import MainSettingsReApplying from './components/MainSettingsReApplying/MainSettingsReApplying'
 import ShrinkChatMessage from './components/ShrinkChatMessage/ShrinkChatMessage'
 import WrapSuperChat from './components/WrapSuperChat/WrapSuperChat'
 import styles from './Popup.module.scss'
@@ -171,10 +173,11 @@ const theme = createTheme({
 const Popup = (): JSX.Element => {
   const [isPersistent, error] = useSettingsStore()
   const [common] = useCommonStore()
+  const { isUpdated } = common as CommonType
 
   return (
     <ThemeProvider theme={theme}>
-      {common.isUpdated && <UpdateDialog />}
+      {isUpdated && <UpdateDialog />}
       <Header />
       <div className={styles.root}>
         <section>
@@ -197,7 +200,10 @@ const Popup = (): JSX.Element => {
           <div className={styles.content}>
             <div className={styles.settings}>
               <FormGroup>
-                <FormLabel>{GetI18n('popup_settings_main_title')}</FormLabel>
+                <FormLabel>
+                  {GetI18n('popup_settings_main_title')}
+                  <MainSettingsReApplying />
+                </FormLabel>
                 <AddSuperChatNumbering />
               </FormGroup>
 
@@ -219,7 +225,7 @@ const Popup = (): JSX.Element => {
                   </Typography>
                   <HideChatAvatar />
                   <AddChatAvatarBlur />
-                  <HideAuthorName isNew={true} />
+                  <HideAuthorName />
                   <ShrinkChatMessage />
                   <ExpandChatHeight />
                   <ChangeChatFontSize />

@@ -40,7 +40,7 @@ const AddSuperChatNumbering = (): JSX.Element => {
           <Typography variant="caption" component="div">
             {GetI18n('popup_settings_main_select_numbering_type_title')}
           </Typography>
-          <SelectNumberingType isNew={true} />
+          <SelectNumberingType />
         </SettingsWrap>
       )}
     </>
