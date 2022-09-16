@@ -20,6 +20,7 @@ import SettingsWrap from '~/pages/Popup/components/SettingsWrap/SettingsWrap'
 import UpdateDialog from '~/pages/Popup/components/UpdateDialog/UpdateDialog'
 import { useCommonStore } from '~/store/atoms/useCommonStore'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
+import { CommonType } from '~/types/CommonType'
 
 import AddChatAvatarBlur from './components/AddChatAvatarBlur/AddChatAvatarBlur'
 import AddSuperChatAvatarBlur from './components/AddSuperChatAvatarBlur/AddSuperChatAvatarBlur'
@@ -172,10 +173,11 @@ const theme = createTheme({
 const Popup = (): JSX.Element => {
   const [isPersistent, error] = useSettingsStore()
   const [common] = useCommonStore()
+  const { isUpdated } = common as CommonType
 
   return (
     <ThemeProvider theme={theme}>
-      {common.isUpdated && <UpdateDialog />}
+      {isUpdated && <UpdateDialog />}
       <Header />
       <div className={styles.root}>
         <section>
@@ -223,7 +225,7 @@ const Popup = (): JSX.Element => {
                   </Typography>
                   <HideChatAvatar />
                   <AddChatAvatarBlur />
-                  <HideAuthorName isNew={true} />
+                  <HideAuthorName />
                   <ShrinkChatMessage />
                   <ExpandChatHeight />
                   <ChangeChatFontSize />

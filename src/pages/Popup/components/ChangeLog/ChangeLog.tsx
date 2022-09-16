@@ -9,6 +9,9 @@ import Typography from '@mui/material/Typography'
 import { memo, useCallback, useState } from 'react'
 
 import changeLog from '~/const/changeLog'
+import GetDateFormatted from '~/modules/GetDateString'
+import { useCommonStore } from '~/store/atoms/useCommonStore'
+import { CommonType } from '~/types/CommonType'
 
 import styles from './ChangeLog.module.scss'
 
@@ -55,6 +58,8 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }))
 
 const ChangeLog = (): JSX.Element => {
+  const [common] = useCommonStore()
+  const { lastUpdateDate } = common as CommonType
   const [expanded, setExpanded] = useState<string | false>('panel0')
 
   const handleChange = useCallback(
@@ -66,36 +71,46 @@ const ChangeLog = (): JSX.Element => {
 
   return (
     <div className={styles.root}>
-      {changeLog.map((item, index) => (
-        <Accordion
-          key={index}
-          expanded={expanded === `panel${index}`}
-          onChange={handleChange(`panel${index}`)}
-        >
-          <AccordionSummary
-            aria-controls={`panel${index}d-content`}
-            id={`panel${index}d-header`}
+      {changeLog.map((item, index) => {
+        console.log(lastUpdateDate)
+
+        // アップデート日付取得
+        const date =
+          index === 0 && lastUpdateDate
+            ? lastUpdateDate
+            : GetDateFormatted(item.date)
+
+        return (
+          <Accordion
+            key={index}
+            expanded={expanded === `panel${index}`}
+            onChange={handleChange(`panel${index}`)}
           >
-            <Typography>
-              Version {item.version}（{item.date}）
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <ul>
-              {item.changes.map((change, changeIndex) => (
-                <li key={changeIndex}>
-                  <span data-type={change.type}>{change.type}</span>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: change.message,
-                    }}
-                  />
-                </li>
-              ))}
-            </ul>
-          </AccordionDetails>
-        </Accordion>
-      ))}
+            <AccordionSummary
+              aria-controls={`panel${index}d-content`}
+              id={`panel${index}d-header`}
+            >
+              <Typography>
+                Version {item.version}（{date}）
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <ul>
+                {item.changes.map((change, changeIndex) => (
+                  <li key={changeIndex}>
+                    <span data-type={change.type}>{change.type}</span>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: change.message,
+                      }}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </AccordionDetails>
+          </Accordion>
+        )
+      })}
     </div>
   )
 }
