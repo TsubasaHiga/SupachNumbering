@@ -125,7 +125,10 @@
   "popup_support": {
     "message": "Bug reports and suggestions are welcome!"
   },
-  "popup_re_applying": {
-    "message": "Re applying"
+  "content_AddSuperChatNumbering_re_applying_hint": {
+    "message": "Re applying 'Add numbering to Super Chat' function"
+  },
+  "content_menu_open_popup_page_hint": {
+    "message": "Open Settings Page"
   }
 }

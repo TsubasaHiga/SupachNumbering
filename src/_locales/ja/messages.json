@@ -125,7 +125,10 @@
   "popup_support": {
     "message": "バグ報告＆提案お待ちしております！"
   },
-  "popup_re_applying": {
-    "message": "再適用"
+  "content_menu_AddSuperChatNumbering_re_applying_label": {
+    "message": "「スーパーチャットにナンバリングを追加」<br>機能を再適用"
+  },
+  "content_menu_open_popup_page_label": {
+    "message": "設定画面を開く"
   }
 }

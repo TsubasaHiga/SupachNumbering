@@ -39,9 +39,9 @@ const Header = (): JSX.Element => {
     <header className={styles.header}>
       <div className={styles.inner}>
         <p className={styles.title}>
-          <img className={styles.logo} src={Logo} alt="Supach Numbering" />
+          <img className={styles.logo} src={Logo} alt={manifest.name} />
           <span className={styles.name}>
-            <span className={styles.text}>Supach Numbering</span>
+            <span className={styles.text}>{manifest.name}</span>
             <span className={styles.version}>{manifest.version}</span>
           </span>
         </p>
