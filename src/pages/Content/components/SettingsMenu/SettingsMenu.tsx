@@ -7,6 +7,7 @@ import { memo, useCallback, useState } from 'react'
 import Logo from '~/assets/img/icon-34.png'
 
 import MainSettingsReApplying from '../MainSettingsReApplying/MainSettingsReApplying'
+import OpenPopupPage from '../OpenPopupPage/OpenPopupPage'
 import styles from './SettingsMenu.module.scss'
 
 const ITEM_HEIGHT = 48
@@ -64,6 +65,7 @@ const SettingsMenu = (): JSX.Element => {
           </div>
           <Divider />
           <MainSettingsReApplying handleClose={handleClose} />
+          <OpenPopupPage handleClose={handleClose} />
         </MenuList>
       </Menu>
     </div>

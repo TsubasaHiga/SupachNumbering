@@ -1,3 +1,4 @@
+import define from '~/const/define'
 import GetDateFormatted from '~/modules/GetDateString'
 import GetLocalStorage from '~/modules/GetLocalStorage'
 import SetLocalStorage from '~/modules/SetLocalStorage'
@@ -32,6 +33,19 @@ const clearBadgeText = async () => {
   await chrome.action.setBadgeText({ text: '' })
 }
 
+// openPopupPage
+const openPopupPage = async (top: number, left: number) => {
+  chrome.windows.create({
+    focused: true,
+    width: define.POPUP_WIDTH,
+    height: define.POPUP_HEIGHT,
+    type: 'popup',
+    url: 'popup.html',
+    top: top,
+    left: left,
+  })
+}
+
 // onInstalled listener
 chrome.runtime.onInstalled.addListener((details) => {
   // update
@@ -44,6 +58,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === 'closed-update-dialog') {
     console.log('closed-update-dialog')
     clearBadgeText()
+  }
+
+  // contentScriptのメニュー内から設定画面を開く時
+  if (request.type === 'open-setting-page') {
+    console.log('open-setting-page')
+    openPopupPage(request.top, request.left)
   }
 })
 
