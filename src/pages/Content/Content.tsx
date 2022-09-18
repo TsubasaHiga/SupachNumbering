@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
 import { SettingsType } from '~/types/SettingsType'
 
+import SettingsMenu from './components/SettingsMenu/SettingsMenu'
 import StyleAddChatAvatarBlur from './styleFunctions/StyleAddChatAvatarBlur'
 import StyleAddSuperChatAvatarBlur from './styleFunctions/StyleAddSuperChatAvatarBlur'
 import StyleAddSuperChatNumbering from './styleFunctions/StyleAddSuperChatNumbering'
@@ -144,10 +145,13 @@ const Content = (): JSX.Element => {
         // ナンバリング方式に'uniqueId', 'uniqueUserName'を選択している時のみレンダリング
         isAddSuperChatNumbering &&
           ['uniqueId', 'uniqueUserName'].includes(numberingType) && (
-            <AddSuperChatNumbering
-              stringLength={uniqueNumberingStringLength}
-              numberingType={numberingType}
-            />
+            <>
+              <SettingsMenu />
+              <AddSuperChatNumbering
+                stringLength={uniqueNumberingStringLength}
+                numberingType={numberingType}
+              />
+            </>
           )
       }
     </>

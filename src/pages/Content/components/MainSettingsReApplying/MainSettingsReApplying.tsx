@@ -1,15 +1,19 @@
-import { memo, useCallback, useState } from 'react'
+import ReplayIcon from '@mui/icons-material/Replay'
+import { memo, useCallback } from 'react'
 
-import ReApplyingButton from '~/pages/Popup/components/ReApplyingButton/ReApplyingButton'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
 import { SettingsType } from '~/types/SettingsType'
 
-const MainSettingsReApplying = (): JSX.Element => {
+import ListItemContent from '../ListText/ListText'
+
+type Props = {
+  handleClose: () => void
+}
+
+const MainSettingsReApplying = ({ handleClose }: Props): JSX.Element => {
   const [, setSettings] = useSettingsStore()
-  const [isDisabled, setIsDisabled] = useState(false)
 
   const clickHandler = useCallback(() => {
-    setIsDisabled(true)
     setSettings((prevState: SettingsType) => {
       return {
         ...prevState,
@@ -19,7 +23,6 @@ const MainSettingsReApplying = (): JSX.Element => {
 
     // 一定時間後にボタンを有効化
     setTimeout(() => {
-      setIsDisabled(false)
       setSettings((prevState: SettingsType) => {
         return {
           ...prevState,
@@ -29,7 +32,16 @@ const MainSettingsReApplying = (): JSX.Element => {
     }, 250)
   }, [setSettings])
 
-  return <ReApplyingButton isDisabled={isDisabled} onClick={clickHandler} />
+  return (
+    <ListItemContent
+      icon={<ReplayIcon fontSize="large" />}
+      label="content_menu_AddSuperChatNumbering_re_applying_label"
+      onClick={() => {
+        clickHandler()
+        handleClose()
+      }}
+    />
+  )
 }
 
 export default memo(MainSettingsReApplying)
