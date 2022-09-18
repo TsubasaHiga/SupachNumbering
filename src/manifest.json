@@ -17,13 +17,20 @@
     {
       "all_frames": true,
       "matches": [
+        "*://www.youtube.com/live_chat*",
+        "*://www.youtube.com/live_chat_replay*"
+      ],
+      "js": [
+        "chatScript.bundle.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
         "*://youtube.com/*",
         "*://www.youtube.com/*",
         "*://m.youtube.com/*",
         "*://studio.youtube.com/*"
-      ],
-      "exclude_matches": [
-        "*://*/*embed*"
       ],
       "js": [
         "contentScript.bundle.js"
