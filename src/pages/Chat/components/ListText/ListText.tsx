@@ -6,14 +6,20 @@ import { memo } from 'react'
 import GetI18n from '~/modules/GetI18n'
 
 type Props = {
+  enabled?: boolean
   icon: JSX.Element
   label: string
   onClick: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void
 }
 
-const ListItemContent = ({ icon, label, onClick }: Props): JSX.Element => {
+const ListItemContent = ({
+  enabled = true,
+  icon,
+  label,
+  onClick,
+}: Props): JSX.Element => {
   return (
-    <MenuItem onClick={(e) => onClick(e)}>
+    <MenuItem disabled={!enabled} onClick={(e) => onClick(e)}>
       <ListItemIcon>{icon}</ListItemIcon>
       <ListItemText
         primaryTypographyProps={{
