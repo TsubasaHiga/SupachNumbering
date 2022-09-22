@@ -77,6 +77,9 @@
   "popup_settings_HideSuperChatAvatar_label_caption": {
     "message": "「金額を非表示」設定はOFFになります"
   },
+  "popup_settings_HideSuperChatSponsorTicker_label": {
+    "message": "スポンサーティッカーを非表示"
+  },
   "popup_settings_AddSuperChatAvatarBlur_label": {
     "message": "ユーザーアバター画像にモザイクを追加"
   },

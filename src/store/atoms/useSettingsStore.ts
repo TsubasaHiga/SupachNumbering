@@ -18,6 +18,9 @@ const INITIAL_VALUE: SettingsType = {
   // スーパーチャットの金額を非表示
   isHideSuperChatPrice: false,
 
+  // スーパーチャットのスポンサーティッカーを非表示
+  isHideSuperChatSponsorTicker: false,
+
   // ユーザーアバター画像（スーパーチャット内のみ）の非表示
   isHideSuperChatAvatar: false,
 

@@ -77,6 +77,9 @@
   "popup_settings_HideSuperChatAvatar_label_caption": {
     "message": "\"Hide price\" setting is OFF"
   },
+  "popup_settings_HideSuperChatSponsorTicker_label": {
+    "message": "Hide sponsor ticker"
+  },
   "popup_settings_AddSuperChatAvatarBlur_label": {
     "message": "Add blur to user avatar image"
   },
