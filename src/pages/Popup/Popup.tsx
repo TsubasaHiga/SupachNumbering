@@ -33,6 +33,7 @@ import HideAuthorName from './components/HideAuthorName/HideAuthorName'
 import HideChatAvatar from './components/HideChatAvatar/HideChatAvatar'
 import HideSuperChatAvatar from './components/HideSuperChatAvatar/HideSuperChatAvatar'
 import HideSuperChatPrice from './components/HideSuperChatPrice/HideSuperChatPrice'
+import HideSuperChatSponsorTicker from './components/HideSuperChatSponsorTicker/HideSuperChatSponsorTicker'
 import ShrinkChatMessage from './components/ShrinkChatMessage/ShrinkChatMessage'
 import WrapSuperChat from './components/WrapSuperChat/WrapSuperChat'
 import styles from './Popup.module.scss'
@@ -213,6 +214,7 @@ const Popup = (): JSX.Element => {
                   <HideSuperChatAvatar />
                   <AddSuperChatAvatarBlur />
                   <WrapSuperChat />
+                  <HideSuperChatSponsorTicker />
                 </SettingsWrap>
 
                 <SettingsWrap>

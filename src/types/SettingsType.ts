@@ -15,6 +15,9 @@ export type SettingsType = {
   // スーパーチャットの金額を非表示
   isHideSuperChatPrice: boolean
 
+  // スーパーチャットのスポンサーティッカーを非表示
+  isHideSuperChatSponsorTicker: boolean
+
   // ユーザーアバター画像（スーパーチャット内のみ）の非表示
   isHideSuperChatAvatar: boolean
 

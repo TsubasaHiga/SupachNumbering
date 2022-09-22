@@ -11,6 +11,7 @@ import StyleHideAuthorName from './styleFunctions/StyleHideAuthorName'
 import StyleHideChatAvatar from './styleFunctions/StyleHideChatAvatar'
 import StyleHideSuperChatAvatar from './styleFunctions/StyleHideSuperChatAvatar'
 import StyleHideSuperChatPrice from './styleFunctions/StyleHideSuperChatPrice'
+import StyleHideSuperChatSponsorTicker from './styleFunctions/StyleHideSuperChatSponsorTicker'
 import StyleShrinkChatMessage from './styleFunctions/StyleShrinkChatMessage'
 import StyleWrapSuperChat from './styleFunctions/StyleWrapSuperChat'
 
@@ -28,6 +29,7 @@ const Chat = (): null => {
     isHideSuperChatPrice,
     isHideSuperChatAvatar,
     isAddSuperChatAvatarBlur,
+    isHideSuperChatSponsorTicker,
     isHideChatAvatar,
     isAddChatAvatarBlur,
     isHideAuthorName,
@@ -70,6 +72,11 @@ const Chat = (): null => {
       inlineStyleElement.innerText += StyleAddSuperChatAvatarBlur()
     }
 
+    // スーパーチャットのスポンサーティッカーを非表示
+    if (isHideSuperChatSponsorTicker) {
+      inlineStyleElement.innerText += StyleHideSuperChatSponsorTicker()
+    }
+
     // ユーザーアバター画像（チャット内のみ）の非表示
     if (isHideChatAvatar) {
       inlineStyleElement.innerText += StyleHideChatAvatar()
@@ -108,6 +115,7 @@ const Chat = (): null => {
     isHideSuperChatPrice,
     isHideSuperChatAvatar,
     isAddSuperChatAvatarBlur,
+    isHideSuperChatSponsorTicker,
     isHideChatAvatar,
     isAddChatAvatarBlur,
     isHideAuthorName,
