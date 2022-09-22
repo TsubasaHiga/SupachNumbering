@@ -3,6 +3,11 @@ const define = {
 
   POPUP_WIDTH: 660,
   POPUP_HEIGHT: 600,
+
+  ELEMENT_READY_OPTIONS: {
+    timeout: 10000,
+    stopOnDomReady: false,
+  },
 }
 
 export default define

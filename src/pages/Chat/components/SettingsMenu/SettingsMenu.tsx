@@ -5,6 +5,8 @@ import MenuList from '@mui/material/MenuList'
 import { memo, useCallback, useState } from 'react'
 
 import Logo from '~/assets/img/icon-34.png'
+import { useSettingsStore } from '~/store/atoms/useSettingsStore'
+import { SettingsType } from '~/types/SettingsType'
 
 import MainSettingsReApplying from '../MainSettingsReApplying/MainSettingsReApplying'
 import OpenPopupPage from '../OpenPopupPage/OpenPopupPage'
@@ -14,6 +16,9 @@ const ITEM_HEIGHT = 48
 
 const SettingsMenu = (): JSX.Element => {
   const manifest = chrome.runtime.getManifest()
+
+  const [settings] = useSettingsStore()
+  const { isAddSuperChatNumbering, numberingType }: SettingsType = settings
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
@@ -64,7 +69,14 @@ const SettingsMenu = (): JSX.Element => {
             </span>
           </div>
           <Divider />
-          <MainSettingsReApplying handleClose={handleClose} />
+          {
+            // isAddSuperChatNumberingがtrue且つ
+            // ナンバリング方式に'uniqueId', 'uniqueUserName'を選択している時のみレンダリング
+            isAddSuperChatNumbering &&
+              ['uniqueId', 'uniqueUserName'].includes(numberingType) && (
+                <MainSettingsReApplying handleClose={handleClose} />
+              )
+          }
           <OpenPopupPage handleClose={handleClose} />
         </MenuList>
       </Menu>

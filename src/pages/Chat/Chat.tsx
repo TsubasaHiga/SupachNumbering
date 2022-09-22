@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
 import { SettingsType } from '~/types/SettingsType'
 
-import SettingsMenu from './components/SettingsMenu/SettingsMenu'
 import StyleAddChatAvatarBlur from './styleFunctions/StyleAddChatAvatarBlur'
 import StyleAddSuperChatAvatarBlur from './styleFunctions/StyleAddSuperChatAvatarBlur'
 import StyleAddSuperChatNumbering from './styleFunctions/StyleAddSuperChatNumbering'
@@ -14,18 +13,16 @@ import StyleHideSuperChatAvatar from './styleFunctions/StyleHideSuperChatAvatar'
 import StyleHideSuperChatPrice from './styleFunctions/StyleHideSuperChatPrice'
 import StyleShrinkChatMessage from './styleFunctions/StyleShrinkChatMessage'
 import StyleWrapSuperChat from './styleFunctions/StyleWrapSuperChat'
-import AddSuperChatNumbering from './voidFunctions/AddSuperChatNumbering/AddSuperChatNumbering'
 
 const inlineStyleElement = document.createElement('style')
 inlineStyleElement.type = 'text/css'
 inlineStyleElement.id = 'supach-numbering-chat-style'
 
-const Chat = (): JSX.Element => {
+const Chat = (): null => {
   const [settings] = useSettingsStore()
   const {
     isAddSuperChatNumbering,
     numberingType,
-    uniqueNumberingStringLength,
     isWrapSuperChat,
     valueWrapSuperChatMaxHeight,
     isHideSuperChatPrice,
@@ -119,24 +116,7 @@ const Chat = (): JSX.Element => {
     valueChatFontSize,
   ])
 
-  return (
-    <>
-      {
-        // isAddSuperChatNumberingがtrue且つ
-        // ナンバリング方式に'uniqueId', 'uniqueUserName'を選択している時のみレンダリング
-        isAddSuperChatNumbering &&
-          ['uniqueId', 'uniqueUserName'].includes(numberingType) && (
-            <>
-              <SettingsMenu />
-              <AddSuperChatNumbering
-                stringLength={uniqueNumberingStringLength}
-                numberingType={numberingType}
-              />
-            </>
-          )
-      }
-    </>
-  )
+  return null
 }
 
 export default Chat
