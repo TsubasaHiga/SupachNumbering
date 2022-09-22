@@ -1,21 +1,12 @@
-import React from 'react'
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import SettingsRender from './render/SettingsRender'
+import StyleRender from './render/StyleRender'
+import SuperChatNumberingRender from './render/SuperChatNumberingRender'
 
-import Chat from './Chat'
+// スタイル適用関連のレンダリング
+StyleRender()
 
-const insertWrapElement = document.querySelector('body')
+// 設定メニューボタンのレンダリング
+SettingsRender()
 
-if (insertWrapElement) {
-  console.log('chat script')
-
-  const div = document.createElement('div')
-  insertWrapElement.firstChild.before(div)
-
-  const root = createRoot(div)
-  root.render(
-    <StrictMode>
-      <Chat />
-    </StrictMode>
-  )
-}
+// スーパーチャットユニークナンバリング機能のレンダリング
+SuperChatNumberingRender()
