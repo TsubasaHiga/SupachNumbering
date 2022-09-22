@@ -7,10 +7,14 @@ import { SettingsType } from '~/types/SettingsType'
 import ListItemContent from '../ListText/ListText'
 
 type Props = {
+  enabled: boolean
   handleClose: () => void
 }
 
-const MainSettingsReApplying = ({ handleClose }: Props): JSX.Element => {
+const MainSettingsReApplying = ({
+  enabled,
+  handleClose,
+}: Props): JSX.Element => {
   const [, setSettings] = useSettingsStore()
 
   const clickHandler = useCallback(() => {
@@ -34,6 +38,7 @@ const MainSettingsReApplying = ({ handleClose }: Props): JSX.Element => {
 
   return (
     <ListItemContent
+      enabled={enabled}
       icon={<ReplayIcon fontSize="large" />}
       label="content_menu_AddSuperChatNumbering_re_applying_label"
       onClick={() => {

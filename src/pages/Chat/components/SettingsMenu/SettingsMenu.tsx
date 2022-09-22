@@ -69,14 +69,15 @@ const SettingsMenu = (): JSX.Element => {
             </span>
           </div>
           <Divider />
-          {
-            // isAddSuperChatNumberingがtrue且つ
-            // ナンバリング方式に'uniqueId', 'uniqueUserName'を選択している時のみレンダリング
-            isAddSuperChatNumbering &&
-              ['uniqueId', 'uniqueUserName'].includes(numberingType) && (
-                <MainSettingsReApplying handleClose={handleClose} />
-              )
-          }
+          <MainSettingsReApplying
+            enabled={
+              // isAddSuperChatNumberingがtrue且つ
+              // ナンバリング方式に'uniqueId', 'uniqueUserName'を選択している時のみ有効
+              isAddSuperChatNumbering &&
+              ['uniqueId', 'uniqueUserName'].includes(numberingType)
+            }
+            handleClose={handleClose}
+          />
           <OpenPopupPage handleClose={handleClose} />
         </MenuList>
       </Menu>
