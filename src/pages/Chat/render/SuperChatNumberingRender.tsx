@@ -1,33 +1,22 @@
-import elementReady from 'element-ready'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import define from '~/const/define'
+import ElementWait from '~/modules/ElementWait'
 
 import SuperChatNumbering from '../SuperChatNumbering'
 
 const SuperChatNumberingRender = async () => {
-  const element = await elementReady(
-    'yt-live-chat-app',
-    define.ELEMENT_READY_OPTIONS
-  )
+  const element = await ElementWait('yt-live-chat-app')
+  if (element) {
+    const div = document.createElement('div')
+    element.before(div)
 
-  try {
-    if (element) {
-      const div = document.createElement('div')
-      element.before(div)
-
-      const root = createRoot(div)
-      root.render(
-        <StrictMode>
-          <SuperChatNumbering />
-        </StrictMode>
-      )
-    } else {
-      throw new SyntaxError()
-    }
-  } catch (error) {
-    console.error(error)
+    const root = createRoot(div)
+    root.render(
+      <StrictMode>
+        <SuperChatNumbering />
+      </StrictMode>
+    )
   }
 }
 
