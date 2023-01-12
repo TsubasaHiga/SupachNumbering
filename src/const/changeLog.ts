@@ -1,7 +1,3 @@
-/**
- * @description: 最新の項目の`date`はbackgroundでupdate時に更新される`lastUpdateDate`が利用される想定だが、年の為おおよその日付を入れること。また次期バージョンアップ時にはおおよその日付をlastUpdateDateとイコールにするのを忘れないこと。
- */
-
 const changeLog = [
   {
     version: '1.0.3',
