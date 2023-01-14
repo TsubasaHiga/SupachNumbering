@@ -56,7 +56,7 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
     lineHeight: 1,
   },
   '& .MuiSlider-markLabel': {
-    fontSize: 11,
+    fontSize: 12,
     color: '#a9a9a9',
     '&[data-index="0"]': {
       transform: 'unset',

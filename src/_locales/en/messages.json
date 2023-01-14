@@ -21,19 +21,19 @@
     "message": "Use ASC order"
   },
   "popup_settings_main_select_numbering_type_label1_caption": {
-    "message": "Recommended if you don't have a lot of super chat."
+    "message": "Best for Moderate Occurrences"
   },
   "popup_settings_main_select_numbering_type_label2": {
     "message": "Use Unique Id"
   },
   "popup_settings_main_select_numbering_type_label2_caption": {
-    "message": "Recommended if you have a lot of super chats."
+    "message": "Best for high occurrence frequency"
   },
   "popup_settings_main_select_numbering_type_label3": {
     "message": "Use User name"
   },
   "popup_settings_main_select_numbering_type_label3_caption": {
-    "message": "Recommended if you have a lot of super chats."
+    "message": "Best for high occurrence frequency"
   },
   "popup_settings_main_select_numbering_length_label": {
     "message": "string length"
@@ -128,10 +128,10 @@
   "popup_support": {
     "message": "Bug reports and suggestions are welcome!"
   },
-  "content_AddSuperChatNumbering_re_applying_hint": {
-    "message": "Re applying 'Add numbering to Super Chat' function"
+  "content_menu_AddSuperChatNumbering_re_applying_label": {
+    "message": "Reapplied 'Add numbering to Super Chat' function"
   },
-  "content_menu_open_popup_page_hint": {
+  "content_menu_open_popup_page_label": {
     "message": "Open Settings Page"
   }
 }

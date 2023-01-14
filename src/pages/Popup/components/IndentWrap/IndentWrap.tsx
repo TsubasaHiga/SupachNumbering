@@ -26,10 +26,11 @@ const IndentWrap = ({ children, title, help }: Props): JSX.Element => {
       border="1px solid #e0e0e0"
       display="flex"
       flexDirection="column"
+      bgcolor="#fff"
     >
       <Typography
         variant="h6"
-        fontSize="12px"
+        fontSize="14px"
         fontWeight={700}
         display="flex"
         alignItems="center"
@@ -38,7 +39,7 @@ const IndentWrap = ({ children, title, help }: Props): JSX.Element => {
         <Tooltip title={GetI18n(help)} arrow placement="right">
           <HelpIcon
             fontSize="inherit"
-            style={{ fontSize: '17px', marginLeft: '4px' }}
+            style={{ fontSize: '18px', marginLeft: '3px' }}
           />
         </Tooltip>
       </Typography>
