@@ -20,6 +20,13 @@ const AddUniqueNumberingString = async (
   // スーパーチャットの要素を取得
   const tickerPaidMessageItem = element.querySelector('#content') as HTMLElement
   if (!tickerPaidMessageItem) return
+  // tickerPaidMessageItemに'.yt-live-chat-ticker-sponsor-item-renderer'のclassNameがある場合はスキップ
+  if (
+    tickerPaidMessageItem.classList.contains(
+      'yt-live-chat-ticker-sponsor-item-renderer'
+    )
+  )
+    return
 
   // 文字列取得
   let stringValue = ''
