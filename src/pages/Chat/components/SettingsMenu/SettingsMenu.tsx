@@ -47,15 +47,15 @@ const SettingsMenu = (): JSX.Element => {
         id="long-menu"
         MenuListProps={{
           'aria-labelledby': 'long-button',
-          disablePadding: true,
+          disablePadding: true
         }}
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
         PaperProps={{
           style: {
-            maxHeight: ITEM_HEIGHT * 4.5,
-          },
+            maxHeight: ITEM_HEIGHT * 4.5
+          }
         }}
       >
         <MenuList>
@@ -73,8 +73,7 @@ const SettingsMenu = (): JSX.Element => {
             enabled={
               // isAddSuperChatNumberingがtrue且つ
               // ナンバリング方式に'uniqueId', 'uniqueUserName'を選択している時のみ有効
-              isAddSuperChatNumbering &&
-              ['uniqueId', 'uniqueUserName'].includes(numberingType)
+              isAddSuperChatNumbering && ['uniqueId', 'uniqueUserName'].includes(numberingType)
             }
             handleClose={handleClose}
           />

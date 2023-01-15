@@ -1,8 +1,6 @@
 import define from '~/const/define'
 
-const GetPopupPosition = (
-  e: React.MouseEvent<HTMLElement>
-): { top: number; left: number } => {
+const GetPopupPosition = (e: React.MouseEvent<HTMLElement>): { top: number; left: number } => {
   // クリーンサイズを取得
   const screenWidth = window.screen.width
   const screenHeight = window.screen.height
@@ -16,8 +14,7 @@ const GetPopupPosition = (
   const popupHeight = y + define.POPUP_HEIGHT
 
   // もし、popupHeightがscreenHeightを超える場合は、screenHeightからPOPUPの高さ分を引く
-  const top =
-    popupHeight > screenHeight ? screenHeight - define.POPUP_HEIGHT : y
+  const top = popupHeight > screenHeight ? screenHeight - define.POPUP_HEIGHT : y
 
   // もし、popupWidthがscreenWidthを超える場合は、screenWidthからPOPUPの横幅分を引く
   const left = popupWidth > screenWidth ? screenWidth - define.POPUP_WIDTH : x

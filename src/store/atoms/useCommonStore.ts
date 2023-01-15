@@ -5,10 +5,7 @@ import { CommonType } from '~/types/CommonType'
 const SETTINGS_KEY = 'common'
 const INITIAL_VALUE: CommonType = {
   // isUpdated
-  isUpdated: false,
+  isUpdated: false
 }
 
-export const useCommonStore = createChromeStorageStateHookLocal(
-  SETTINGS_KEY,
-  INITIAL_VALUE
-)
+export const useCommonStore = createChromeStorageStateHookLocal(SETTINGS_KEY, INITIAL_VALUE)

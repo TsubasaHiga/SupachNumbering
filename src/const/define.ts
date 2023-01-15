@@ -6,8 +6,8 @@ const define = {
 
   ELEMENT_READY_OPTIONS: {
     timeout: 10000,
-    stopOnDomReady: false,
-  },
+    stopOnDomReady: false
+  }
 }
 
 export default define

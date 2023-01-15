@@ -11,22 +11,16 @@ type Props = {
   numberingType: NumberingType
 }
 
-const AddSuperChatNumbering = ({
-  stringLength,
-  numberingType,
-}: Props): null => {
+const AddSuperChatNumbering = ({ stringLength, numberingType }: Props): null => {
   console.log('AddSuperChatNumbering')
 
   // チャット欄の変更を監視する要素を取得
-  const [rootElements] = useState<null | NodeListOf<HTMLElement>>(
-    document.querySelectorAll('yt-live-chat-app')
-  )
+  const [rootElements] = useState<null | NodeListOf<HTMLElement>>(document.querySelectorAll('yt-live-chat-app'))
 
   // スーパーチャットの要素の親要素を取得
-  const [elementItems, setElementItems] =
-    useState<null | NodeListOf<HTMLElement>>(
-      document.querySelectorAll('#ticker #items')
-    )
+  const [elementItems, setElementItems] = useState<null | NodeListOf<HTMLElement>>(
+    document.querySelectorAll('#ticker #items')
+  )
 
   // rootMutationCallback
   const rootMutationCallback = useCallback((mutations: MutationRecord[]) => {
@@ -42,7 +36,7 @@ const AddSuperChatNumbering = ({
   // useMutationObserver
   useMutationObserver(rootElements, rootMutationCallback, {
     childList: true,
-    subtree: true,
+    subtree: true
   })
 
   // mutationCallback
@@ -56,11 +50,7 @@ const AddSuperChatNumbering = ({
         if (!mutation.addedNodes[0]) return
 
         // AddUniqueNumberingString
-        AddUniqueNumberingString(
-          mutation.addedNodes[0] as HTMLElement,
-          numberingType,
-          stringLength
-        )
+        AddUniqueNumberingString(mutation.addedNodes[0] as HTMLElement, numberingType, stringLength)
       })
     },
     [stringLength, numberingType]
@@ -73,13 +63,7 @@ const AddSuperChatNumbering = ({
   useEffect(() => {
     if (!elementItems) return
     elementItems.forEach((target) => {
-      target.childNodes.forEach((child) =>
-        AddUniqueNumberingString(
-          child as HTMLElement,
-          numberingType,
-          stringLength
-        )
-      )
+      target.childNodes.forEach((child) => AddUniqueNumberingString(child as HTMLElement, numberingType, stringLength))
     })
   }, [elementItems, stringLength, numberingType])
 

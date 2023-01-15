@@ -35,7 +35,7 @@ const Chat = (): null => {
     isHideAuthorName,
     isShrinkChatMessage,
     isChangeChatFontSize,
-    valueChatFontSize,
+    valueChatFontSize
   }: SettingsType = settings
 
   // スタイル追加
@@ -121,7 +121,7 @@ const Chat = (): null => {
     isHideAuthorName,
     isShrinkChatMessage,
     isChangeChatFontSize,
-    valueChatFontSize,
+    valueChatFontSize
   ])
 
   return null

@@ -10,12 +10,7 @@ type Props = {
 
 const SettingsWrap = ({ children, style }: Props): JSX.Element => {
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      className={styles.settingBox}
-      style={style}
-    >
+    <Box display="flex" flexDirection="column" className={styles.settingBox} style={style}>
       {children}
     </Box>
   )

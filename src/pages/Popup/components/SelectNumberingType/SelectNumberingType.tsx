@@ -17,59 +17,59 @@ const unit = GetI18n('popup_settings_main_select_numbering_length_unit')
 const marks = [
   {
     value: 0,
-    label: GetI18n('popup_settings_main_select_numbering_length_all'),
+    label: GetI18n('popup_settings_main_select_numbering_length_all')
   },
   {
     value: 1,
-    label: '1' + unit,
+    label: '1' + unit
   },
   {
     value: 2,
-    label: '2' + unit,
+    label: '2' + unit
   },
   {
     value: 3,
-    label: '3' + unit,
+    label: '3' + unit
   },
   {
     value: 4,
-    label: '4' + unit,
+    label: '4' + unit
   },
   {
     value: 5,
-    label: '5' + unit,
+    label: '5' + unit
   },
   {
     value: 6,
-    label: '6' + unit,
-  },
+    label: '6' + unit
+  }
 ]
 
 const CustomSlider = styled(Slider)(({ theme }) => ({
   '&.MuiSlider-root': {
     margin: '4px 2px 20px',
-    width: 'auto',
+    width: 'auto'
   },
   '& .MuiSlider-valueLabel': {
     fontSize: 12,
     borderRadius: '3px',
-    lineHeight: 1,
+    lineHeight: 1
   },
   '& .MuiSlider-markLabel': {
     fontSize: 12,
     color: '#a9a9a9',
     '&[data-index="0"]': {
-      transform: 'unset',
+      transform: 'unset'
     },
     '&[data-index="6"]': {
       transform: 'unset',
       left: 'unset !important',
-      right: '-6px',
+      right: '-6px'
     },
     '&.MuiSlider-markLabelActive': {
-      color: '#000',
-    },
-  },
+      color: '#000'
+    }
+  }
 }))
 
 type Props = {
@@ -144,9 +144,7 @@ const SelectNumberingType = ({ isNew = false }: Props): JSX.Element => {
                 {GetI18n('popup_settings_main_select_numbering_type_label1')}
                 <span>
                   <InfoIcon fontSize="inherit" />
-                  {GetI18n(
-                    'popup_settings_main_select_numbering_type_label1_caption'
-                  )}
+                  {GetI18n('popup_settings_main_select_numbering_type_label1_caption')}
                 </span>
               </>
             }
@@ -163,9 +161,7 @@ const SelectNumberingType = ({ isNew = false }: Props): JSX.Element => {
                 {GetI18n('popup_settings_main_select_numbering_type_label2')}
                 <span>
                   <InfoIcon fontSize="inherit" />
-                  {GetI18n(
-                    'popup_settings_main_select_numbering_type_label2_caption'
-                  )}
+                  {GetI18n('popup_settings_main_select_numbering_type_label2_caption')}
                 </span>
               </>
             }
@@ -183,9 +179,7 @@ const SelectNumberingType = ({ isNew = false }: Props): JSX.Element => {
                 {GetI18n('popup_settings_main_select_numbering_type_label3')}
                 <span>
                   <InfoIcon fontSize="inherit" />
-                  {GetI18n(
-                    'popup_settings_main_select_numbering_type_label3_caption'
-                  )}
+                  {GetI18n('popup_settings_main_select_numbering_type_label3_caption')}
                 </span>
               </>
             }

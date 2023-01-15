@@ -11,17 +11,14 @@ type Props = {
   handleClose: () => void
 }
 
-const MainSettingsReApplying = ({
-  enabled,
-  handleClose,
-}: Props): JSX.Element => {
+const MainSettingsReApplying = ({ enabled, handleClose }: Props): JSX.Element => {
   const [, setSettings] = useSettingsStore()
 
   const clickHandler = useCallback(() => {
     setSettings((prevState: SettingsType) => {
       return {
         ...prevState,
-        isAddSuperChatNumbering: false,
+        isAddSuperChatNumbering: false
       }
     })
 
@@ -30,7 +27,7 @@ const MainSettingsReApplying = ({
       setSettings((prevState: SettingsType) => {
         return {
           ...prevState,
-          isAddSuperChatNumbering: true,
+          isAddSuperChatNumbering: true
         }
       })
     }, 250)

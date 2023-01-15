@@ -18,7 +18,7 @@ const onUpdate = async () => {
     isUpdated: true,
 
     // 最終アップデート日付を更新（ChangeLogの最初の項目で使用などを想定）
-    lastUpdateDate: GetDateFormatted(new Date()),
+    lastUpdateDate: GetDateFormatted(new Date())
   }
 
   // local storageにcommonのデータを保存
@@ -42,7 +42,7 @@ const openPopupPage = async (top: number, left: number) => {
     type: 'popup',
     url: 'popup.html',
     top: top,
-    left: left,
+    left: left
   })
 }
 

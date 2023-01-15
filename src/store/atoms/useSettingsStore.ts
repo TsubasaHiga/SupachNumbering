@@ -44,10 +44,7 @@ const INITIAL_VALUE: SettingsType = {
 
   // チャット欄のフォントサイズを変更
   isChangeChatFontSize: false,
-  valueChatFontSize: 10,
+  valueChatFontSize: 10
 }
 
-export const useSettingsStore = createChromeStorageStateHookLocal(
-  SETTINGS_KEY,
-  INITIAL_VALUE
-)
+export const useSettingsStore = createChromeStorageStateHookLocal(SETTINGS_KEY, INITIAL_VALUE)

@@ -2,13 +2,8 @@ import elementReady from 'element-ready'
 
 import define from '~/const/define'
 
-const ElementWait = async (
-  targetElementString: string
-): Promise<HTMLElement | false> => {
-  const element = await elementReady(
-    targetElementString,
-    define.ELEMENT_READY_OPTIONS
-  )
+const ElementWait = async (targetElementString: string): Promise<HTMLElement | false> => {
+  const element = await elementReady(targetElementString, define.ELEMENT_READY_OPTIONS)
 
   try {
     return element ? element : false

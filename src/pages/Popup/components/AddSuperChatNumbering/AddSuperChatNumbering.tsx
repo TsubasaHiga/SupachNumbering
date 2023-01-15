@@ -17,7 +17,7 @@ const AddSuperChatNumbering = (): JSX.Element => {
     setSettings((prevState: SettingsType) => {
       return {
         ...prevState,
-        isAddSuperChatNumbering: !isAddSuperChatNumbering,
+        isAddSuperChatNumbering: !isAddSuperChatNumbering
       }
     })
   }, [isAddSuperChatNumbering, setSettings])
@@ -26,13 +26,7 @@ const AddSuperChatNumbering = (): JSX.Element => {
     <>
       <FormControlLabel
         label={GetI18n('popup_settings_AddSuperChatNumbering_label')}
-        control={
-          <Switch
-            size="small"
-            checked={isAddSuperChatNumbering}
-            onChange={switchHandleChange}
-          />
-        }
+        control={<Switch size="small" checked={isAddSuperChatNumbering} onChange={switchHandleChange} />}
       />
 
       {isAddSuperChatNumbering && (

@@ -4,13 +4,7 @@ import FormGroup from '@mui/material/FormGroup'
 import FormLabel from '@mui/material/FormLabel'
 import { ThemeProvider } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
-import {
-  IconBellRinging,
-  IconBrandChrome,
-  IconGitPullRequest,
-  IconSettings,
-  IconTools,
-} from '@tabler/icons'
+import { IconBellRinging, IconBrandChrome, IconGitPullRequest, IconSettings, IconTools } from '@tabler/icons'
 
 import img from '~/assets/img/popup.png'
 import define from '~/const/define'
@@ -55,9 +49,7 @@ const Popup = (): JSX.Element => {
             <span>{GetI18n('popup_about_title')}</span>
           </h2>
           <div className={styles.content}>
-            <p
-              dangerouslySetInnerHTML={{ __html: GetI18n('popup_about_desc') }}
-            />
+            <p dangerouslySetInnerHTML={{ __html: GetI18n('popup_about_desc') }} />
           </div>
         </section>
 
@@ -132,10 +124,7 @@ const Popup = (): JSX.Element => {
           <div className={styles.content}>
             <p
               dangerouslySetInnerHTML={{
-                __html: GetI18n('popup_notwork_desc').replace(
-                  'define.STORE_URL',
-                  define.STORE_URL
-                ),
+                __html: GetI18n('popup_notwork_desc').replace('define.STORE_URL', define.STORE_URL)
               }}
             />
           </div>

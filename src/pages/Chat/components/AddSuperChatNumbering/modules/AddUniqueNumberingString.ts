@@ -9,11 +9,7 @@ import { NumberingType } from '~/types/SettingsType'
  * @param stringLength
  * @returns
  */
-const AddUniqueNumberingString = async (
-  element: HTMLElement,
-  numberingType: NumberingType,
-  stringLength: number
-) => {
+const AddUniqueNumberingString = async (element: HTMLElement, numberingType: NumberingType, stringLength: number) => {
   if (!element.id || element.id.length <= 0) return
   // console.log('AddUniqueNumberingString')
 
@@ -21,12 +17,7 @@ const AddUniqueNumberingString = async (
   const tickerPaidMessageItem = element.querySelector('#content') as HTMLElement
   if (!tickerPaidMessageItem) return
   // tickerPaidMessageItemに'.yt-live-chat-ticker-sponsor-item-renderer'のclassNameがある場合はスキップ
-  if (
-    tickerPaidMessageItem.classList.contains(
-      'yt-live-chat-ticker-sponsor-item-renderer'
-    )
-  )
-    return
+  if (tickerPaidMessageItem.classList.contains('yt-live-chat-ticker-sponsor-item-renderer')) return
 
   // 文字列取得
   let stringValue = ''
@@ -40,8 +31,7 @@ const AddUniqueNumberingString = async (
   }
 
   // データ属性にユニークな文字列をセット
-  tickerPaidMessageItem.dataset.uniqueString =
-    stringLength > 0 ? stringValue.slice(0, stringLength) : stringValue
+  tickerPaidMessageItem.dataset.uniqueString = stringLength > 0 ? stringValue.slice(0, stringLength) : stringValue
 }
 
 export default AddUniqueNumberingString
