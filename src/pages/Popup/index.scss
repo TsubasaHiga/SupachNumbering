@@ -6,7 +6,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 660px;
+  min-width: 660px;
+  width: 100%;
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    margin: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    background-color: rgba(#000, .3);
+    border: 2px solid transparent;
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
 
   a {
     color: inherit;
