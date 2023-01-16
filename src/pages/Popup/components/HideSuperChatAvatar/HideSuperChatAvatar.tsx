@@ -16,7 +16,7 @@ const HideSuperChatAvatar = (): JSX.Element => {
       return {
         ...prevState,
         isHideSuperChatAvatar: !isHideSuperChatAvatar,
-        isHideSuperChatPrice: false, // 金額を非表示をfalseに
+        isHideSuperChatPrice: false // 金額を非表示をfalseに
       }
     })
   }, [isHideSuperChatAvatar, setSettings])
@@ -32,13 +32,7 @@ const HideSuperChatAvatar = (): JSX.Element => {
           </span>
         </>
       }
-      control={
-        <Switch
-          size="small"
-          checked={isHideSuperChatAvatar}
-          onChange={switchHandleChange}
-        />
-      }
+      control={<Switch size="small" checked={isHideSuperChatAvatar} onChange={switchHandleChange} />}
     />
   )
 }

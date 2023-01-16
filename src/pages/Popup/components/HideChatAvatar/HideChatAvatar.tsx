@@ -14,7 +14,7 @@ const HideChatAvatar = (): JSX.Element => {
     setSettings((prevState: SettingsType) => {
       return {
         ...prevState,
-        isHideChatAvatar: !isHideChatAvatar,
+        isHideChatAvatar: !isHideChatAvatar
       }
     })
   }, [isHideChatAvatar, setSettings])
@@ -22,13 +22,7 @@ const HideChatAvatar = (): JSX.Element => {
   return (
     <FormControlLabel
       label={GetI18n('popup_settings_HideChatAvatar_label')}
-      control={
-        <Switch
-          size="small"
-          checked={isHideChatAvatar}
-          onChange={switchHandleChange}
-        />
-      }
+      control={<Switch size="small" checked={isHideChatAvatar} onChange={switchHandleChange} />}
     />
   )
 }

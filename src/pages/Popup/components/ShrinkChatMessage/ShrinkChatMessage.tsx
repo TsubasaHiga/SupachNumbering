@@ -14,7 +14,7 @@ const ShrinkChatMessage = (): JSX.Element => {
     setSettings((prevState: SettingsType) => {
       return {
         ...prevState,
-        isShrinkChatMessage: !isShrinkChatMessage,
+        isShrinkChatMessage: !isShrinkChatMessage
       }
     })
   }, [isShrinkChatMessage, setSettings])
@@ -22,13 +22,7 @@ const ShrinkChatMessage = (): JSX.Element => {
   return (
     <FormControlLabel
       label={GetI18n('popup_settings_ShrinkChatMessage_label')}
-      control={
-        <Switch
-          size="small"
-          checked={isShrinkChatMessage}
-          onChange={switchHandleChange}
-        />
-      }
+      control={<Switch size="small" checked={isShrinkChatMessage} onChange={switchHandleChange} />}
     />
   )
 }

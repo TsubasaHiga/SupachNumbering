@@ -14,7 +14,7 @@ const ExpandChatHeight = (): JSX.Element => {
     setSettings((prevState: SettingsType) => {
       return {
         ...prevState,
-        isExpandChatHeight: !isExpandChatHeight,
+        isExpandChatHeight: !isExpandChatHeight
       }
     })
   }, [isExpandChatHeight, setSettings])
@@ -22,13 +22,7 @@ const ExpandChatHeight = (): JSX.Element => {
   return (
     <FormControlLabel
       label={GetI18n('popup_settings_ExpandChatHeight_label')}
-      control={
-        <Switch
-          size="small"
-          checked={isExpandChatHeight}
-          onChange={switchHandleChange}
-        />
-      }
+      control={<Switch size="small" checked={isExpandChatHeight} onChange={switchHandleChange} />}
     />
   )
 }

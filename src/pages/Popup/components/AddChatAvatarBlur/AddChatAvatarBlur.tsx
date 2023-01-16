@@ -14,7 +14,7 @@ const AddChatAvatarBlur = (): JSX.Element => {
     setSettings((prevState: SettingsType) => {
       return {
         ...prevState,
-        isAddChatAvatarBlur: !isAddChatAvatarBlur,
+        isAddChatAvatarBlur: !isAddChatAvatarBlur
       }
     })
   }, [isAddChatAvatarBlur, setSettings])
@@ -23,12 +23,7 @@ const AddChatAvatarBlur = (): JSX.Element => {
     <FormControlLabel
       label={GetI18n('popup_settings_AddChatAvatarBlur_label')}
       control={
-        <Switch
-          size="small"
-          disabled={isHideChatAvatar}
-          checked={isAddChatAvatarBlur}
-          onChange={switchHandleChange}
-        />
+        <Switch size="small" disabled={isHideChatAvatar} checked={isAddChatAvatarBlur} onChange={switchHandleChange} />
       }
     />
   )

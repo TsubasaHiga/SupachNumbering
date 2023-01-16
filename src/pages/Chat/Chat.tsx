@@ -35,7 +35,7 @@ const Chat = (): null => {
     isHideAuthorName,
     isShrinkChatMessage,
     isChangeChatFontSize,
-    valueChatFontSize,
+    valueChatFontSize
   }: SettingsType = settings
 
   // スタイル追加
@@ -52,7 +52,7 @@ const Chat = (): null => {
       const containerElement = document.querySelector('#content-pages')
       const containerH = containerElement ? containerElement.clientHeight : 0
       // containerHをvalueWrapSuperChatMaxHeightの割合で計算
-      const maxHeight = (containerH * valueWrapSuperChatMaxHeight) / 100
+      const maxHeight = (containerH * valueWrapSuperChatMaxHeight) / 100 - 100
       console.log({ containerH, maxHeight })
       inlineStyleElement.innerText += StyleWrapSuperChat(maxHeight)
     }
@@ -121,7 +121,7 @@ const Chat = (): null => {
     isHideAuthorName,
     isShrinkChatMessage,
     isChangeChatFontSize,
-    valueChatFontSize,
+    valueChatFontSize
   ])
 
   return null

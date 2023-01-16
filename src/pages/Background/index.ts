@@ -14,7 +14,7 @@ const onUpdate = async () => {
     ...commonValues,
 
     // isUpdatedをtrueにする
-    isUpdated: true,
+    isUpdated: true
   }
 
   // local storageにcommonのデータを保存
@@ -38,7 +38,7 @@ const openPopupPage = async (top: number, left: number) => {
     type: 'popup',
     url: 'popup.html',
     top: top,
-    left: left,
+    left: left
   })
 }
 

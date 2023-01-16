@@ -2,9 +2,7 @@
  * '#items'を取得
  * 取得出来た場合は要素を返し、取得出来なかった場合はfalseを返す
  */
-const GetItemsElement = (
-  mutation: MutationRecord
-): NodeListOf<HTMLElement> | false => {
+const GetItemsElement = (mutation: MutationRecord): NodeListOf<HTMLElement> | false => {
   // childList以外の変更の時は処理しない
   if (mutation.type !== 'childList') return false
 
@@ -30,9 +28,7 @@ const GetItemsElement = (
   if (element.tagName !== 'YT-LIVE-CHAT-TICKER-RENDERER') return false
 
   // #itemsを取得
-  const elementItems = element.querySelectorAll(
-    '#items'
-  ) as NodeListOf<HTMLElement>
+  const elementItems = element.querySelectorAll('#items') as NodeListOf<HTMLElement>
 
   // elementItemsが存在しない時は処理しない
   if (!elementItems || elementItems.length <= 0) return false

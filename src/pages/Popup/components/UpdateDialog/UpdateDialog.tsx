@@ -14,14 +14,14 @@ import styles from './UpdateDialog.module.scss'
 
 const CustomDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialog-paper': {
-    borderRadius: '8px',
+    borderRadius: '8px'
   },
   '& .MuiDialogContent-root': {
-    padding: theme.spacing(2.5),
+    padding: theme.spacing(2.5)
   },
   '& .MuiDialogActions-root': {
-    padding: theme.spacing(1.5),
-  },
+    padding: theme.spacing(1.5)
+  }
 }))
 
 export interface DialogTitleProps {
@@ -50,7 +50,7 @@ const CustomDialogTitle = (props: DialogTitleProps) => {
             position: 'absolute',
             right: 16,
             top: 16,
-            color: (theme) => theme.palette.grey[500],
+            color: (theme) => theme.palette.grey[500]
           }}
         >
           <CloseIcon />
@@ -81,15 +81,9 @@ const UpdateDialog = (): JSX.Element => {
   }, [setCommon])
 
   return (
-    <CustomDialog
-      onClose={handleClose}
-      aria-labelledby="customized-dialog-title"
-      open={open}
-      fullWidth
-    >
+    <CustomDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} fullWidth>
       <CustomDialogTitle id="customized-dialog-title" onClose={handleClose}>
-        <span style={{ marginRight: '6px' }}>🎉</span>Updated to Version{' '}
-        <code>{manifest.version}</code>
+        <span style={{ marginRight: '6px' }}>🎉</span>Updated to Version <code>{manifest.version}</code>
       </CustomDialogTitle>
       <DialogContent>
         <ChangeLog />

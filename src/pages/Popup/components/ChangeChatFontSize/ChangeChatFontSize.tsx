@@ -34,13 +34,7 @@ const ChangeChatFontSize = (): JSX.Element => {
       <Box display="flex" alignItems="center">
         <FormControlLabel
           label={GetI18n('popup_settings_ChangeChatFontSize_label')}
-          control={
-            <Switch
-              size="small"
-              checked={isChangeChatFontSize}
-              onChange={switchHandleChange}
-            />
-          }
+          control={<Switch size="small" checked={isChangeChatFontSize} onChange={switchHandleChange} />}
         />
         <TextField
           value={valueChatFontSize}
@@ -58,7 +52,7 @@ const ChangeChatFontSize = (): JSX.Element => {
                 <FormatSizeIcon fontSize="small" />
               </InputAdornment>
             ),
-            endAdornment: <InputAdornment position="end">px</InputAdornment>,
+            endAdornment: <InputAdornment position="end">px</InputAdornment>
           }}
           onChange={(e) => textHandleChange(e)}
         />

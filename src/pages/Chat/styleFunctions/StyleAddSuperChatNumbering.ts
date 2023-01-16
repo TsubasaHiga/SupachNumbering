@@ -39,9 +39,7 @@ yt-live-chat-ticker-paid-message-item-renderer #content:before {
   }
   ${
     // ユニークなナンバリング
-    ['uniqueId', 'uniqueUserName'].includes(numberingType)
-      ? `content: attr(data-unique-string);`
-      : ''
+    ['uniqueId', 'uniqueUserName'].includes(numberingType) ? `content: attr(data-unique-string);` : ''
   }
   counter-increment: number 1;
   margin-right: 8px;

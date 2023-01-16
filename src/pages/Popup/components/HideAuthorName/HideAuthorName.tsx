@@ -19,7 +19,7 @@ const HideAuthorName = ({ isNew = false }: Props): JSX.Element => {
     setSettings((prevState: SettingsType) => {
       return {
         ...prevState,
-        isHideAuthorName: !isHideAuthorName,
+        isHideAuthorName: !isHideAuthorName
       }
     })
   }, [isHideAuthorName, setSettings])
@@ -32,13 +32,7 @@ const HideAuthorName = ({ isNew = false }: Props): JSX.Element => {
           {GetI18n('popup_settings_HideAuthorName_label')}
         </>
       }
-      control={
-        <Switch
-          size="small"
-          checked={isHideAuthorName}
-          onChange={switchHandleChange}
-        />
-      }
+      control={<Switch size="small" checked={isHideAuthorName} onChange={switchHandleChange} />}
     />
   )
 }

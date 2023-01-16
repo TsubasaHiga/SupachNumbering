@@ -19,7 +19,7 @@ const HideSuperChatSponsorTicker = ({ isNew = false }: Props): JSX.Element => {
     setSettings((prevState: SettingsType) => {
       return {
         ...prevState,
-        isHideSuperChatSponsorTicker: !isHideSuperChatSponsorTicker,
+        isHideSuperChatSponsorTicker: !isHideSuperChatSponsorTicker
       }
     })
   }, [isHideSuperChatSponsorTicker, setSettings])
@@ -33,13 +33,7 @@ const HideSuperChatSponsorTicker = ({ isNew = false }: Props): JSX.Element => {
             {GetI18n('popup_settings_HideSuperChatSponsorTicker_label')}
           </>
         }
-        control={
-          <Switch
-            size="small"
-            checked={isHideSuperChatSponsorTicker}
-            onChange={switchHandleChange}
-          />
-        }
+        control={<Switch size="small" checked={isHideSuperChatSponsorTicker} onChange={switchHandleChange} />}
       />
     </>
   )

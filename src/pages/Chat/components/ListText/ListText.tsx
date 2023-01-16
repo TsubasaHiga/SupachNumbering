@@ -12,12 +12,7 @@ type Props = {
   onClick: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void
 }
 
-const ListItemContent = ({
-  enabled = true,
-  icon,
-  label,
-  onClick,
-}: Props): JSX.Element => {
+const ListItemContent = ({ enabled = true, icon, label, onClick }: Props): JSX.Element => {
   return (
     <MenuItem disabled={!enabled} onClick={(e) => onClick(e)}>
       <ListItemIcon>{icon}</ListItemIcon>
@@ -26,12 +21,12 @@ const ListItemContent = ({
           fontSize: '13px',
           fontWeight: 'medium',
           variant: 'body2',
-          whiteSpace: 'break-spaces',
+          whiteSpace: 'break-spaces'
         }}
       >
         <span
           dangerouslySetInnerHTML={{
-            __html: GetI18n(label),
+            __html: GetI18n(label)
           }}
         ></span>
       </ListItemText>

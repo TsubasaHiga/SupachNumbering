@@ -3,11 +3,7 @@ import { memo, useCallback, useState } from 'react'
 
 import changeLog from '~/const/changeLog'
 import GetDateFormatted from '~/modules/GetDateString'
-import {
-  CustomAccordion,
-  CustomAccordionDetails,
-  CustomAccordionSummary,
-} from '~/ui/CustomAccordion'
+import { CustomAccordion, CustomAccordionDetails, CustomAccordionSummary } from '~/ui/CustomAccordion'
 
 import styles from './ChangeLog.module.scss'
 
@@ -25,15 +21,8 @@ const ChangeLog = (): JSX.Element => {
     <div className={styles.root}>
       {changeLog.map((item, index) => {
         return (
-          <CustomAccordion
-            key={index}
-            expanded={expanded === `panel${index}`}
-            onChange={handleChange(`panel${index}`)}
-          >
-            <CustomAccordionSummary
-              aria-controls={`panel${index}d-content`}
-              id={`panel${index}d-header`}
-            >
+          <CustomAccordion key={index} expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
+            <CustomAccordionSummary aria-controls={`panel${index}d-content`} id={`panel${index}d-header`}>
               <Typography>
                 Version {item.version}（{GetDateFormatted(item.date)}）
               </Typography>

@@ -1,30 +1,22 @@
-import elementReady from 'element-ready'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import define from '~/const/define'
+import ElementWait from '~/modules/ElementWait'
 
 import Chat from '../Chat'
 
 const StyleRender = async () => {
-  const element = await elementReady('body', define.ELEMENT_READY_OPTIONS)
+  const element = await ElementWait('body')
+  if (element) {
+    const div = document.createElement('div')
+    element.firstChild?.before(div)
 
-  try {
-    if (element) {
-      const div = document.createElement('div')
-      element.firstChild?.before(div)
-
-      const root = createRoot(div)
-      root.render(
-        <StrictMode>
-          <Chat />
-        </StrictMode>
-      )
-    } else {
-      throw new SyntaxError()
-    }
-  } catch (error) {
-    console.error(error)
+    const root = createRoot(div)
+    root.render(
+      <StrictMode>
+        <Chat />
+      </StrictMode>
+    )
   }
 }
 

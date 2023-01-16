@@ -24,7 +24,7 @@ const OpenPopupPage = ({ handleClose }: Props): JSX.Element => {
         chrome.runtime.sendMessage({
           type: 'open-setting-page',
           top: top,
-          left: left,
+          left: left
         })
       }}
     />

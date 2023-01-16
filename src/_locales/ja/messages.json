@@ -21,19 +21,19 @@
     "message": "昇順でナンバリング（数字）"
   },
   "popup_settings_main_select_numbering_type_label1_caption": {
-    "message": "スーパーチャットの出現頻度が穏やかな場合におすすめ"
+    "message": "出現頻度が穏やかな場合に最適"
   },
   "popup_settings_main_select_numbering_type_label2": {
     "message": "ユニークIDを使用（文字）"
   },
   "popup_settings_main_select_numbering_type_label2_caption": {
-    "message": "スーパーチャットの出現頻度が激しい場合におすすめ"
+    "message": "出現頻度が激しい場合に最適"
   },
   "popup_settings_main_select_numbering_type_label3": {
     "message": "ユーザー名を使用（文字）"
   },
   "popup_settings_main_select_numbering_type_label3_caption": {
-    "message": "スーパーチャットの出現頻度が激しい場合におすすめ"
+    "message": "出現頻度が激しい場合に最適"
   },
   "popup_settings_main_select_numbering_length_label": {
     "message": "文字列の長さ指定"

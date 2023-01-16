@@ -14,14 +14,13 @@ import { SettingsType } from '~/types/SettingsType'
 
 const WrapSuperChat = (): JSX.Element => {
   const [settings, setSettings] = useSettingsStore()
-  const { isWrapSuperChat, valueWrapSuperChatMaxHeight }: SettingsType =
-    settings
+  const { isWrapSuperChat, valueWrapSuperChatMaxHeight }: SettingsType = settings
 
   const switchHandleChange = useCallback(() => {
     setSettings((prevState: SettingsType) => {
       return {
         ...prevState,
-        isWrapSuperChat: !isWrapSuperChat,
+        isWrapSuperChat: !isWrapSuperChat
       }
     })
   }, [isWrapSuperChat, setSettings])
@@ -31,7 +30,7 @@ const WrapSuperChat = (): JSX.Element => {
       setSettings((prevState: SettingsType) => {
         return {
           ...prevState,
-          valueWrapSuperChatMaxHeight: e.target.value,
+          valueWrapSuperChatMaxHeight: e.target.value
         }
       })
     },
@@ -41,25 +40,12 @@ const WrapSuperChat = (): JSX.Element => {
   return (
     <Box display="flex" alignItems="center" mt={0.5}>
       <FormControlLabel
-        control={
-          <Switch
-            size="small"
-            checked={isWrapSuperChat}
-            onChange={switchHandleChange}
-          />
-        }
+        control={<Switch size="small" checked={isWrapSuperChat} onChange={switchHandleChange} />}
         label={
           <>
             {GetI18n('popup_settings_WrapSuperChat_label')}
-            <Tooltip
-              title={GetI18n('popup_settings_WrapSuperChat_help')}
-              arrow
-              placement="right"
-            >
-              <HelpIcon
-                fontSize="inherit"
-                style={{ fontSize: '17px', marginLeft: '4px' }}
-              />
+            <Tooltip title={GetI18n('popup_settings_WrapSuperChat_help')} arrow placement="right">
+              <HelpIcon fontSize="inherit" style={{ fontSize: '17px', marginLeft: '4px' }} />
             </Tooltip>
           </>
         }
@@ -80,7 +66,7 @@ const WrapSuperChat = (): JSX.Element => {
               <HeightIcon fontSize="small" />
             </InputAdornment>
           ),
-          endAdornment: <InputAdornment position="end">%</InputAdornment>,
+          endAdornment: <InputAdornment position="end">%</InputAdornment>
         }}
         onChange={(e) => textHandleChange(e)}
       />
