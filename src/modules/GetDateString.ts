@@ -1,6 +1,5 @@
 const GetDateFormatted = (date: Date | undefined): string => {
   if (!date) return ''
-  console.log({ date })
 
   return date
     .toLocaleDateString('ja-JP', {
