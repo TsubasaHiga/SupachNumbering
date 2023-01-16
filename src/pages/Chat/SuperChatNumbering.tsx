@@ -1,5 +1,5 @@
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
-import { SettingsType } from '~/types/SettingsType'
+import { NumberingTypeUnique, SettingsType } from '~/types/SettingsType'
 
 import AddSuperChatNumbering from './components//AddSuperChatNumbering/AddSuperChatNumbering'
 
@@ -14,7 +14,10 @@ const SuperChatNumbering = (): JSX.Element => {
         // ナンバリング方式に'uniqueId', 'uniqueUserName'を選択している時のみレンダリング
         isAddSuperChatNumbering && ['uniqueId', 'uniqueUserName'].includes(numberingType) && (
           <>
-            <AddSuperChatNumbering stringLength={uniqueNumberingStringLength} numberingType={numberingType} />
+            <AddSuperChatNumbering
+              stringLength={uniqueNumberingStringLength}
+              numberingType={numberingType as NumberingTypeUnique}
+            />
           </>
         )
       }
