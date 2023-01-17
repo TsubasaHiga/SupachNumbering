@@ -21,19 +21,19 @@
     "message": "昇順でナンバリング（数字）"
   },
   "popup_settings_main_select_numbering_type_label1_caption": {
-    "message": "スーパーチャットの出現頻度が穏やかな場合におすすめ"
+    "message": "出現頻度が穏やかな場合に最適"
   },
   "popup_settings_main_select_numbering_type_label2": {
     "message": "ユニークIDを使用（文字）"
   },
   "popup_settings_main_select_numbering_type_label2_caption": {
-    "message": "スーパーチャットの出現頻度が激しい場合におすすめ"
+    "message": "出現頻度が激しい場合に最適"
   },
   "popup_settings_main_select_numbering_type_label3": {
     "message": "ユーザー名を使用（文字）"
   },
   "popup_settings_main_select_numbering_type_label3_caption": {
-    "message": "スーパーチャットの出現頻度が激しい場合におすすめ"
+    "message": "出現頻度が激しい場合に最適"
   },
   "popup_settings_main_select_numbering_length_label": {
     "message": "文字列の長さ指定"
@@ -76,6 +76,9 @@
   },
   "popup_settings_HideSuperChatAvatar_label_caption": {
     "message": "「金額を非表示」設定はOFFになります"
+  },
+  "popup_settings_HideSuperChatSponsorTicker_label": {
+    "message": "スポンサーティッカーを非表示"
   },
   "popup_settings_AddSuperChatAvatarBlur_label": {
     "message": "ユーザーアバター画像にモザイクを追加"
@@ -125,7 +128,10 @@
   "popup_support": {
     "message": "バグ報告＆提案お待ちしております！"
   },
-  "popup_re_applying": {
-    "message": "再適用"
+  "content_menu_reapplying_label": {
+    "message": "再適用する"
+  },
+  "content_menu_open_popup_page_label": {
+    "message": "設定画面を開く"
   }
 }

@@ -1,4 +1,4 @@
-import GetDateFormatted from '~/modules/GetDateString'
+import define from '~/const/define'
 import GetLocalStorage from '~/modules/GetLocalStorage'
 import SetLocalStorage from '~/modules/SetLocalStorage'
 import { CommonType } from '~/types/CommonType'
@@ -14,10 +14,7 @@ const onUpdate = async () => {
     ...commonValues,
 
     // isUpdatedをtrueにする
-    isUpdated: true,
-
-    // 最終アップデート日付を更新（ChangeLogの最初の項目で使用などを想定）
-    lastUpdateDate: GetDateFormatted(new Date()),
+    isUpdated: true
   }
 
   // local storageにcommonのデータを保存
@@ -32,6 +29,19 @@ const clearBadgeText = async () => {
   await chrome.action.setBadgeText({ text: '' })
 }
 
+// openPopupPage
+const openPopupPage = async (top: number, left: number) => {
+  chrome.windows.create({
+    focused: true,
+    width: define.POPUP_WIDTH,
+    height: define.POPUP_HEIGHT,
+    type: 'popup',
+    url: 'popup.html',
+    top: top,
+    left: left
+  })
+}
+
 // onInstalled listener
 chrome.runtime.onInstalled.addListener((details) => {
   // update
@@ -44,6 +54,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === 'closed-update-dialog') {
     console.log('closed-update-dialog')
     clearBadgeText()
+  }
+
+  // contentScriptのメニュー内から設定画面を開く時
+  if (request.type === 'open-setting-page') {
+    console.log('open-setting-page')
+    openPopupPage(request.top, request.left)
   }
 })
 

@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+.root {
+  align-items: center;
+  color: var(--yt-spec-icon-inactive);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 40px;
+
+  .button {
+    height: 100%;
+    padding: 10px;
+    width: 100%;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+}

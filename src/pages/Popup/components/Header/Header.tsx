@@ -16,20 +16,20 @@ const linkList = [
     id: 'store',
     title: 'popup_web_store',
     link: define.STORE_URL,
-    icon: <ShopIcon fontSize="inherit" color="primary" />,
+    icon: <ShopIcon fontSize="inherit" color="primary" />
   },
   {
     id: 'review',
     title: 'popup_review',
     link: define.STORE_URL + '/reviews',
-    icon: <RateReviewIcon fontSize="inherit" color="primary" />,
+    icon: <RateReviewIcon fontSize="inherit" color="primary" />
   },
   {
     id: 'support',
     title: 'popup_support',
     link: define.STORE_URL + '/support',
-    icon: <QuestionAnswerIcon fontSize="inherit" color="primary" />,
-  },
+    icon: <QuestionAnswerIcon fontSize="inherit" color="primary" />
+  }
 ]
 
 const Header = (): JSX.Element => {
@@ -39,21 +39,16 @@ const Header = (): JSX.Element => {
     <header className={styles.header}>
       <div className={styles.inner}>
         <p className={styles.title}>
-          <img className={styles.logo} src={Logo} alt="Supach Numbering" />
+          <img className={styles.logo} src={Logo} alt={manifest.name} />
           <span className={styles.name}>
-            <span className={styles.text}>Supach Numbering</span>
+            <span className={styles.text}>{manifest.name}</span>
             <span className={styles.version}>{manifest.version}</span>
           </span>
         </p>
 
         <div className={styles.links}>
           {linkList.map((link) => (
-            <a
-              key={link.id}
-              href={link.link}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
+            <a key={link.id} href={link.link} target="_blank" rel="noreferrer noopener">
               <Tooltip title={GetI18n(link.title)} arrow placement="bottom">
                 <IconButton color="inherit">{link.icon}</IconButton>
               </Tooltip>

@@ -1,5 +1,8 @@
 export type NumberingType = 'default' | 'uniqueId' | 'uniqueUserName'
 
+// NumberingType型から'uniqueId'と'uniqueUserName'をピックアップした型を生成
+export type NumberingTypeUnique = Extract<NumberingType, 'uniqueId' | 'uniqueUserName'>
+
 export type SettingsType = {
   // スーパーチャットにナンバリングを追加
   isAddSuperChatNumbering: boolean
@@ -14,6 +17,9 @@ export type SettingsType = {
 
   // スーパーチャットの金額を非表示
   isHideSuperChatPrice: boolean
+
+  // スーパーチャットのスポンサーティッカーを非表示
+  isHideSuperChatSponsorTicker: boolean
 
   // ユーザーアバター画像（スーパーチャット内のみ）の非表示
   isHideSuperChatAvatar: boolean

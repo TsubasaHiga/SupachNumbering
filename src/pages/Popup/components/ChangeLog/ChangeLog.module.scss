@@ -1,12 +1,12 @@
 .root {
 
   li {
+    display: flex;
+    user-select: none;
 
     &:not(:first-of-type) {
-      margin-top: 6px;
+      margin-top: 8px;
     }
-
-    display: flex;
 
     > span {
       align-items: center;
@@ -14,12 +14,15 @@
       color: #000;
       display: flex;
       font-size: 12px;
+      font-weight: 700;
       height: 21px;
       justify-content: center;
       line-height: 1;
       margin-right: 8px;
-      min-width: 60px;
-      padding: 0 8px;
+      margin-top: 2px;
+      min-width: 68px;
+      padding: 2px 8px;
+      text-transform: uppercase;
 
       &[data-type = "new"] {
         background-color: #fbca04;
@@ -46,18 +49,16 @@
     }
 
     p {
-      font-size: 13px;
-      margin-top: 1px;
+      font-size: 15px;
 
       code {
         background-color: #eee;
         border-radius: 3px;
         color: #666;
         font-family: Roboto, sans-serif;
-        font-size: 11px;
         line-height: 1;
         margin: 0 3px;
-        padding: 3px;
+        padding: 2px 6px;
       }
     }
   }

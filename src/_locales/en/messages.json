@@ -21,19 +21,19 @@
     "message": "Use ASC order"
   },
   "popup_settings_main_select_numbering_type_label1_caption": {
-    "message": "Recommended if you don't have a lot of super chat."
+    "message": "Best for Moderate Occurrences"
   },
   "popup_settings_main_select_numbering_type_label2": {
     "message": "Use Unique Id"
   },
   "popup_settings_main_select_numbering_type_label2_caption": {
-    "message": "Recommended if you have a lot of super chats."
+    "message": "Best for high occurrence frequency"
   },
   "popup_settings_main_select_numbering_type_label3": {
     "message": "Use User name"
   },
   "popup_settings_main_select_numbering_type_label3_caption": {
-    "message": "Recommended if you have a lot of super chats."
+    "message": "Best for high occurrence frequency"
   },
   "popup_settings_main_select_numbering_length_label": {
     "message": "string length"
@@ -76,6 +76,9 @@
   },
   "popup_settings_HideSuperChatAvatar_label_caption": {
     "message": "\"Hide price\" setting is OFF"
+  },
+  "popup_settings_HideSuperChatSponsorTicker_label": {
+    "message": "Hide sponsor ticker"
   },
   "popup_settings_AddSuperChatAvatarBlur_label": {
     "message": "Add blur to user avatar image"
@@ -125,7 +128,10 @@
   "popup_support": {
     "message": "Bug reports and suggestions are welcome!"
   },
-  "popup_re_applying": {
-    "message": "Re applying"
+  "content_menu_reapplying_label": {
+    "message": "Reapply"
+  },
+  "content_menu_open_popup_page_label": {
+    "message": "Open Settings Page"
   }
 }

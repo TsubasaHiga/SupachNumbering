@@ -8,14 +8,13 @@ import { SettingsType } from '~/types/SettingsType'
 
 const AddSuperChatAvatarBlur = (): JSX.Element => {
   const [settings, setSettings] = useSettingsStore()
-  const { isAddSuperChatAvatarBlur, isHideSuperChatAvatar }: SettingsType =
-    settings
+  const { isAddSuperChatAvatarBlur, isHideSuperChatAvatar }: SettingsType = settings
 
   const switchHandleChange = useCallback(() => {
     setSettings((prevState: SettingsType) => {
       return {
         ...prevState,
-        isAddSuperChatAvatarBlur: !isAddSuperChatAvatarBlur,
+        isAddSuperChatAvatarBlur: !isAddSuperChatAvatarBlur
       }
     })
   }, [isAddSuperChatAvatarBlur, setSettings])

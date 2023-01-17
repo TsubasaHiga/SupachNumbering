@@ -18,6 +18,9 @@ const INITIAL_VALUE: SettingsType = {
   // スーパーチャットの金額を非表示
   isHideSuperChatPrice: false,
 
+  // スーパーチャットのスポンサーティッカーを非表示
+  isHideSuperChatSponsorTicker: false,
+
   // ユーザーアバター画像（スーパーチャット内のみ）の非表示
   isHideSuperChatAvatar: false,
 
@@ -41,10 +44,7 @@ const INITIAL_VALUE: SettingsType = {
 
   // チャット欄のフォントサイズを変更
   isChangeChatFontSize: false,
-  valueChatFontSize: 10,
+  valueChatFontSize: 10
 }
 
-export const useSettingsStore = createChromeStorageStateHookLocal(
-  SETTINGS_KEY,
-  INITIAL_VALUE
-)
+export const useSettingsStore = createChromeStorageStateHookLocal(SETTINGS_KEY, INITIAL_VALUE)
