@@ -3,14 +3,13 @@ import { memo, useCallback } from 'react'
 
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
 import { SettingsType } from '~/types/SettingsType'
-
-import ListItemContent from '../ListText/ListText'
+import ListItemContent from '~/ui/MenuListItem'
 
 type Props = {
   handleClose: () => void
 }
 
-const MainSettingsReApplying = ({ handleClose }: Props): JSX.Element => {
+const MenuReapply = ({ handleClose }: Props): JSX.Element => {
   const [, setSettings] = useSettingsStore()
 
   const Reapply = useCallback(() => {
@@ -41,4 +40,4 @@ const MainSettingsReApplying = ({ handleClose }: Props): JSX.Element => {
   )
 }
 
-export default memo(MainSettingsReApplying)
+export default memo(MenuReapply)
