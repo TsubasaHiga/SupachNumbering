@@ -38,8 +38,12 @@ yt-live-chat-ticker-paid-message-item-renderer #content:before {
       : ''
   }
   ${
-    // ユニークなナンバリング
-    ['uniqueId', 'uniqueUserName'].includes(numberingType) ? `content: attr(data-unique-string);` : ''
+    // ユニークIDでナンバリング
+    ['uniqueId'].includes(numberingType) ? `content: attr(data-unique-id);` : ''
+  }
+  ${
+    // ユニークユーザー名でナンバリング
+    ['uniqueUserName'].includes(numberingType) ? `content: attr(data-unique-user-name);` : ''
   }
   counter-increment: number 1;
   margin-right: 8px;

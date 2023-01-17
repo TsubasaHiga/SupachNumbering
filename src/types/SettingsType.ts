@@ -1,5 +1,8 @@
 export type NumberingType = 'default' | 'uniqueId' | 'uniqueUserName'
 
+// NumberingType型から'uniqueId'と'uniqueUserName'をピックアップした型を生成
+export type NumberingTypeUnique = Extract<NumberingType, 'uniqueId' | 'uniqueUserName'>
+
 export type SettingsType = {
   // スーパーチャットにナンバリングを追加
   isAddSuperChatNumbering: boolean

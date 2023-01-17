@@ -5,26 +5,34 @@
  */
 const GetUserNameFromTickerItemElement = async (
   element: HTMLElement,
-  timeoutMillisecond: number,
-  intervalMillisecond: number
+  timeoutMillisecond = 10000,
+  intervalMillisecond = 100
 ): Promise<string> => {
-  // 画像のaltからユーザー名を取得するので要素を取得
-  const targetElement = element.querySelector('#img') as HTMLImageElement
-
   // 画像のaltは動的に生成されるのでsetIntervalで取得できるまでポーリングする
   return new Promise(async (resolve, reject) => {
-    // 一定時間で強制的にintervalを終了させる
+    // 画像のaltからユーザー名を取得するので要素を取得
+    const imageElement = element.querySelector('#author-photo #img') as HTMLImageElement
+    if (!imageElement) {
+      console.warn('imageElement not found')
+      reject('-')
+      return
+    }
+
+    // timeout
     const timer = setTimeout(() => {
       clearInterval(interval)
-      console.log('timeout')
-      resolve('-')
+      console.error('timeout')
+      reject('-')
     }, timeoutMillisecond)
 
     // interval
     const interval = setInterval(() => {
-      console.log('interval')
-      const alt = targetElement.alt
-      if (alt) {
+      const alt = imageElement.alt
+      const existAlt = alt && alt.length > 0 ? true : false
+
+      console.log({ id: element.id, existAlt, alt, imageElement })
+
+      if (existAlt) {
         clearInterval(interval)
         clearTimeout(timer)
         resolve(alt)
