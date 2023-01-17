@@ -7,37 +7,32 @@ import { SettingsType } from '~/types/SettingsType'
 import ListItemContent from '../ListText/ListText'
 
 type Props = {
-  enabled: boolean
   handleClose: () => void
 }
 
-const MainSettingsReApplying = ({ enabled, handleClose }: Props): JSX.Element => {
+const MainSettingsReApplying = ({ handleClose }: Props): JSX.Element => {
   const [, setSettings] = useSettingsStore()
 
-  const clickHandler = useCallback(() => {
+  const Reapply = useCallback(() => {
     setSettings((prevState: SettingsType) => {
       return {
         ...prevState,
-        isAddSuperChatNumbering: false
+        isAddSuperChatNumbering: !prevState.isAddSuperChatNumbering
       }
     })
+  }, [setSettings])
+
+  const clickHandler = useCallback(() => {
+    Reapply()
 
     // 一定時間後にボタンを有効化
-    setTimeout(() => {
-      setSettings((prevState: SettingsType) => {
-        return {
-          ...prevState,
-          isAddSuperChatNumbering: true
-        }
-      })
-    }, 250)
-  }, [setSettings])
+    setTimeout(() => Reapply(), 250)
+  }, [Reapply])
 
   return (
     <ListItemContent
-      enabled={enabled}
       icon={<ReplayIcon fontSize="large" />}
-      label="content_menu_AddSuperChatNumbering_re_applying_label"
+      label="content_menu_reapplying_label"
       onClick={() => {
         clickHandler()
         handleClose()
