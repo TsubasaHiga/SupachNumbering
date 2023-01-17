@@ -2,14 +2,13 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import { memo } from 'react'
 
 import GetPopupPosition from '~/modules/GetPopupPosition'
-
-import ListItemContent from '../ListText/ListText'
+import ListItemContent from '~/ui/MenuListItem'
 
 type Props = {
   handleClose: () => void
 }
 
-const OpenPopupPage = ({ handleClose }: Props): JSX.Element => {
+const MenuOpenPopupPage = ({ handleClose }: Props): JSX.Element => {
   return (
     <ListItemContent
       icon={<SettingsIcon fontSize="large" />}
@@ -31,4 +30,4 @@ const OpenPopupPage = ({ handleClose }: Props): JSX.Element => {
   )
 }
 
-export default memo(OpenPopupPage)
+export default memo(MenuOpenPopupPage)

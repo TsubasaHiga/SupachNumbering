@@ -5,20 +5,17 @@ import MenuList from '@mui/material/MenuList'
 import { memo, useCallback, useState } from 'react'
 
 import Logo from '~/assets/img/icon-34.png'
-import { useSettingsStore } from '~/store/atoms/useSettingsStore'
-import { SettingsType } from '~/types/SettingsType'
 
-import MainSettingsReApplying from '../MainSettingsReApplying/MainSettingsReApplying'
-import OpenPopupPage from '../OpenPopupPage/OpenPopupPage'
+import MenuFooter from './MenuFooter/MenuFooter'
+import MenuHeader from './MenuHeader/MenuHeader'
+import MenuOpenPopupPage from './MenuOpenPopupPage/MenuOpenPopupPage'
+import MenuReapply from './MenuReapply/MenuReapply'
 import styles from './SettingsMenu.module.scss'
 
 const ITEM_HEIGHT = 48
 
 const SettingsMenu = (): JSX.Element => {
   const manifest = chrome.runtime.getManifest()
-
-  const [settings] = useSettingsStore()
-  const { isAddSuperChatNumbering, numberingType }: SettingsType = settings
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
@@ -59,25 +56,12 @@ const SettingsMenu = (): JSX.Element => {
         }}
       >
         <MenuList>
-          <div className={styles.title}>
-            <span className={styles.logo}>
-              <img src={chrome.runtime.getURL(Logo)} alt={manifest.name} />
-            </span>
-            <span className={styles.name}>
-              <span className={styles.text}>{manifest.name}</span>
-              <span className={styles.version}>{manifest.version}</span>
-            </span>
-          </div>
+          <MenuHeader manifest={manifest} />
           <Divider />
-          <MainSettingsReApplying
-            enabled={
-              // isAddSuperChatNumberingがtrue且つ
-              // ナンバリング方式に'uniqueId', 'uniqueUserName'を選択している時のみ有効
-              isAddSuperChatNumbering && ['uniqueId', 'uniqueUserName'].includes(numberingType)
-            }
-            handleClose={handleClose}
-          />
-          <OpenPopupPage handleClose={handleClose} />
+          <MenuReapply handleClose={handleClose} />
+          <MenuOpenPopupPage handleClose={handleClose} />
+          <Divider />
+          <MenuFooter manifest={manifest} />
         </MenuList>
       </Menu>
     </div>

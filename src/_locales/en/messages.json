@@ -128,8 +128,8 @@
   "popup_support": {
     "message": "Bug reports and suggestions are welcome!"
   },
-  "content_menu_AddSuperChatNumbering_re_applying_label": {
-    "message": "Reapplied 'Add numbering to Super Chat' function"
+  "content_menu_reapplying_label": {
+    "message": "Reapply"
   },
   "content_menu_open_popup_page_label": {
     "message": "Open Settings Page"
