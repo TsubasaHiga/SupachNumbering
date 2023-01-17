@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+.title {
+  align-items: center;
+  display: flex;
+  padding: 12px 16px;
+
+  .logo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+    width: 23px;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .name {
+    align-items: center;
+    color: #333;
+    display: flex;
+    margin-bottom: 5px;
+
+    .text {
+      font-size: 15px;
+      margin-right: 6px;
+    }
+  }
+}

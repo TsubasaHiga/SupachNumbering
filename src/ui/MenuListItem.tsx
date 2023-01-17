@@ -12,7 +12,7 @@ type Props = {
   onClick: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void
 }
 
-const ListItemContent = ({ enabled = true, icon, label, onClick }: Props): JSX.Element => {
+const MenuListItem = ({ enabled = true, icon, label, onClick }: Props): JSX.Element => {
   return (
     <MenuItem disabled={!enabled} onClick={(e) => onClick(e)}>
       <ListItemIcon>{icon}</ListItemIcon>
@@ -34,4 +34,4 @@ const ListItemContent = ({ enabled = true, icon, label, onClick }: Props): JSX.E
   )
 }
 
-export default memo(ListItemContent)
+export default memo(MenuListItem)
