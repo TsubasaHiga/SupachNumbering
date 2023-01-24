@@ -1,5 +1,16 @@
 const changeLog = [
   {
+    version: '1.0.5',
+    date: new Date('2023-01-24'),
+    changes: [
+      {
+        type: 'fix',
+        message:
+          'YouTube Studioページ<code>*://studio.youtube.com/*</code>でチャット関連の機能が動作しない不具合を修正しました。'
+      }
+    ]
+  },
+  {
     version: '1.0.4',
     date: new Date('2023-01-20'),
     changes: [
@@ -85,7 +96,7 @@ const changeLog = [
     changes: [
       {
         type: 'update',
-        message: 'YouTube配信者側の画面<code>*://studio.youtube.com/*</code>での動作をサポートしました。'
+        message: 'YouTube Studioページ<code>*://studio.youtube.com/*</code>での動作をサポートしました。'
       },
       {
         type: 'update',
