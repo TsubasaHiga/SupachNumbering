@@ -101,6 +101,9 @@
   "popup_settings_ChangeChatFontSize_label": {
     "message": "Change font size of chat field"
   },
+  "popup_settings_AddEvenCommentBackgroundColor_label": {
+    "message": "Add bg color to even comments"
+  },
   "popup_image_title": {
     "message": "Operation image"
   },
