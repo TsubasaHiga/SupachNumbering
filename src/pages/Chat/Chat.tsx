@@ -4,6 +4,7 @@ import { useSettingsStore } from '~/store/atoms/useSettingsStore'
 import { SettingsType } from '~/types/SettingsType'
 
 import StyleAddChatAvatarBlur from './styleFunctions/StyleAddChatAvatarBlur'
+import StyleAddEvenCommentBackgroundColor from './styleFunctions/StyleAddEvenCommentBackgroundColor'
 import StyleAddSuperChatAvatarBlur from './styleFunctions/StyleAddSuperChatAvatarBlur'
 import StyleAddSuperChatNumbering from './styleFunctions/StyleAddSuperChatNumbering'
 import StyleChangeChatFontSize from './styleFunctions/StyleChangeChatFontSize'
@@ -35,7 +36,8 @@ const Chat = (): null => {
     isHideAuthorName,
     isShrinkChatMessage,
     isChangeChatFontSize,
-    valueChatFontSize
+    valueChatFontSize,
+    isAddEvenCommentBackgroundColor
   }: SettingsType = settings
 
   // スタイル追加
@@ -102,6 +104,11 @@ const Chat = (): null => {
       inlineStyleElement.innerText += StyleChangeChatFontSize(valueChatFontSize)
     }
 
+    // チャット欄の偶数コメントに背景色を追加
+    if (isAddEvenCommentBackgroundColor) {
+      inlineStyleElement.innerText += StyleAddEvenCommentBackgroundColor()
+    }
+
     console.log('スタイル追加')
     console.log({ inlineStyleElement })
 
@@ -121,7 +128,8 @@ const Chat = (): null => {
     isHideAuthorName,
     isShrinkChatMessage,
     isChangeChatFontSize,
-    valueChatFontSize
+    valueChatFontSize,
+    isAddEvenCommentBackgroundColor
   ])
 
   return null

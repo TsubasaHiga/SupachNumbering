@@ -101,6 +101,9 @@
   "popup_settings_ChangeChatFontSize_label": {
     "message": "チャット欄のフォントサイズを変更"
   },
+  "popup_settings_AddEvenCommentBackgroundColor_label": {
+    "message": "チャット欄の偶数コメントに背景色を追加"
+  },
   "popup_image_title": {
     "message": "動作イメージ"
   },

@@ -44,7 +44,10 @@ const INITIAL_VALUE: SettingsType = {
 
   // チャット欄のフォントサイズを変更
   isChangeChatFontSize: false,
-  valueChatFontSize: 10
+  valueChatFontSize: 10,
+
+  // チャット欄の偶数コメントに背景色を追加
+  isAddEvenCommentBackgroundColor: false
 }
 
 export const useSettingsStore = createChromeStorageStateHookLocal(SETTINGS_KEY, INITIAL_VALUE)

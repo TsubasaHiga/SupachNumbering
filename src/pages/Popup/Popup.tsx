@@ -18,6 +18,7 @@ import { theme } from '~/theme/mui'
 import { CommonType } from '~/types/CommonType'
 
 import AddChatAvatarBlur from './components/AddChatAvatarBlur/AddChatAvatarBlur'
+import AddEvenCommentBackgroundColor from './components/AddEvenCommentBackgroundColor/AddEvenCommentBackgroundColor'
 import AddSuperChatAvatarBlur from './components/AddSuperChatAvatarBlur/AddSuperChatAvatarBlur'
 import AddSuperChatNumbering from './components/AddSuperChatNumbering/AddSuperChatNumbering'
 import ChangeChatFontSize from './components/ChangeChatFontSize/ChangeChatFontSize'
@@ -88,6 +89,7 @@ const Popup = (): JSX.Element => {
                   <ShrinkChatMessage />
                   <ExpandChatHeight />
                   <ChangeChatFontSize />
+                  <AddEvenCommentBackgroundColor isNew={true} />
                 </SettingsWrap>
               </FormGroup>
 

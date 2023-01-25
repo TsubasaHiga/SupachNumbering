@@ -45,4 +45,7 @@ export type SettingsType = {
   // チャット欄のフォントサイズを変更
   isChangeChatFontSize: boolean
   valueChatFontSize: number
+
+  // チャット欄の偶数コメントに背景色を追加
+  isAddEvenCommentBackgroundColor: boolean
 }
