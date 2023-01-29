@@ -47,7 +47,10 @@ const INITIAL_VALUE: SettingsType = {
   valueChatFontSize: 10,
 
   // チャット欄の偶数コメントに背景色を追加
-  isAddEvenCommentBackgroundColor: false
+  isAddEvenCommentBackgroundColor: false,
+
+  // チャット欄上部に設定メニューを表示
+  isDisplayChatOnSettingMenu: true
 }
 
 export const useSettingsStore = createChromeStorageStateHookLocal(SETTINGS_KEY, INITIAL_VALUE)

@@ -56,6 +56,9 @@
   "popup_settings_sub_chat_title": {
     "message": "チャット内の設定"
   },
+  "popup_settings_other_title": {
+    "message": "その他の設定"
+  },
   "popup_settings_AddSuperChatNumbering_label": {
     "message": "スーパーチャットにナンバリングを追加"
   },
@@ -103,6 +106,9 @@
   },
   "popup_settings_AddEvenCommentBackgroundColor_label": {
     "message": "チャット欄の偶数コメントに背景色を追加"
+  },
+  "popup_settings_DisplayChatOnSettingMenu_label": {
+    "message": "チャット欄上部に設定メニューを表示"
   },
   "popup_image_title": {
     "message": "動作イメージ"

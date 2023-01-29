@@ -48,4 +48,7 @@ export type SettingsType = {
 
   // チャット欄の偶数コメントに背景色を追加
   isAddEvenCommentBackgroundColor: boolean
+
+  // チャット欄上部に設定メニューを表示
+  isDisplayChatOnSettingMenu: boolean
 }

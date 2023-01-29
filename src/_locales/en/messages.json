@@ -56,6 +56,9 @@
   "popup_settings_sub_chat_title": {
     "message": "Settings in Chat"
   },
+  "popup_settings_other_title": {
+    "message": "Other Settings"
+  },
   "popup_settings_AddSuperChatNumbering_label": {
     "message": "Add numbering to Super Chat"
   },
@@ -103,6 +106,9 @@
   },
   "popup_settings_AddEvenCommentBackgroundColor_label": {
     "message": "Add bg color to even comments"
+  },
+  "popup_settings_DisplayChatOnSettingMenu_label": {
+    "message": "Display settings menu on chat field"
   },
   "popup_image_title": {
     "message": "Operation image"

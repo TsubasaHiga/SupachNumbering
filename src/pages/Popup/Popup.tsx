@@ -22,6 +22,7 @@ import AddEvenCommentBackgroundColor from './components/AddEvenCommentBackground
 import AddSuperChatAvatarBlur from './components/AddSuperChatAvatarBlur/AddSuperChatAvatarBlur'
 import AddSuperChatNumbering from './components/AddSuperChatNumbering/AddSuperChatNumbering'
 import ChangeChatFontSize from './components/ChangeChatFontSize/ChangeChatFontSize'
+import DisplayChatOnSettingMenu from './components/DisplayChatOnSettingMenu/DisplayChatOnSettingMenu'
 import ExpandChatHeight from './components/ExpandChatHeight/ExpandChatHeight'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
@@ -90,6 +91,13 @@ const Popup = (): JSX.Element => {
                   <ExpandChatHeight />
                   <ChangeChatFontSize />
                   <AddEvenCommentBackgroundColor isNew={true} />
+                </SettingsWrap>
+
+                <SettingsWrap>
+                  <Typography variant="caption" component="div">
+                    {GetI18n('popup_settings_other_title')}
+                  </Typography>
+                  <DisplayChatOnSettingMenu isNew={true} />
                 </SettingsWrap>
               </FormGroup>
 
