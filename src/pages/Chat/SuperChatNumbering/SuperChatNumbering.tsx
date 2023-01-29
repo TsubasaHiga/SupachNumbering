@@ -1,7 +1,7 @@
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
 import { NumberingTypeUnique, SettingsType } from '~/types/SettingsType'
 
-import AddSuperChatNumbering from './components//AddSuperChatNumbering/AddSuperChatNumbering'
+import AddSuperChatNumbering from './components/AddSuperChatNumbering/AddSuperChatNumbering'
 
 const SuperChatNumbering = (): JSX.Element => {
   const [settings] = useSettingsStore()

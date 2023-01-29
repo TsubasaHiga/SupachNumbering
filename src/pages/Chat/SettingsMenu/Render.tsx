@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client'
 
 import ElementWait from '~/modules/ElementWait'
 
-import SuperChatNumbering from '../SuperChatNumbering'
+import SettingsMenu from './SettingsMenu'
 
-const SuperChatNumberingRender = async () => {
-  const element = await ElementWait('yt-live-chat-app')
+export const RenderSettingsMenu = async () => {
+  const element = await ElementWait('#overflow')
   if (element) {
     const div = document.createElement('div')
     element.before(div)
@@ -14,10 +14,8 @@ const SuperChatNumberingRender = async () => {
     const root = createRoot(div)
     root.render(
       <StrictMode>
-        <SuperChatNumbering />
+        <SettingsMenu />
       </StrictMode>
     )
   }
 }
-
-export default SuperChatNumberingRender

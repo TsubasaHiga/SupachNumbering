@@ -1,12 +1,12 @@
-import SettingsRender from './render/SettingsRender'
-import StyleRender from './render/StyleRender'
-import SuperChatNumberingRender from './render/SuperChatNumberingRender'
+import { RenderChatStyle } from './ChatStyle/Render'
+import { RenderSettingsMenu } from './SettingsMenu/Render'
+import { RenderSuperChatNumbering } from './SuperChatNumbering/Render'
 
 // スタイル適用関連のレンダリング
-StyleRender()
+RenderChatStyle()
 
 // 設定メニューボタンのレンダリング
-SettingsRender()
+RenderSettingsMenu()
 
 // スーパーチャットユニークナンバリング機能のレンダリング
-SuperChatNumberingRender()
+RenderSuperChatNumbering()

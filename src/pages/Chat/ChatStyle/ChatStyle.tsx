@@ -20,7 +20,7 @@ const inlineStyleElement = document.createElement('style')
 inlineStyleElement.type = 'text/css'
 inlineStyleElement.id = 'supach-numbering-chat-style'
 
-const Chat = (): null => {
+const ChatStyle = (): null => {
   const [settings] = useSettingsStore()
   const {
     isAddSuperChatNumbering,
@@ -135,4 +135,4 @@ const Chat = (): null => {
   return null
 }
 
-export default Chat
+export default ChatStyle
