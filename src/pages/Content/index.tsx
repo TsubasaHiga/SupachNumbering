@@ -6,7 +6,7 @@ import Content from './Content'
 
 const insertWrapElement = document.querySelector('body')
 
-if (insertWrapElement) {
+if (insertWrapElement && insertWrapElement.firstChild) {
   console.log('content script')
 
   const div = document.createElement('div')
