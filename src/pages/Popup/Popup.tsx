@@ -4,7 +4,7 @@ import FormGroup from '@mui/material/FormGroup'
 import FormLabel from '@mui/material/FormLabel'
 import { ThemeProvider } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
-import { IconBellRinging, IconBrandChrome, IconGitPullRequest, IconSettings, IconTools } from '@tabler/icons'
+import { IconBellRinging, IconBrandChrome, IconGitPullRequest, IconSettings, IconTools } from '@tabler/icons-react'
 
 import img from '~/assets/img/popup.png'
 import define from '~/const/define'
