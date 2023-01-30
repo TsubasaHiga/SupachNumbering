@@ -4,6 +4,9 @@ export type NumberingType = 'default' | 'uniqueId' | 'uniqueUserName'
 export type NumberingTypeUnique = Extract<NumberingType, 'uniqueId' | 'uniqueUserName'>
 
 export type SettingsType = {
+  // 全ての機能を有効化
+  isEnableAll: boolean
+
   // スーパーチャットにナンバリングを追加
   isAddSuperChatNumbering: boolean
 

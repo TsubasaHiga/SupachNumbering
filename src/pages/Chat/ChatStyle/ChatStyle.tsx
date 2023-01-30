@@ -23,6 +23,7 @@ inlineStyleElement.id = 'supach-numbering-chat-style'
 const ChatStyle = (): null => {
   const [settings] = useSettingsStore()
   const {
+    isEnableAll,
     isAddSuperChatNumbering,
     numberingType,
     isWrapSuperChat,
@@ -42,6 +43,12 @@ const ChatStyle = (): null => {
 
   // スタイル追加
   useEffect(() => {
+    if (!isEnableAll) {
+      console.log('スタイル削除')
+      inlineStyleElement.innerText = ''
+      return
+    }
+
     inlineStyleElement.innerText = ''
 
     // スーパーチャットにナンバリングを追加
@@ -115,6 +122,7 @@ const ChatStyle = (): null => {
     // headに追加
     document.querySelector('head')?.appendChild(inlineStyleElement)
   }, [
+    isEnableAll,
     isAddSuperChatNumbering,
     numberingType,
     isWrapSuperChat,
