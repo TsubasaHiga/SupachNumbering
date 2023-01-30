@@ -4,6 +4,7 @@ import { useSettingsStore } from '~/store/atoms/useSettingsStore'
 import { SettingsType } from '~/types/SettingsType'
 
 import StyleAddChatAvatarBlur from './styleFunctions/StyleAddChatAvatarBlur'
+import StyleAddEvenCommentBackgroundColor from './styleFunctions/StyleAddEvenCommentBackgroundColor'
 import StyleAddSuperChatAvatarBlur from './styleFunctions/StyleAddSuperChatAvatarBlur'
 import StyleAddSuperChatNumbering from './styleFunctions/StyleAddSuperChatNumbering'
 import StyleChangeChatFontSize from './styleFunctions/StyleChangeChatFontSize'
@@ -19,9 +20,10 @@ const inlineStyleElement = document.createElement('style')
 inlineStyleElement.type = 'text/css'
 inlineStyleElement.id = 'supach-numbering-chat-style'
 
-const Chat = (): null => {
+const ChatStyle = (): null => {
   const [settings] = useSettingsStore()
   const {
+    isEnableAll,
     isAddSuperChatNumbering,
     numberingType,
     isWrapSuperChat,
@@ -35,11 +37,18 @@ const Chat = (): null => {
     isHideAuthorName,
     isShrinkChatMessage,
     isChangeChatFontSize,
-    valueChatFontSize
+    valueChatFontSize,
+    isAddEvenCommentBackgroundColor
   }: SettingsType = settings
 
   // スタイル追加
   useEffect(() => {
+    if (!isEnableAll) {
+      console.log('スタイル削除')
+      inlineStyleElement.innerText = ''
+      return
+    }
+
     inlineStyleElement.innerText = ''
 
     // スーパーチャットにナンバリングを追加
@@ -102,12 +111,18 @@ const Chat = (): null => {
       inlineStyleElement.innerText += StyleChangeChatFontSize(valueChatFontSize)
     }
 
+    // チャット欄の偶数コメントに背景色を追加
+    if (isAddEvenCommentBackgroundColor) {
+      inlineStyleElement.innerText += StyleAddEvenCommentBackgroundColor()
+    }
+
     console.log('スタイル追加')
     console.log({ inlineStyleElement })
 
     // headに追加
     document.querySelector('head')?.appendChild(inlineStyleElement)
   }, [
+    isEnableAll,
     isAddSuperChatNumbering,
     numberingType,
     isWrapSuperChat,
@@ -121,10 +136,11 @@ const Chat = (): null => {
     isHideAuthorName,
     isShrinkChatMessage,
     isChangeChatFontSize,
-    valueChatFontSize
+    valueChatFontSize,
+    isAddEvenCommentBackgroundColor
   ])
 
   return null
 }
 
-export default Chat
+export default ChatStyle

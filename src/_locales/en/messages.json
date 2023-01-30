@@ -11,6 +11,18 @@
   "popup_settings_title": {
     "message": "Settings"
   },
+  "popup_settings_common_title": {
+    "message": "Supach Numbering Settings"
+  },
+  "popup_settings_sub_common_title": {
+    "message": "Common Settings"
+  },
+  "popup_settings_EnableAll_label": {
+    "message": "Enable extension"
+  },
+  "popup_settings_DisplayChatOnSettingMenu_label": {
+    "message": "Display settings menu on chat field"
+  },
   "popup_settings_main_title": {
     "message": "Main Settings"
   },
@@ -101,6 +113,9 @@
   "popup_settings_ChangeChatFontSize_label": {
     "message": "Change font size of chat field"
   },
+  "popup_settings_AddEvenCommentBackgroundColor_label": {
+    "message": "Add bg color to even comments"
+  },
   "popup_image_title": {
     "message": "Operation image"
   },
@@ -133,5 +148,11 @@
   },
   "content_menu_open_popup_page_label": {
     "message": "Open Settings Page"
+  },
+  "content_menu_enable_label": {
+    "message": "Enable extension"
+  },
+  "content_menu_disable_label": {
+    "message": "Disable extension"
   }
 }

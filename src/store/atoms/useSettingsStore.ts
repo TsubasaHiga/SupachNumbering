@@ -4,6 +4,9 @@ import { SettingsType } from '~/types/SettingsType'
 
 const SETTINGS_KEY = 'settings'
 const INITIAL_VALUE: SettingsType = {
+  // 全ての機能を有効化
+  isEnableAll: true,
+
   // スーパーチャットにナンバリングを追加
   isAddSuperChatNumbering: false,
 
@@ -44,7 +47,13 @@ const INITIAL_VALUE: SettingsType = {
 
   // チャット欄のフォントサイズを変更
   isChangeChatFontSize: false,
-  valueChatFontSize: 10
+  valueChatFontSize: 10,
+
+  // チャット欄の偶数コメントに背景色を追加
+  isAddEvenCommentBackgroundColor: false,
+
+  // チャット欄上部に設定メニューを表示
+  isDisplayChatOnSettingMenu: true
 }
 
 export const useSettingsStore = createChromeStorageStateHookLocal(SETTINGS_KEY, INITIAL_VALUE)

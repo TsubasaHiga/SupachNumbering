@@ -4,6 +4,9 @@ export type NumberingType = 'default' | 'uniqueId' | 'uniqueUserName'
 export type NumberingTypeUnique = Extract<NumberingType, 'uniqueId' | 'uniqueUserName'>
 
 export type SettingsType = {
+  // 全ての機能を有効化
+  isEnableAll: boolean
+
   // スーパーチャットにナンバリングを追加
   isAddSuperChatNumbering: boolean
 
@@ -45,4 +48,10 @@ export type SettingsType = {
   // チャット欄のフォントサイズを変更
   isChangeChatFontSize: boolean
   valueChatFontSize: number
+
+  // チャット欄の偶数コメントに背景色を追加
+  isAddEvenCommentBackgroundColor: boolean
+
+  // チャット欄上部に設定メニューを表示
+  isDisplayChatOnSettingMenu: boolean
 }

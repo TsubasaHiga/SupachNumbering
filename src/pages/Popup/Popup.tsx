@@ -4,7 +4,7 @@ import FormGroup from '@mui/material/FormGroup'
 import FormLabel from '@mui/material/FormLabel'
 import { ThemeProvider } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
-import { IconBellRinging, IconBrandChrome, IconGitPullRequest, IconSettings, IconTools } from '@tabler/icons'
+import { IconBellRinging, IconBrandChrome, IconGitPullRequest, IconSettings, IconTools } from '@tabler/icons-react'
 
 import img from '~/assets/img/popup.png'
 import define from '~/const/define'
@@ -18,9 +18,12 @@ import { theme } from '~/theme/mui'
 import { CommonType } from '~/types/CommonType'
 
 import AddChatAvatarBlur from './components/AddChatAvatarBlur/AddChatAvatarBlur'
+import AddEvenCommentBackgroundColor from './components/AddEvenCommentBackgroundColor/AddEvenCommentBackgroundColor'
 import AddSuperChatAvatarBlur from './components/AddSuperChatAvatarBlur/AddSuperChatAvatarBlur'
 import AddSuperChatNumbering from './components/AddSuperChatNumbering/AddSuperChatNumbering'
 import ChangeChatFontSize from './components/ChangeChatFontSize/ChangeChatFontSize'
+import DisplayChatOnSettingMenu from './components/DisplayChatOnSettingMenu/DisplayChatOnSettingMenu'
+import EnableAll from './components/EnableAll/EnableAll'
 import ExpandChatHeight from './components/ExpandChatHeight/ExpandChatHeight'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
@@ -61,6 +64,17 @@ const Popup = (): JSX.Element => {
           <div className={styles.content}>
             <div className={styles.settings}>
               <FormGroup>
+                <FormLabel>{GetI18n('popup_settings_common_title')}</FormLabel>
+                <SettingsWrap>
+                  <Typography variant="caption" component="div">
+                    {GetI18n('popup_settings_sub_common_title')}
+                  </Typography>
+                  <EnableAll isNew={true} />
+                  <DisplayChatOnSettingMenu isNew={true} />
+                </SettingsWrap>
+              </FormGroup>
+
+              <FormGroup>
                 <FormLabel>{GetI18n('popup_settings_main_title')}</FormLabel>
                 <AddSuperChatNumbering />
               </FormGroup>
@@ -75,7 +89,7 @@ const Popup = (): JSX.Element => {
                   <HideSuperChatAvatar />
                   <AddSuperChatAvatarBlur />
                   <WrapSuperChat />
-                  <HideSuperChatSponsorTicker isNew={true} />
+                  <HideSuperChatSponsorTicker />
                 </SettingsWrap>
 
                 <SettingsWrap>
@@ -88,6 +102,7 @@ const Popup = (): JSX.Element => {
                   <ShrinkChatMessage />
                   <ExpandChatHeight />
                   <ChangeChatFontSize />
+                  <AddEvenCommentBackgroundColor isNew={true} />
                 </SettingsWrap>
               </FormGroup>
 

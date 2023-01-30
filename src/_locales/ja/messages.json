@@ -11,6 +11,18 @@
   "popup_settings_title": {
     "message": "設定"
   },
+  "popup_settings_common_title": {
+    "message": "Supach Numbering全体の設定"
+  },
+  "popup_settings_sub_common_title": {
+    "message": "共通設定"
+  },
+  "popup_settings_EnableAll_label": {
+    "message": "拡張機能を有効化"
+  },
+  "popup_settings_DisplayChatOnSettingMenu_label": {
+    "message": "チャット欄上部に設定メニューを表示"
+  },
   "popup_settings_main_title": {
     "message": "メイン設定"
   },
@@ -101,6 +113,9 @@
   "popup_settings_ChangeChatFontSize_label": {
     "message": "チャット欄のフォントサイズを変更"
   },
+  "popup_settings_AddEvenCommentBackgroundColor_label": {
+    "message": "チャット欄の偶数コメントに背景色を追加"
+  },
   "popup_image_title": {
     "message": "動作イメージ"
   },
@@ -133,5 +148,11 @@
   },
   "content_menu_open_popup_page_label": {
     "message": "設定画面を開く"
+  },
+  "content_menu_enable_label": {
+    "message": "拡張機能を有効化"
+  },
+  "content_menu_disable_label": {
+    "message": "拡張機能を無効化"
   }
 }

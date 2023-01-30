@@ -13,7 +13,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           '&:not(:first-of-type)': {
-            marginTop: '20px'
+            marginTop: '30px'
           },
 
           '&[role="radiogroup"]': {
@@ -24,6 +24,12 @@ export const theme = createTheme({
               '&:not(:first-of-type)': {
                 marginTop: '0'
               }
+            }
+          },
+
+          '> .MuiFormControlLabel-root': {
+            '&:not(:first-of-type)': {
+              marginTop: '0px'
             }
           }
         }
