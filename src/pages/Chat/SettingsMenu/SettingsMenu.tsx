@@ -8,10 +8,10 @@ import Logo from '~/assets/img/icon-34.png'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
 import { SettingsType } from '~/types/SettingsType'
 
-import MenuFooter from './MenuFooter/MenuFooter'
-import MenuHeader from './MenuHeader/MenuHeader'
-import MenuOpenPopupPage from './MenuOpenPopupPage/MenuOpenPopupPage'
-import MenuReapply from './MenuReapply/MenuReapply'
+import MenuFooter from './components/MenuFooter/MenuFooter'
+import MenuHeader from './components/MenuHeader/MenuHeader'
+import MenuOpenPopupPage from './components/MenuOpenPopupPage/MenuOpenPopupPage'
+import MenuReapply from './components/MenuReapply/MenuReapply'
 import styles from './SettingsMenu.module.scss'
 
 const ITEM_HEIGHT = 48

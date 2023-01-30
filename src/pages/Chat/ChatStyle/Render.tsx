@@ -3,9 +3,9 @@ import { createRoot } from 'react-dom/client'
 
 import ElementWait from '~/modules/ElementWait'
 
-import Chat from '../Chat'
+import ChatStyle from './ChatStyle'
 
-const StyleRender = async () => {
+export const RenderChatStyle = async () => {
   const element = await ElementWait('body')
   if (element) {
     const div = document.createElement('div')
@@ -14,10 +14,8 @@ const StyleRender = async () => {
     const root = createRoot(div)
     root.render(
       <StrictMode>
-        <Chat />
+        <ChatStyle />
       </StrictMode>
     )
   }
 }
-
-export default StyleRender
