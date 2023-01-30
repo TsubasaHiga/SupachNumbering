@@ -8,6 +8,7 @@ import Logo from '~/assets/img/icon-34.png'
 import { useSettingsStore } from '~/store/atoms/useSettingsStore'
 import { SettingsType } from '~/types/SettingsType'
 
+import MenuEnableAll from './components/MenuEnableAll/MenuEnableAll'
 import MenuFooter from './components/MenuFooter/MenuFooter'
 import MenuHeader from './components/MenuHeader/MenuHeader'
 import MenuOpenPopupPage from './components/MenuOpenPopupPage/MenuOpenPopupPage'
@@ -65,6 +66,7 @@ const SettingsMenu = (): JSX.Element => {
             <MenuList>
               <MenuHeader manifest={manifest} />
               <Divider />
+              <MenuEnableAll />
               <MenuReapply handleClose={handleClose} />
               <MenuOpenPopupPage handleClose={handleClose} />
               <Divider />

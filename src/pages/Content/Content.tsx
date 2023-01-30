@@ -11,10 +11,16 @@ inlineStyleElement.id = 'supach-numbering-style'
 
 const Content = (): null => {
   const [settings] = useSettingsStore()
-  const { isExpandChatHeight }: SettingsType = settings
+  const { isEnableAll, isExpandChatHeight }: SettingsType = settings
 
   // スタイル追加
   useEffect(() => {
+    if (!isEnableAll) {
+      console.log('スタイル削除')
+      inlineStyleElement.innerText = ''
+      return
+    }
+
     inlineStyleElement.innerText = ''
 
     // チャット欄の高さを拡張
@@ -30,7 +36,7 @@ const Content = (): null => {
 
     // headに追加
     document.querySelector('head')?.appendChild(inlineStyleElement)
-  }, [isExpandChatHeight])
+  }, [isEnableAll, isExpandChatHeight])
 
   return null
 }

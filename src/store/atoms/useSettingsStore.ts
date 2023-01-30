@@ -4,6 +4,9 @@ import { SettingsType } from '~/types/SettingsType'
 
 const SETTINGS_KEY = 'settings'
 const INITIAL_VALUE: SettingsType = {
+  // 全ての機能を有効化
+  isEnableAll: true,
+
   // スーパーチャットにナンバリングを追加
   isAddSuperChatNumbering: false,
 
