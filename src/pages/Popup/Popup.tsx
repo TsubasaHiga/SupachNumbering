@@ -89,7 +89,7 @@ const Popup = (): JSX.Element => {
                   <HideSuperChatAvatar />
                   <AddSuperChatAvatarBlur />
                   <WrapSuperChat />
-                  <HideSuperChatSponsorTicker isNew={true} />
+                  <HideSuperChatSponsorTicker />
                 </SettingsWrap>
 
                 <SettingsWrap>
